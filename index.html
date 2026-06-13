@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feuern Outsourcing | Property Preservation Processing</title>
+<title>Feuern Outsourcing | Property Preservation Work Order Processing</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
@@ -17,37 +17,85 @@ color:#1a1a1a;
 line-height:1.6;
 }
 
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:6px;
+margin-bottom:15px;
+cursor:pointer;
+}
+
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 padding:0 20px;
+}
+
+section{
+padding:90px 0;
 }
 
 .hero{
 background:linear-gradient(135deg,#0e2a47,#071a2c);
 color:white;
-padding:110px 20px;
-text-align:center;
+padding:130px 20px;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:50px;
+align-items:center;
 }
 
 .hero img{
-width:130px;
-margin-bottom:20px;
+width:120px;
+margin-bottom:25px;
+opacity:0.95;
 }
 
 .hero h1{
-font-size:40px;
-margin-bottom:15px;
+font-size:46px;
+font-weight:700;
+line-height:1.15;
 }
 
-.hero p{
+.hero-highlight{
+margin-top:20px;
 font-size:18px;
-opacity:0.9;
+}
+
+.hero-highlight span{
+font-weight:600;
+}
+
+.hero-sub{
+margin-top:15px;
+font-size:16px;
+opacity:0.85;
+}
+
+.portal-badges span{
+display:inline-block;
+border:2px solid #ff7a00;
+color:#ff7a00;
+padding:8px 14px;
+border-radius:6px;
+margin:6px 6px 0 0;
+font-weight:600;
+font-size:14px;
+}
+
+.portal-note{
+margin-top:12px;
+font-size:14px;
+opacity:0.8;
 }
 
 .btn{
 display:inline-block;
-margin:15px 10px 0 10px;
+margin-top:25px;
 padding:14px 28px;
 background:#ff7a00;
 color:white;
@@ -57,30 +105,21 @@ font-weight:600;
 transition:0.3s;
 }
 
-.btn-outline{
-background:transparent;
-border:2px solid #ff7a00;
-}
-
 .btn:hover{
 opacity:0.9;
 }
 
-section{
-padding:80px 0;
-}
-
 h2{
-font-size:30px;
+font-size:32px;
 margin-bottom:20px;
 color:#0e2a47;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
-margin-top:30px;
+margin-top:40px;
 }
 
 .card{
@@ -88,74 +127,47 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 8px 25px rgba(0,0,0,0.06);
-}
-
-.card:hover{
-transform:translateY(-5px);
 transition:0.3s ease;
 }
 
-.card img{
-width:100%;
-border-radius:6px;
-margin-bottom:15px;
+.card:hover{
+transform:translateY(-6px);
 }
 
-.stats{
+
+
+.workflow{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
-margin-top:30px;
-text-align:center;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:50px;
 }
 
-.stat-box{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
+.workflow .card{
+min-height:180px;
 }
 
-.stat-box h3{
-color:#ff7a00;
-font-size:26px;
+.contact-buttons{
+margin-top:20px;
 }
 
-.process-step{
-margin-bottom:15px;
-}
-
-.highlight{
-background:#ff7a00;
-color:white;
-text-align:center;
-padding:70px 20px;
-}
-
-form{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-margin-top:30px;
-}
-
-input, textarea{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:6px;
-}
-
-button{
-background:#ff7a00;
-color:white;
-padding:12px 25px;
-border:none;
+.contact-buttons a{
+display:inline-block;
+margin:10px 10px 0 0;
+padding:12px 22px;
 border-radius:6px;
 font-weight:600;
-cursor:pointer;
+text-decoration:none;
+}
+
+.email-btn{
+background:#0e2a47;
+color:white;
+}
+
+.whatsapp-btn{
+background:#25D366;
+color:white;
 }
 
 footer{
@@ -166,159 +178,297 @@ padding:40px 20px;
 margin-top:60px;
 }
 
-@media(max-width:768px){
-.hero h1{font-size:28px;}
+/* LIGHTBOX */
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
 }
 
+.lightbox img{
+max-width:95%;
+max-height:90%;
+border-radius:8px;
+}
+
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr;}
+.workflow{grid-template-columns:1fr;}
+.hero h1{font-size:30px;}
+}
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
 <div class="container">
+<div class="hero-grid">
+
+<div>
 <img src="logo.png" alt="Feuern Logo">
-<h1>Back Office Processing for Property Preservation Contractors</h1>
-<p>Safeguard • MCS • Five Brothers • Cyprexx • Altisource</p>
-<p>Accurate Updates. Strong Justifications. Cleaner Portals.</p>
-<p style="margin-top:10px;font-weight:300;">
-Dedicated Back Office Support for Property Preservation Vendors.
+
+<h1>Property Preservation<br>Work Order Processing</h1>
+
+<p class="hero-highlight">
+<span>Accurate Updates.</span>
+<span>Damage‑Focused Scope Writing.</span>
+<span>Cleaner Portals.</span>
 </p>
-<a href="#contact" class="btn">Start Free Trial</a>
-<a href="#proof" class="btn btn-outline">View Real Work</a>
+
+<p class="hero-sub">
+Dedicated Back Office Support for Regional & National Preservation Vendors
+</p>
+
+<a href="#contact" class="btn">Start With One Trial Order</a>
+</div>
+
+<div>
+<h3 style="margin-bottom:15px;">Portals We Work In:</h3>
+<div class="portal-badges">
+<span>Safeguard</span>
+<span>MCS Vendor360</span>
+<span>Five Brothers</span>
+<span>Cyprexx</span>
+<span>Altisource</span>
+</div>
+<p class="portal-note">
++ Additional Nationals & Regional Platforms
+</p>
+</div>
+
+</div>
 </div>
 </div>
 
+<!-- PAIN -->
 <section>
 <div class="container">
 <h2>Stop Staying Up Until 2AM Updating Portals.</h2>
-<p>You finish the field work — then still handle photos, bids, PCRs, reopens, and disputes.  
-We manage the entire back-office process inside the portal so you can focus on operations and scaling.</p>
+<p>
+You finish the field work — then still handle photos, bids, PCRs, reopens, and disputes.
+We manage the entire back‑office workflow inside the portal so you can focus on operations and scaling.
+</p>
 </div>
 </section>
 
+<!-- WORKFLOW -->
 <section>
 <div class="container">
-<h2 style="text-align:center;">Why Contractors Stay With Us</h2>
+<h2 style="text-align:center;">How Our Processing Workflow Works</h2>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:40px;">
+<div class="workflow">
 
-<!-- LEFT COLUMN -->
-<div>
-<h3 style="color:#0e2a47;margin-bottom:15px;">Why Our Submissions Get Approved</h3>
-
-<div class="card" style="margin-bottom:15px;">
-<p><strong>High Approval Focus</strong><br>
-We match photos correctly to line items and write hazard‑focused justifications.</p>
-</div>
-
-<div class="card" style="margin-bottom:15px;">
-<p><strong>Previous Order Review</strong><br>
-We check property history to avoid duplicate scope and missed bids.</p>
+<div class="card">
+<h3>1️⃣ Photo & History Review</h3>
+<p>We analyze field photos and review previous work orders before drafting scope.</p>
 </div>
 
 <div class="card">
-<p><strong>QC Before Final Submit</strong><br>
-Every order is reviewed before submission to reduce denials and reopens.</p>
-</div>
-
-</div>
-
-<!-- RIGHT COLUMN -->
-<div>
-<h3 style="color:#0e2a47;margin-bottom:15px;">What You Get Working With Us</h3>
-
-<div class="card" style="margin-bottom:15px;">
-<p><strong>Cleaner Portals</strong><br>
-Organized submissions that make asset managers confident in your work.</p>
-</div>
-
-<div class="card" style="margin-bottom:15px;">
-<p><strong>Discrepancy Reporting</strong><br>
-If we find scope conflicts or missing documentation, we inform you immediately.</p>
+<h3>2️⃣ Scope Drafting</h3>
+<p>Bluebook compliant pricing with damage‑focused language.</p>
 </div>
 
 <div class="card">
-<p><strong>Scalable Back Office Support</strong><br>
-Whether 5 orders per day or high volume, we adjust to your workflow.</p>
+<h3>3️⃣ Portal Entry</h3>
+<p>Safeguard, MCS, Five Brothers and additional platforms submission.</p>
 </div>
 
+<div class="card">
+<h3>4️⃣ QC Review</h3>
+<p>Line item matching, PCR validation and compliance verification.</p>
+</div>
+
+<div class="card">
+<h3>5️⃣ Photo Validation</h3>
+<p>Pruvan & PPW review to ensure correct photo categorization.</p>
+</div>
+
+<div class="card">
+<h3>6️⃣ Secure File Management</h3>
+<p>Dropbox & structured documentation tracking system.</p>
 </div>
 
 </div>
 </div>
 </section>
-<section id="proof" style="background:white;">
+
+<!-- REAL WORK -->
+<section style="background:white;">
 <div class="container">
 <h2>Real Work Samples</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="structural.jpg">
+<img src="structural.jpg" onclick="openLightbox(this.src)">
 <h3>Structural Inspection Proposal – $2,800</h3>
+<p style="font-size:13px;opacity:0.7;">
+(Third‑Party Bid Generated Letterhead by Request)
+</p>
 </div>
 
 <div class="card">
-<img src="propane.jpg">
+<img src="propane.jpg" onclick="openLightbox(this.src)">
 <h3>Propane Tank Removal – $1,800</h3>
+<p style="font-size:14px;">
+Remove (1) ABOVE‑GROUND 250 gallon propane tank.
+Verify safe disconnection. Transport and dispose properly.
+</p>
 </div>
 
 <div class="card">
-<img src="panel.jpg">
-<h3>Electrical Panel Hazard – Approved</h3>
+<img src="panel.jpg" onclick="openLightbox(this.src)">
+<h3>Electrical Service Panel Cover – $211.01 Approved</h3>
+<p style="font-size:14px;">
+Replace missing interior electrical service panel cover.
+Correct exposed wiring hazard.
+</p>
 </div>
 
 <div class="card">
-<img src="workorder.jpg">
+<img src="workorder.jpg" onclick="openLightbox(this.src)">
 <h3>Full Safeguard Work Order Processing</h3>
 </div>
 
+<div class="card">
+<img src="tree.jpg" onclick="openLightbox(this.src)">
+<h3>Tree Hazard Removal – $3,034.61 Approved</h3>
+<p style="font-size:14px;">
+Trim branches contacting roof and structure.
+Prevent structural damage and water intrusion.
+</p>
+</div>
+
+<div class="card">
+<img src="satellite.jpg" onclick="openLightbox(this.src)">
+<h3>Satellite Dish Removal – $177.05</h3>
+<p style="font-size:14px;">
+Remove abandoned satellite dish.
+Seal roof penetration and haul debris.
+</p>
 </div>
 
 </div>
+</div>
+
+
+
 </section>
 
-<section>
+<!-- CONTACT -->
+<section id="contact" style="background:#eef2f7;">
 <div class="container">
-<h2>How We Work</h2>
 
-<div class="process-step">✅ You send photos & scope</div>
-<div class="process-step">✅ We review previous work orders</div>
-<div class="process-step">✅ We draft bids & complete portal entry</div>
-<div class="process-step">✅ QC review before submission</div>
-<div class="process-step">✅ We report discrepancies & approvals</div>
+<h2 style="text-align:center;margin-bottom:50px;">
+Start With One Trial Order
+</h2>
 
-</div>
-</section>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;">
 
-<section id="contact">
-<div class="container">
-<h2>Start With One Trial Order</h2>
-<p style="color:#ff7a00;font-weight:600;">
-Send one work order. If you're not satisfied, you don’t pay.
+<!-- LEFT SIDE -->
+<div>
+
+<h3 style="margin-bottom:15px;color:#0e2a47;">
+Let’s Handle Your Portal Work
+</h3>
+
+<p style="margin-bottom:25px;">
+Send us one work order and experience clean processing, structured scope writing and proper portal updates.
 </p>
 
+<div style="background:white;padding:25px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
 
-<form action="https://formsubmit.co/feuernoutsourcing@gmail.com" method="POST">
-<input type="text" name="Name" placeholder="Your Name" required>
-<input type="text" name="Company" placeholder="Company Name">
-<input type="text" name="Portal" placeholder="Portal Used (Safeguard, MCS, etc)">
-<input type="text" name="Volume" placeholder="Orders Per Week">
-<textarea name="Message" placeholder="Tell us about your workflow"></textarea>
-<button type="submit">Send Trial Request</button>
+<p style="margin-bottom:15px;">
+<strong>Email:</strong><br>
+<a href="mailto:feuernoutsourcing@gmail.com" style="color:#ff7a00;text-decoration:none;">
+feuernoutsourcing@gmail.com
+</a>
+</p>
+
+<p style="margin-bottom:15px;">
+<strong>WhatsApp:</strong><br>
++8801760055708
+</p>
+
+<div style="margin-top:15px;">
+<a href="mailto:feuernoutsourcing@gmail.com" 
+style="display:inline-block;margin-right:10px;background:#0e2a47;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">
+📧 Email Now
+</a>
+
+<a href="https://wa.me/8801760055708" 
+style="display:inline-block;background:#25D366;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">
+💬 WhatsApp Now
+</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE FORM -->
+<div>
+
+<form action="https://formsubmit.co/feuernoutsourcing@gmail.com" method="POST"
+style="background:white;padding:35px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+
+<input type="text" name="Name" placeholder="Your Name" required
+style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #dcdcdc;border-radius:6px;">
+
+<input type="text" name="Company" placeholder="Company Name"
+style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #dcdcdc;border-radius:6px;">
+
+<input type="text" name="Portal" placeholder="Portal Used (Safeguard, MCS, etc)"
+style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #dcdcdc;border-radius:6px;">
+
+<input type="text" name="Volume" placeholder="Orders Per Week"
+style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #dcdcdc;border-radius:6px;">
+
+<textarea name="Message" placeholder="Tell us about your workflow"
+style="width:100%;padding:14px;margin-bottom:20px;border:1px solid #dcdcdc;border-radius:6px;height:120px;"></textarea>
+
+<button type="submit"
+style="width:100%;background:#ff7a00;color:white;padding:14px;border:none;border-radius:6px;font-weight:600;font-size:16px;cursor:pointer;">
+Send Trial Request
+</button>
+
 </form>
 
-<p style="margin-top:20px;">Or Email: feuernoutsourcing@gmail.com | WhatsApp: +8801760055708</p>
+</div>
+
+</div>
 
 </div>
 </section>
 
 <footer>
-© 2026 Feuern Outsourcing | Serving Contractors Across the United States
+© 2026 Feuern Outsourcing | Property Preservation Work Order Processing Support
 </footer>
 
-<!-- WhatsApp Floating Button -->
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src){
+document.getElementById('lightbox').style.display='flex';
+document.getElementById('lightbox-img').src=src;
+}
+function closeLightbox(){
+document.getElementById('lightbox').style.display='none';
+}
+</script>
+
 <a href="https://wa.me/8801760055708" 
 style="
 position:fixed;
@@ -326,14 +476,15 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 18px;
-border-radius:50px;
-font-size:18px;
+padding:16px;
+border-radius:50%;
+font-size:20px;
 text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,0.3);
 z-index:999;
 ">
-Chat
+💬
 </a>
+
 </body>
 </html>
