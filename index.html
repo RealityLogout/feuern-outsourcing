@@ -90,6 +90,11 @@ border-radius:10px;
 box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
+.card:hover{
+transform:translateY(-5px);
+transition:0.3s ease;
+}
+
 .card img{
 width:100%;
 border-radius:6px;
@@ -175,7 +180,10 @@ margin-top:60px;
 <img src="logo.png" alt="Feuern Logo">
 <h1>Back Office Processing for Property Preservation Contractors</h1>
 <p>Safeguard • MCS • Five Brothers • Cyprexx • Altisource</p>
-<p>Higher Approval Rates. Cleaner Portals. Less Stress.</p>
+<p>Accurate Updates. Strong Justifications. Cleaner Portals.</p>
+<p style="margin-top:10px;font-weight:300;">
+Dedicated Back Office Support for Property Preservation Vendors.
+</p>
 <a href="#contact" class="btn">Start Free Trial</a>
 <a href="#proof" class="btn btn-outline">View Real Work</a>
 </div>
@@ -191,33 +199,55 @@ We manage the entire back-office process inside the portal so you can focus on o
 
 <section>
 <div class="container">
-<h2>Real Bid Values We've Processed</h2>
+<h2 style="text-align:center;">Why Contractors Stay With Us</h2>
 
-<div class="stats">
-<div class="stat-box">
-<h3>$48,348</h3>
-<p>Unfinished Renovation Bid</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:40px;">
+
+<!-- LEFT COLUMN -->
+<div>
+<h3 style="color:#0e2a47;margin-bottom:15px;">Why Our Submissions Get Approved</h3>
+
+<div class="card" style="margin-bottom:15px;">
+<p><strong>High Approval Focus</strong><br>
+We match photos correctly to line items and write hazard‑focused justifications.</p>
 </div>
 
-<div class="stat-box">
-<h3>$11,512</h3>
-<p>Floor Replacement Scope</p>
+<div class="card" style="margin-bottom:15px;">
+<p><strong>Previous Order Review</strong><br>
+We check property history to avoid duplicate scope and missed bids.</p>
 </div>
 
-<div class="stat-box">
-<h3>$10,000</h3>
-<p>Roof Damage Estimate</p>
+<div class="card">
+<p><strong>QC Before Final Submit</strong><br>
+Every order is reviewed before submission to reduce denials and reopens.</p>
 </div>
 
-<div class="stat-box">
-<h3>$2,400</h3>
-<p>Tree Hazard Approved</p>
-</div>
 </div>
 
+<!-- RIGHT COLUMN -->
+<div>
+<h3 style="color:#0e2a47;margin-bottom:15px;">What You Get Working With Us</h3>
+
+<div class="card" style="margin-bottom:15px;">
+<p><strong>Cleaner Portals</strong><br>
+Organized submissions that make asset managers confident in your work.</p>
+</div>
+
+<div class="card" style="margin-bottom:15px;">
+<p><strong>Discrepancy Reporting</strong><br>
+If we find scope conflicts or missing documentation, we inform you immediately.</p>
+</div>
+
+<div class="card">
+<p><strong>Scalable Back Office Support</strong><br>
+Whether 5 orders per day or high volume, we adjust to your workflow.</p>
+</div>
+
+</div>
+
+</div>
 </div>
 </section>
-
 <section id="proof" style="background:white;">
 <div class="container">
 <h2>Real Work Samples</h2>
@@ -265,7 +295,10 @@ We manage the entire back-office process inside the portal so you can focus on o
 <section id="contact">
 <div class="container">
 <h2>Start With One Trial Order</h2>
-<p>If you're not satisfied, you don’t pay.</p>
+<p style="color:#ff7a00;font-weight:600;">
+Send one work order. If you're not satisfied, you don’t pay.
+</p>
+
 
 <form action="https://formsubmit.co/feuernoutsourcing@gmail.com" method="POST">
 <input type="text" name="Name" placeholder="Your Name" required>
@@ -285,5 +318,22 @@ We manage the entire back-office process inside the portal so you can focus on o
 © 2026 Feuern Outsourcing | Serving Contractors Across the United States
 </footer>
 
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/8801760055708" 
+style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:999;
+">
+Chat
+</a>
 </body>
 </html>
