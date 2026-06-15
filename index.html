@@ -8,7 +8,7 @@
 <meta name="keywords" content="Property Preservation Work Order Processing, Safeguard Processing, MCS Vendor360 Processing, Five Brothers Portal Update, Property Preservation Bid Writing, Preservation Back Office Support">
 
 <meta name="author" content="Feuern Outsourcing">
-  
+
 <title>Feuern Outsourcing | Property Preservation Work Order Processing</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -260,7 +260,7 @@ Dedicated Back Office Support for Regional & National Preservation Vendors
 <div class="container">
 <h2>Stop Staying Up Until 2AM Updating Portals.</h2>
 <p>
-You finish the field work — then still handle photos, bids, PCRs, reopens, and disputes?
+You finish the field work — then still handle photos, bids, PCRs, reopens, and disputes.
 We manage the entire back‑office workflow inside the portal so you can focus on operations and scaling.
 </p>
 </div>
@@ -385,6 +385,7 @@ Bid drafting, photo upload and scope submission inside Vendor360 system.
 
 
 </section>
+
 <section style="background:#eef2f7;">
 <div class="container">
 <h2>Photo Review & Bid Drafting Service</h2>
@@ -407,6 +408,36 @@ No portal access required.
 
 </div>
 </section>
+
+<section>
+<div class="container">
+<h2>Industry Insights</h2>
+
+<div id="blog-preview" class="cards"></div>
+
+<div style="margin-top:40px;">
+<a href="blog.html" class="btn">View All Articles</a>
+</div>
+
+</div>
+</section>
+
+<script>
+fetch('blogs.json')
+.then(response => response.json())
+.then(data => {
+    const container = document.getElementById('blog-preview');
+    data.slice(0,2).forEach(blog => {
+        container.innerHTML += `
+            <div class="card">
+                <h3>${blog.title}</h3>
+                <p>${blog.excerpt}</p>
+                <a href="${blog.file}" class="btn">Read More</a>
+            </div>
+        `;
+    });
+});
+</script>
 
 <!-- CONTACT -->
 <section id="contact" style="background:#eef2f7;">
