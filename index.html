@@ -205,9 +205,93 @@ border-radius:8px;
 }
 
 @media(max-width:900px){
-.hero-grid{grid-template-columns:1fr;}
-.workflow{grid-template-columns:1fr;}
-.hero h1{font-size:30px;}
+
+/* General spacing */
+section{
+padding:60px 0;
+}
+
+/* Hero */
+.hero{
+padding:80px 20px;
+}
+
+.hero-grid{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.hero h1{
+font-size:28px;
+line-height:1.2;
+}
+
+.hero-highlight{
+font-size:16px;
+}
+
+.hero-sub{
+font-size:14px;
+}
+
+/* Portal badges */
+.portal-badges span{
+font-size:13px;
+padding:6px 10px;
+margin:5px 5px 0 0;
+}
+
+/* Workflow stack */
+.workflow{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+/* Real Work cards stack */
+.cards{
+grid-template-columns:1fr;
+}
+
+/* Card spacing */
+.card{
+padding:20px;
+}
+
+/* Headings & text */
+h2{
+font-size:24px;
+}
+
+p{
+font-size:15px;
+}
+
+/* Buttons easier to tap */
+.btn{
+width:100%;
+text-align:center;
+padding:16px;
+font-size:16px;
+}
+
+/* Contact section grid fix */
+#contact div[style*="grid-template-columns"]{
+display:grid !important;
+grid-template-columns:1fr !important;
+gap:30px !important;
+}
+
+/* Form readability */
+#contact input,
+#contact textarea{
+font-size:16px !important;
+}
+
+#contact button{
+font-size:16px !important;
+padding:16px !important;
+}
+
 }
 </style>
 </head>
