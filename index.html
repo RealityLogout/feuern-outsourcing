@@ -414,6 +414,92 @@ form textarea:focus{
 footer{
   background:linear-gradient(135deg,#071a2c,#0e2a47);
 }
+
+.bid-showcase{
+background:linear-gradient(180deg,#ffffff,#f4f7fb);
+}
+
+.bid-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+margin-top:40px;
+}
+
+.bid-card{
+background:white;
+border:1px solid rgba(14,42,71,0.10);
+border-radius:10px;
+padding:24px;
+box-shadow:0 12px 32px rgba(14,42,71,0.08);
+transition:0.3s ease;
+position:relative;
+overflow:hidden;
+}
+
+.bid-card:hover{
+transform:translateY(-6px);
+box-shadow:0 22px 46px rgba(14,42,71,0.14);
+}
+
+.bid-card:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:#ff7a00;
+}
+
+.bid-top{
+display:flex;
+justify-content:space-between;
+gap:12px;
+align-items:flex-start;
+margin-bottom:14px;
+}
+
+.bid-tag{
+font-size:12px;
+font-weight:700;
+color:#0e2a47;
+background:#eef2f7;
+padding:6px 10px;
+border-radius:20px;
+}
+
+.bid-price{
+font-size:16px;
+font-weight:700;
+color:#ff7a00;
+white-space:nowrap;
+}
+
+.bid-card h3{
+font-size:18px;
+color:#0e2a47;
+margin-bottom:12px;
+line-height:1.35;
+}
+
+.bid-card p{
+font-size:14px;
+color:#4f5f70;
+line-height:1.65;
+}
+
+.bid-note{
+margin-top:18px;
+font-size:13px;
+opacity:0.75;
+}
+
+@media(max-width:900px){
+.bid-top{
+flex-direction:column;
+}
+}
     
 </style>
 </head>
@@ -590,6 +676,91 @@ Bid drafting, photo upload and scope submission inside Vendor360 system.
 
 
 
+</section>
+
+<section class="bid-showcase">
+<div class="container">
+
+<h2>See Some of the Bids We Have Given in Several Work Orders</h2>
+<p>
+Below are selected bid examples from actual property preservation work order processing scopes.
+</p>
+
+<div class="bid-grid">
+
+<div class="bid-card">
+<div class="bid-top">
+<span class="bid-tag">Fire Hazard / Tree Removal</span>
+<span class="bid-price">$42,000</span>
+</div>
+<h3>Dead & Fire-Burned Tree Removal</h3>
+<p>
+Remove (10) dead and fire burned severe fire hazard large trees and lots of limbs or wooden tree pieces approx. 60 limbs that have fallen down and are in the way of accessing the property as they are dangerous and in the way of the driveway access to the property. There are also separate tree stumps that need to be grinded and removed. That will required stump grinder to rent with other landscaping tools like chainsaw, woodchipper, approximately 200 cyds of debris will be generated removing trees.
+</p>
+</div>
+
+<div class="bid-card">
+<div class="bid-top">
+<span class="bid-tag">Demolition</span>
+<span class="bid-price">$7,761.55</span>
+</div>
+<h3>600 SQFT Outbuilding Demolition</h3>
+<p>
+Demolish and remove a wooden outbuilding approximately 600 SQFT in size. Structure is severely damaged, deteriorated, and rotten, creating a safety hazard. Due to the extent of the damage, the outbuilding is beyond repair and requires complete demolition and removal. Work includes labor, necessary equipment, haul away, and disposal of all generated debris.
+</p>
+</div>
+
+<div class="bid-card">
+<div class="bid-top">
+<span class="bid-tag">Custom Garage Door</span>
+<span class="bid-price">$6,788.82</span>
+</div>
+<h3>Custom Overhead Garage Door Replacement</h3>
+<p>
+Remove temporary boarding from a single-car garage door custom size. Remove the existing damaged overhead garage door and replace it with a new custom overhead garage door with roller, spring and any necessary hardware. The existing door is broken beyond repair and has been temporarily boarded for security; the boarding must be removed prior to door removal.
+</p>
+</div>
+
+<div class="bid-card">
+<div class="bid-top">
+<span class="bid-tag">Propane Tank</span>
+<span class="bid-price">$1,800</span>
+</div>
+<h3>Above-Ground Propane Tank Removal</h3>
+<p>
+Remove (1) ABOVE-GROUND PROPANE TANK & DISPOSE, need to remove safely and dispose (1) 250 gallon propane tank located near fence line outside of the property, need to verify disconnection of it to prevent safety hazard, transport and dispose to damp properly, in order to prevent health hazard.
+</p>
+</div>
+
+<div class="bid-card">
+<div class="bid-top">
+<span class="bid-tag">Pool Securing</span>
+<span class="bid-price">$3,085.96</span>
+</div>
+<h3>In-Ground Pool Cover Installation</h3>
+<p>
+Install a pool cover on an in-ground swimming pool approximately 35 ft x 18 ft to secure the area and prevent a fall hazard. Installation will be completed after draining the pool and performing the initial shock and treatment.
+</p>
+</div>
+
+<div class="bid-card">
+<div class="bid-top">
+<span class="bid-tag">Yard Structure Removal</span>
+<span class="bid-price">$4,350.95</span>
+</div>
+<h3>Detached Outbuilding / Coop Structure Removal</h3>
+<p>
+Demolish and remove (3) detached outbuilding/coop structures located in rear yard area. Structures are deteriorated and not permanent construction, creating safety hazard, pest harborage risk, and obstruction to yard maintenance. Bid includes full dismantling of all three coop structures including wood framing, wire mesh/cage materials, tarp coverings and generated debris removal.
+</p>
+</div>
+
+</div>
+
+<p class="bid-note">
+Each bid depends on photo support, investor approval, portal requirements, and final work order review.
+</p>
+
+</div>
 </section>
 
 <section style="background:#eef2f7;">
