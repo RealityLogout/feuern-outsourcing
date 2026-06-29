@@ -500,14 +500,179 @@ opacity:0.75;
 flex-direction:column;
 }
 }
+
+.site-menu{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(7,26,44,.96);
+backdrop-filter:blur(12px);
+box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+.site-menu .container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+padding-top:12px;
+padding-bottom:12px;
+}
+.menu-brand{
+color:white;
+font-weight:700;
+font-size:15px;
+}
+.menu-links{
+display:flex;
+gap:10px;
+overflow-x:auto;
+white-space:nowrap;
+}
+.menu-links a{
+color:white;
+font-size:13px;
+font-weight:600;
+padding:8px 12px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+}
+.menu-links a:hover{
+background:#ff7a00;
+}
+
+.bid-media{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:6px;
+margin:-6px -6px 18px;
+}
+.bid-media img{
+width:100%;
+height:82px;
+object-fit:cover;
+border-radius:7px;
+cursor:pointer;
+filter:saturate(1.03) contrast(1.02);
+}
+.bid-media.single{
+grid-template-columns:1fr;
+}
+.bid-media.single img{
+height:170px;
+}
+.bid-media.four{
+grid-template-columns:repeat(2,1fr);
+}
+.bid-media.four img{
+height:88px;
+}
+
+.bid-note{
+background:#0e2a47;
+color:white;
+padding:24px;
+border-radius:10px;
+font-size:18px;
+line-height:1.7;
+opacity:1;
+box-shadow:0 14px 36px rgba(14,42,71,.16);
+}
+
+.video-callout{
+margin-top:35px;
+background:white;
+border:1px solid rgba(14,42,71,.10);
+border-radius:12px;
+padding:26px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+box-shadow:0 14px 36px rgba(14,42,71,.08);
+}
+.video-callout h3{
+color:#0e2a47;
+margin-bottom:6px;
+}
+.video-callout p{
+color:#4f5f70;
+font-size:14px;
+}
+.video-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.82);
+z-index:2000;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+.video-box{
+width:min(900px,96vw);
+background:#071a2c;
+border-radius:12px;
+padding:16px;
+position:relative;
+}
+.video-box video{
+width:100%;
+border-radius:8px;
+display:block;
+}
+.video-close{
+position:absolute;
+right:14px;
+top:-42px;
+background:#ff7a00;
+color:white;
+border:none;
+border-radius:50%;
+width:34px;
+height:34px;
+font-size:20px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+.site-menu .container,
+.video-callout{
+flex-direction:column;
+align-items:flex-start;
+}
+.menu-links{
+width:100%;
+}
+.bid-media img{
+height:74px;
+}
+.bid-media.single img{
+height:150px;
+}
+}
     
 </style>
 </head>
 
 <body>
 
+<div class="site-menu">
+<div class="container">
+<div class="menu-brand">Feuern Outsourcing</div>
+<div class="menu-links">
+<a href="#home">Home</a>
+<a href="#workflow">Workflow</a>
+<a href="#works">Works</a>
+<a href="#bids">Bids</a>
+<a href="#bid-drafting">Bid Drafting</a>
+<a href="#insights">Insights</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</div>
+
 <!-- HERO -->
-<div class="hero">
+<div id="home" class="hero">
 <div class="container">
 <div class="hero-grid">
 
@@ -559,7 +724,7 @@ We manage the entire back‑office workflow inside the portal so you can focus o
 </section>
 
 <!-- WORKFLOW -->
-<section>
+<section id="workflow">
 <div class="container">
 <h2 style="text-align:center;">How Our Processing Workflow Works</h2>
 
@@ -600,7 +765,7 @@ We manage the entire back‑office workflow inside the portal so you can focus o
 </section>
 
 <!-- REAL WORK -->
-<section style="background:white;">
+<section id="works" style="background:white;">
 <div class="container">
 <h2>Real Work Samples</h2>
 
@@ -678,7 +843,7 @@ Bid drafting, photo upload and scope submission inside Vendor360 system.
 
 </section>
 
-<section class="bid-showcase">
+<section id="bids" class="bid-showcase">
 <div class="container">
 
 <h2>See Some of the Bids We Have Given in Several Work Orders</h2>
@@ -689,6 +854,13 @@ Below are selected bid examples from actual property preservation work order pro
 <div class="bid-grid">
 
 <div class="bid-card">
+
+<div class="bid-media">
+<img src="bid-fire-trees-1.jpg" onclick="openLightbox(this.src)" alt="Fire burned tree damage">
+<img src="bid-fire-trees-2.jpg" onclick="openLightbox(this.src)" alt="Fallen yard tree debris">
+<img src="bid-fire-trees-3.jpg" onclick="openLightbox(this.src)" alt="Tree debris and access obstruction">
+</div>
+
 <div class="bid-top">
 <span class="bid-tag">Fire Hazard / Tree Removal</span>
 <span class="bid-price">$42,000</span>
@@ -700,6 +872,11 @@ Remove (10) dead and fire burned severe fire hazard large trees and lots of limb
 </div>
 
 <div class="bid-card">
+
+<div class="bid-media single">
+<img src="bid-water-damage.jpg" onclick="openLightbox(this.src)" alt="Water damage measurement under sink">
+</div>
+
 <div class="bid-top">
 <span class="bid-tag">Apply Bleach and Kilz</span>
 <span class="bid-price">$373.03</span>
@@ -711,6 +888,11 @@ Apply a bleach and water mixture, then prime/seal with a stain blocker (Kilz-typ
 </div>
 
 <div class="bid-card">
+
+<div class="bid-media single">
+<img src="bid-garage-door.jpg" onclick="openLightbox(this.src)" alt="Damaged overhead garage door">
+</div>
+
 <div class="bid-top">
 <span class="bid-tag">Custom Garage Door</span>
 <span class="bid-price">$6,788.82</span>
@@ -722,6 +904,11 @@ Remove temporary boarding from a single-car garage door custom size. Remove the 
 </div>
 
 <div class="bid-card">
+
+<div class="bid-media single">
+<img src="bid-propane-tank.jpg" onclick="openLightbox(this.src)" alt="Above ground propane tank">
+</div>
+
 <div class="bid-top">
 <span class="bid-tag">Propane Tank</span>
 <span class="bid-price">$1,800</span>
@@ -733,6 +920,11 @@ Remove (1) ABOVE-GROUND PROPANE TANK & DISPOSE, need to remove safely and dispos
 </div>
 
 <div class="bid-card">
+
+<div class="bid-media single">
+<img src="bid-pool.jpg" onclick="openLightbox(this.src)" alt="Unsecured in-ground pool condition">
+</div>
+
 <div class="bid-top">
 <span class="bid-tag">Pool Securing</span>
 <span class="bid-price">$3,085.96</span>
@@ -744,6 +936,14 @@ Install a pool cover on an in-ground swimming pool approximately 35 ft x 18 ft t
 </div>
 
 <div class="bid-card">
+
+<div class="bid-media four">
+<img src="bid-outbuilding-1.jpg" onclick="openLightbox(this.src)" alt="Detached outbuilding condition">
+<img src="bid-outbuilding-2.jpg" onclick="openLightbox(this.src)" alt="Coop structure damage">
+<img src="bid-outbuilding-3.jpg" onclick="openLightbox(this.src)" alt="Rear yard structure damage">
+<img src="bid-outbuilding-4.jpg" onclick="openLightbox(this.src)" alt="Outbuilding removal area">
+</div>
+
 <div class="bid-top">
 <span class="bid-tag">Yard Structure Removal</span>
 <span class="bid-price">$4,350.95</span>
@@ -757,13 +957,21 @@ Demolish and remove (3) detached outbuilding/coop structures located in rear yar
 </div>
 
 <p class="bid-note">
-Each bid depends on photo support, investor approval, portal requirements, and final work order review.
+Bid amounts and scope depend on photo support, national/vendor requirements, portal notes, field crew measurements, prior work orders for the same property, and final work order review.
 </p>
+
+<div class="video-callout">
+<div>
+<h3>Watch a Short Explainer</h3>
+<p>A quick video of how photo review, bid writing, QC, and portal processing work together.</p>
+</div>
+<button class="btn" onclick="openVideo()">Watch Video</button>
+</div>
 
 </div>
 </section>
 
-<section style="background:#eef2f7;">
+<section id="bid-drafting" style="background:#eef2f7;">
 <div class="container">
 <h2>Photo Review & Bid Drafting Service</h2>
 
@@ -786,7 +994,7 @@ No portal access required.
 </div>
 </section>
 
-<section>
+<section id="insights">
 <div class="container">
 <h2>Industry Insights</h2>
 
@@ -814,6 +1022,16 @@ fetch('blogs.json')
         `;
     });
 });
+
+function openVideo(){
+document.getElementById('videoModal').style.display='flex';
+}
+
+function closeVideo(){
+document.getElementById('videoModal').style.display='none';
+document.getElementById('explainerVideo').pause();
+}
+
 </script>
 
 <!-- CONTACT -->
@@ -937,6 +1155,15 @@ z-index:999;
 ">
 💬
 </a>
+
+<div id="videoModal" class="video-modal">
+<div class="video-box">
+<button class="video-close" onclick="closeVideo()">×</button>
+<video id="explainerVideo" controls>
+<source src="explainer-video.mp4" type="video/mp4">
+</video>
+</div>
+</div>
 
 </body>
 </html>
