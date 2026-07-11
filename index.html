@@ -649,6 +649,217 @@ height:74px;
 height:150px;
 }
 }
+
+/* MENU + VIDEO UPGRADE ONLY */
+
+html{
+scroll-padding-top:85px;
+}
+
+#home,
+#workflow,
+#works,
+#bids,
+#bid-drafting,
+#insights,
+#contact{
+scroll-margin-top:85px;
+}
+
+.site-menu{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(7,26,44,.97);
+backdrop-filter:blur(14px);
+box-shadow:0 10px 30px rgba(0,0,0,.16);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.site-menu .container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+padding-top:11px;
+padding-bottom:11px;
+}
+
+.menu-brand{
+color:white;
+font-weight:700;
+font-size:15px;
+letter-spacing:.2px;
+}
+
+.menu-links{
+display:flex;
+gap:8px;
+overflow-x:auto;
+white-space:nowrap;
+scrollbar-width:none;
+}
+
+.menu-links::-webkit-scrollbar{
+display:none;
+}
+
+.menu-links a{
+color:white;
+font-size:13px;
+font-weight:600;
+padding:8px 13px;
+border-radius:999px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.08);
+transition:.2s ease;
+}
+
+.menu-links a:hover{
+background:#ff7a00;
+border-color:#ff7a00;
+transform:translateY(-1px);
+}
+
+/* Visible explainer video box */
+.explainer-wrap{
+margin-top:36px;
+background:linear-gradient(135deg,#071a2c,#0e2a47);
+border-radius:14px;
+padding:28px;
+display:grid;
+grid-template-columns:1fr 340px;
+gap:28px;
+align-items:center;
+box-shadow:0 18px 46px rgba(14,42,71,.18);
+overflow:hidden;
+}
+
+.explainer-copy h3{
+color:white;
+font-size:24px;
+margin-bottom:10px;
+}
+
+.explainer-copy p{
+color:rgba(255,255,255,.78);
+font-size:15px;
+line-height:1.7;
+}
+
+.video-preview{
+position:relative;
+border:none;
+width:100%;
+aspect-ratio:16/10;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+background:
+linear-gradient(rgba(7,26,44,.15),rgba(7,26,44,.55)),
+url("logo.png") center/95px no-repeat,
+linear-gradient(135deg,#eef2f7,#ffffff);
+box-shadow:0 16px 38px rgba(0,0,0,.28);
+}
+
+.video-preview span{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+width:68px;
+height:68px;
+border-radius:50%;
+background:#ff7a00;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+box-shadow:0 12px 30px rgba(255,122,0,.35);
+padding-left:4px;
+}
+
+.video-preview small{
+position:absolute;
+left:16px;
+right:16px;
+bottom:14px;
+color:white;
+font-weight:700;
+font-size:13px;
+text-align:center;
+}
+
+/* Popup video */
+.video-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.84);
+z-index:3000;
+align-items:center;
+justify-content:center;
+padding:22px;
+backdrop-filter:blur(5px);
+}
+
+.video-modal.active{
+display:flex;
+}
+
+.video-box{
+width:min(920px,96vw);
+background:#071a2c;
+border-radius:14px;
+padding:16px;
+position:relative;
+box-shadow:0 30px 90px rgba(0,0,0,.45);
+}
+
+.video-box video{
+width:100%;
+max-height:78vh;
+border-radius:10px;
+display:block;
+background:#000;
+}
+
+.video-close{
+position:absolute;
+right:10px;
+top:-46px;
+background:#ff7a00;
+color:white;
+border:none;
+border-radius:50%;
+width:36px;
+height:36px;
+font-size:24px;
+line-height:36px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+.site-menu .container{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+
+.menu-links{
+width:100%;
+}
+
+.explainer-wrap{
+grid-template-columns:1fr;
+padding:22px;
+}
+
+.video-preview{
+max-width:100%;
+}
+}
     
 </style>
 </head>
@@ -959,12 +1170,16 @@ Demolish and remove (3) detached outbuilding/coop structures located in rear yar
 Bid amounts and scope depend on photo support, national/vendor requirements, portal notes, field crew measurements, prior work orders for the same property, and final work order review.
 </p>
 
-<div class="video-callout">
-<div>
+<div class="explainer-wrap">
+<div class="explainer-copy">
 <h3>Watch a Short Explainer</h3>
 <p>A quick video of how photo review, bid writing, QC, and portal processing work together.</p>
 </div>
-<button class="btn" onclick="openVideo()">Watch Video</button>
+
+<button class="video-preview" onclick="openVideo()" aria-label="Open explainer video">
+<span>▶</span>
+<small>Click to watch the explainer video</small>
+</button>
 </div>
 
 </div>
@@ -1023,13 +1238,27 @@ fetch('blogs.json')
 });
 
 function openVideo(){
-document.getElementById('videoModal').style.display='flex';
+document.getElementById('videoModal').classList.add('active');
 }
 
 function closeVideo(){
-document.getElementById('videoModal').style.display='none';
-document.getElementById('explainerVideo').pause();
+const modal = document.getElementById('videoModal');
+const video = document.getElementById('explainerVideo');
+modal.classList.remove('active');
+video.pause();
 }
+
+function closeVideoFromBackdrop(event){
+if(event.target.id === 'videoModal'){
+closeVideo();
+}
+}
+
+document.addEventListener('keydown', function(event){
+if(event.key === 'Escape'){
+closeVideo();
+}
+});
 
 </script>
 
@@ -1155,10 +1384,10 @@ z-index:999;
 💬
 </a>
 
-<div id="videoModal" class="video-modal">
+<div id="videoModal" class="video-modal" onclick="closeVideoFromBackdrop(event)">
 <div class="video-box">
-<button class="video-close" onclick="closeVideo()">×</button>
-<video id="explainerVideo" controls>
+<button class="video-close" onclick="closeVideo()" aria-label="Close video">&times;</button>
+<video id="explainerVideo" controls preload="metadata">
 <source src="explainer-video.mp4" type="video/mp4">
 </video>
 </div>
