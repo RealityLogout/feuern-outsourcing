@@ -14,7 +14,7 @@
     
 <title>Feuern Outsourcing | Property Preservation Work Order Processing</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -24,11 +24,29 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
+:root{
+--ink:#0e2a47;
+--ink-deep:#071a2c;
+--accent:#ff7a00;
+--accent-dark:#e06800;
+--paper:#f6f7fb;
+--slate:#4f5f70;
+--line:rgba(14,42,71,0.10);
+--font-body:'Inter',sans-serif;
+--font-display:'Archivo','Inter',sans-serif;
+}
+
+*{-webkit-font-smoothing:antialiased;}
+
 body{
-font-family:'Inter',sans-serif;
+font-family:var(--font-body);
 background:#f5f7fb;
 color:#1a1a1a;
 line-height:1.6;
+}
+
+h1,h2,h3,.menu-brand,.bid-price,.stat-num{
+font-family:var(--font-display);
 }
 
 .card img{
@@ -70,9 +88,10 @@ opacity:0.95;
 }
 
 .hero h1{
-font-size:46px;
+font-size:50px;
 font-weight:700;
-line-height:1.15;
+line-height:1.1;
+letter-spacing:-0.5px;
 }
 
 .hero-highlight{
@@ -124,10 +143,57 @@ opacity:0.9;
 }
 
 h2{
-font-size:32px;
+font-size:34px;
+font-weight:700;
 margin-bottom:20px;
 color:#0e2a47;
+letter-spacing:-0.4px;
 }
+
+.proof-strip{
+background:var(--ink-deep);
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+.proof-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+padding:36px 20px;
+}
+
+.proof-item{
+text-align:center;
+padding:0 10px;
+border-left:1px solid rgba(255,255,255,.10);
+}
+
+.proof-item:first-child{
+border-left:none;
+}
+
+.stat-num{
+color:var(--accent);
+font-size:32px;
+font-weight:700;
+line-height:1.1;
+}
+
+.proof-label{
+color:rgba(255,255,255,.70);
+font-size:13px;
+margin-top:6px;
+}
+
+@media(max-width:900px){
+.proof-grid{
+grid-template-columns:repeat(2,1fr);
+row-gap:26px;
+}
+.proof-item:nth-child(3){
+border-left:none;
+}
+}
+
 
 .cards{
 display:grid;
@@ -159,6 +225,29 @@ margin-top:50px;
 
 .workflow .card{
 min-height:180px;
+padding-top:22px;
+}
+
+.step-num{
+width:36px;
+height:36px;
+border-radius:50%;
+background:var(--accent);
+color:white;
+font-family:var(--font-display);
+font-weight:700;
+font-size:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:14px;
+box-shadow:0 8px 18px rgba(255,122,0,.28);
+}
+
+.workflow .card h3{
+font-size:17px;
+color:var(--ink);
+margin-bottom:8px;
 }
 
 .contact-buttons{
@@ -500,6 +589,125 @@ flex-direction:column;
 }
 }
 
+/* PRICING */
+.pricing-table{
+margin-top:40px;
+background:white;
+border:1px solid var(--line);
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 14px 36px rgba(14,42,71,0.07);
+}
+
+.pricing-row{
+display:grid;
+grid-template-columns:1.4fr .7fr 1fr;
+gap:16px;
+align-items:center;
+padding:18px 26px;
+border-bottom:1px solid var(--line);
+}
+
+.pricing-row:last-child{
+border-bottom:none;
+}
+
+.pricing-row.head{
+background:var(--ink-deep);
+color:white;
+font-size:12px;
+font-weight:600;
+letter-spacing:.3px;
+padding:14px 26px;
+}
+
+.pricing-row.head span{
+color:rgba(255,255,255,.65);
+}
+
+.pricing-type{
+font-weight:600;
+color:var(--ink);
+font-size:15px;
+}
+
+.pricing-base{
+font-family:var(--font-display);
+font-weight:700;
+color:var(--accent);
+font-size:18px;
+}
+
+.pricing-extra{
+color:var(--slate);
+font-size:14px;
+}
+
+.pricing-fine{
+margin-top:18px;
+font-size:13px;
+color:var(--slate);
+}
+
+@media(max-width:700px){
+.pricing-row{
+grid-template-columns:1fr;
+gap:4px;
+padding:16px 20px;
+}
+.pricing-row.head{
+display:none;
+}
+.pricing-base{
+font-size:20px;
+}
+}
+
+/* TESTIMONIALS */
+.testimonial-band{
+background:linear-gradient(135deg,var(--ink),var(--ink-deep));
+padding:80px 0;
+}
+
+.testimonial-band h2{
+color:white;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:40px;
+}
+
+.testimonial{
+border-left:3px solid var(--accent);
+padding-left:20px;
+}
+
+.testimonial p{
+color:rgba(255,255,255,.88);
+font-size:15px;
+line-height:1.7;
+font-style:italic;
+}
+
+.testimonial cite{
+display:block;
+margin-top:14px;
+font-style:normal;
+font-weight:600;
+font-size:13px;
+color:var(--accent);
+}
+
+@media(max-width:900px){
+.testimonial-grid{
+grid-template-columns:1fr;
+gap:34px;
+}
+}
+
 .site-menu{
 position:sticky;
 top:0;
@@ -661,6 +869,7 @@ scroll-padding-top:85px;
 #works,
 #bids,
 #bid-drafting,
+#pricing,
 #insights,
 #contact{
 scroll-margin-top:85px;
@@ -920,6 +1129,7 @@ max-width:100%;
 <a href="#works">Works</a>
 <a href="#bids">Bids</a>
 <a href="#bid-drafting">Bid Drafting</a>
+<a href="#pricing">Pricing</a>
 <a href="#insights">Insights</a>
 <a href="#contact">Contact</a>
 </div>
@@ -967,6 +1177,33 @@ Dedicated Back Office Support for Regional & National Preservation Vendors
 </div>
 </div>
 
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+<div class="container proof-grid">
+
+<div class="proof-item">
+<div class="stat-num">20,000+</div>
+<div class="proof-label">Work Orders Processed</div>
+</div>
+
+<div class="proof-item">
+<div class="stat-num">7</div>
+<div class="proof-label">Active Contractor Clients</div>
+</div>
+
+<div class="proof-item">
+<div class="stat-num">10</div>
+<div class="proof-label">States Covered</div>
+</div>
+
+<div class="proof-item">
+<div class="stat-num">2020</div>
+<div class="proof-label">Processing Since</div>
+</div>
+
+</div>
+</div>
+
 <!-- PAIN -->
 <section>
 <div class="container">
@@ -986,32 +1223,38 @@ We manage the entire back‑office workflow inside the portal so you can focus o
 <div class="workflow">
 
 <div class="card">
-<h3>1️⃣ Order Assignment</h3>
+<div class="step-num">1</div>
+<h3>Order Assignment</h3>
 <p>Client assigns work order via text, portal or address reference.</p>
 </div>
 
 <div class="card">
-<h3>2️⃣ Photo Handling</h3>
+<div class="step-num">2</div>
+<h3>Photo Handling</h3>
 <p>We upload field photos if needed, organize grass‑cut archives, reuse seasonal photos properly and adjust datestamps when required.</p>
 </div>
 
 <div class="card">
-<h3>3️⃣ Scope & Damage Review</h3>
+<div class="step-num">3</div>
+<h3>Scope & Damage Review</h3>
 <p>We analyze damage, review previous work orders, and draft Bluebook‑compliant bids.</p>
 </div>
 
 <div class="card">
-<h3>4️⃣ Portal Update & Invoice</h3>
+<div class="step-num">4</div>
+<h3>Portal Update & Invoice</h3>
 <p>Work completion entry, bid placement, invoice submission and note documentation.</p>
 </div>
 
 <div class="card">
-<h3>5️⃣ QC & Risk Prevention (no charge order)</h3>
+<div class="step-num">5</div>
+<h3>QC & Risk Prevention (no charge order)</h3>
 <p>Photo edits if needed, letterhead generation, documentation tracking, and backcharge prevention review.</p>
 </div>
 
 <div class="card">
-<h3>6️⃣ Reporting & Record Keeping</h3>
+<div class="step-num">6</div>
+<h3>Reporting & Record Keeping</h3>
 <p>Excel tracking, work order summary reports, and structured client communication.</p>
 </div>
 
@@ -1253,6 +1496,85 @@ No portal access required.
 </div>
 </section>
 
+<section id="pricing">
+<div class="container">
+<h2>Simple, Per-Order Pricing</h2>
+<p>
+No monthly fees. No long-term contracts. You only pay for the orders we process.
+</p>
+
+<div class="pricing-table">
+
+<div class="pricing-row head">
+<span>Order Type</span>
+<span>Base Charge</span>
+<span>Additional Bids / Tasks</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">Maintenance Orders</span>
+<span class="pricing-base">$3.50</span>
+<span class="pricing-extra">+$1.00 per additional bid/task</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">Lock &amp; Winterization (Initial)</span>
+<span class="pricing-base">$8.50</span>
+<span class="pricing-extra">+$1.00 per additional bid/task</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">Grass / Snow Orders</span>
+<span class="pricing-base">$2.50</span>
+<span class="pricing-extra">+$1.00 per additional bid/task</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">Occupied / Vacant Property</span>
+<span class="pricing-base">$2.00</span>
+<span class="pricing-extra"></span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">REO / Reopens / Disputes / Note Only</span>
+<span class="pricing-base">$1.00</span>
+<span class="pricing-extra">+$1.00 per additional bid/task, if applicable</span>
+</div>
+
+</div>
+
+<p class="pricing-fine">
+First work completion or first bid request is included in the base charge. A bid/task is any additional work or bid submitted in the order — winterization, debris removal, repairs, or any work requiring before/during/after photos.
+</p>
+
+</div>
+</section>
+
+<div class="testimonial-band">
+<div class="container">
+<h2>What Contractors Say</h2>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+<p>“The bids are written the way the portals want them, my approval rate went up, and now they handle all my processing.”</p>
+<cite>Mary B., Contractor</cite>
+</div>
+
+<div class="testimonial">
+<p>“I send photos straight from the property and they tell me exactly what's still needed before I leave. They've grown with me from day one.”</p>
+<cite>Edgar V., Contractor</cite>
+</div>
+
+<div class="testimonial">
+<p>“Feuern runs my entire back office, the approvals they bring in are what keep me in this business.”</p>
+<cite>Rafee, Regional Company Owner</cite>
+</div>
+
+</div>
+</div>
+</div>
+
 <section id="insights">
 <div class="container">
 <h2>Industry Insights</h2>
@@ -1344,13 +1666,15 @@ feuernoutsourcing@gmail.com
 
 <div style="margin-top:15px;">
 <a href="mailto:feuernoutsourcing@gmail.com" 
-style="display:inline-block;margin-right:10px;background:#0e2a47;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">
-📧 Email Now
+style="display:inline-flex;align-items:center;gap:8px;margin-right:10px;background:#0e2a47;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
+Email Now
 </a>
 
 <a href="https://wa.me/8801410271226" 
-style="display:inline-block;background:#25D366;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">
-💬 WhatsApp Now
+style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.9-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+WhatsApp Now
 </a>
 </div>
 
@@ -1413,20 +1737,21 @@ document.getElementById('lightbox').style.display='none';
 </script>
 
 <a href="https://wa.me/8801410271226" 
+aria-label="Chat on WhatsApp"
 style="
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:16px;
+padding:14px;
 border-radius:50%;
-font-size:20px;
+display:flex;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+box-shadow:0 8px 22px rgba(0,0,0,0.28);
 z-index:999;
 ">
-💬
+<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.9-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
 </a>
 
 <div id="videoModal" class="video-modal" onclick="closeVideoFromBackdrop(event)">
