@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Simple, transparent per-order pricing for property preservation work order processing, bid writing, and portal updates. No monthly fees, no long-term contracts.">
+<meta name="author" content="Feuern Outsourcing">
+<title>Pricing | Feuern Outsourcing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+:root{
+--ink:#0e2a47;--ink-deep:#071a2c;--accent:#ff7a00;--accent-dark:#e06800;
+--paper:#f6f7fb;--slate:#4f5f70;--line:rgba(14,42,71,0.10);
+--font-body:'Inter',sans-serif;--font-display:'Archivo','Inter',sans-serif;
+}
+body{font-family:var(--font-body);background:linear-gradient(180deg,#f7f9fc 0%,#eef3f8 100%);color:#1a1a1a;line-height:1.6;}
+h1,h2,h3{font-family:var(--font-display);}
+.container{max-width:900px;margin:auto;padding:0 20px;}
+
+.site-menu{position:sticky;top:0;z-index:999;background:rgba(7,26,44,.97);backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.16);}
+.site-menu .inner{max-width:1150px;margin:auto;padding:11px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.menu-brand{color:white;font-family:var(--font-display);font-weight:700;font-size:15px;}
+.menu-links{display:flex;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;}
+.menu-links::-webkit-scrollbar{display:none;}
+.menu-links a{color:white;font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;}
+.menu-links a:hover{background:var(--accent);}
+
+.page-hero{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;padding:70px 0 56px;text-align:center;}
+.page-hero h1{font-size:38px;letter-spacing:-0.4px;color:white;}
+.page-hero p{margin-top:14px;color:rgba(255,255,255,.78);max-width:520px;margin-left:auto;margin-right:auto;}
+
+section{padding:70px 0;}
+
+.pricing-table{
+margin-top:10px;
+background:white;
+border:1px solid var(--line);
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 16px 40px rgba(14,42,71,0.08);
+}
+.pricing-row{
+display:grid;
+grid-template-columns:1.4fr .7fr 1fr;
+gap:16px;
+align-items:center;
+padding:22px 28px;
+border-bottom:1px solid var(--line);
+}
+.pricing-row:last-child{border-bottom:none;}
+.pricing-row.head{
+background:var(--ink-deep);
+color:white;
+font-size:12px;
+font-weight:600;
+letter-spacing:.3px;
+padding:16px 28px;
+}
+.pricing-row.head span{color:rgba(255,255,255,.65);}
+.pricing-type{font-weight:600;color:var(--ink);font-size:16px;}
+.pricing-base{font-family:var(--font-display);font-weight:700;color:var(--accent);font-size:20px;}
+.pricing-extra{color:var(--slate);font-size:14px;}
+
+.pricing-fine{margin-top:20px;font-size:13px;color:var(--slate);text-align:center;}
+
+@media(max-width:700px){
+.pricing-row{grid-template-columns:1fr;gap:4px;padding:18px 22px;}
+.pricing-row.head{display:none;}
+.pricing-base{font-size:22px;}
+}
+
+.assurance-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:50px;
+}
+.assurance{
+background:white;
+border:1px solid var(--line);
+border-radius:10px;
+padding:24px;
+text-align:center;
+box-shadow:0 12px 30px rgba(14,42,71,0.06);
+}
+.assurance .mark{
+width:40px;height:40px;border-radius:50%;
+background:rgba(255,122,0,.12);
+color:var(--accent);
+display:flex;align-items:center;justify-content:center;
+margin:0 auto 14px;
+font-weight:700;font-family:var(--font-display);
+}
+.assurance h3{font-size:15px;color:var(--ink);margin-bottom:6px;}
+.assurance p{font-size:13px;color:var(--slate);}
+
+@media(max-width:700px){.assurance-grid{grid-template-columns:1fr;}}
+
+.final-cta{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;text-align:center;padding:70px 0;}
+.final-cta h2{color:white;margin-bottom:12px;}
+.final-cta p{color:rgba(255,255,255,.78);max-width:480px;margin:0 auto 28px;}
+.btn{display:inline-block;padding:14px 30px;background:var(--accent);color:white;text-decoration:none;border-radius:6px;font-weight:600;box-shadow:0 12px 28px rgba(255,122,0,.28);}
+
+footer{background:linear-gradient(135deg,var(--ink-deep),var(--ink));color:white;text-align:center;padding:36px 20px;font-size:14px;}
+footer a{color:rgba(255,255,255,.7);}
+</style>
+</head>
+<body>
+
+<div class="site-menu">
+<div class="inner">
+<div class="menu-brand">Feuern Outsourcing</div>
+<div class="menu-links">
+<a href="index.html#home">Home</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="team.html">Team</a>
+<a href="pricing.html">Pricing</a>
+<a href="blog.html">Insights</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</div>
+</div>
+
+<div class="page-hero">
+<div class="container">
+<h1>Simple, Per-Order Pricing</h1>
+<p>No monthly fees. No long-term contracts. You only pay for the orders we actually process.</p>
+</div>
+</div>
+
+<section>
+<div class="container">
+
+<div class="pricing-table">
+
+<div class="pricing-row head">
+<span>Order Type</span>
+<span>Base Charge</span>
+<span>Additional Bids / Tasks</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">Maintenance Orders</span>
+<span class="pricing-base">$3.50</span>
+<span class="pricing-extra">+$1.00 per additional bid/task</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">Lock &amp; Winterization (Initial)</span>
+<span class="pricing-base">$8.50</span>
+<span class="pricing-extra">+$1.00 per additional bid/task</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">Grass / Snow Orders</span>
+<span class="pricing-base">$2.50</span>
+<span class="pricing-extra">+$1.00 per additional bid/task</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">Occupied / Vacant Property</span>
+<span class="pricing-base">$2.00</span>
+<span class="pricing-extra">—</span>
+</div>
+
+<div class="pricing-row">
+<span class="pricing-type">REO / Reopens / Disputes / Note Only</span>
+<span class="pricing-base">$1.00</span>
+<span class="pricing-extra">+$1.00 per additional bid/task, if applicable</span>
+</div>
+
+</div>
+
+<p class="pricing-fine">
+First work completion or first bid request is included in the base charge. A bid/task is any additional work or bid submitted in the order — winterization, debris removal, repairs, or any work requiring before/during/after photos.
+</p>
+
+<div class="assurance-grid">
+<div class="assurance">
+<div class="mark">$</div>
+<h3>Pay Per Order</h3>
+<p>No retainers, no seat licenses — you're billed for what actually gets processed.</p>
+</div>
+<div class="assurance">
+<div class="mark">✕</div>
+<h3>No Contracts</h3>
+<p>Start with one trial order. Stop anytime — nothing locks you in.</p>
+</div>
+<div class="assurance">
+<div class="mark">✓</div>
+<h3>Transparent Add-Ons</h3>
+<p>Additional bids or tasks are a flat +$1.00 — no surprise line items.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="final-cta">
+<div class="container">
+<h2>Ready to Try One Order?</h2>
+<p>Send a single work order and see the processing quality firsthand — no commitment required.</p>
+<a href="index.html#contact" class="btn">Start With One Trial Order</a>
+</div>
+</div>
+
+<footer>
+© 2026 Feuern Outsourcing · <a href="index.html">Home</a>
+</footer>
+
+</body>
+</html>
