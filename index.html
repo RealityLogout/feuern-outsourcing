@@ -138,6 +138,13 @@ font-weight:600;
 transition:0.3s;
 }
 
+.hero-trust{
+margin-top:14px;
+font-size:13px;
+color:rgba(255,255,255,.6);
+font-weight:500;
+}
+
 .btn:hover{
 opacity:0.9;
 }
@@ -271,6 +278,167 @@ color:white;
 .whatsapp-btn{
 background:#25D366;
 color:white;
+}
+
+/* CONTACT — premium redesign */
+.contact-section{
+background:linear-gradient(180deg,#eef2f7 0%,#f4f7fb 100%);
+}
+
+.contact-wrap{
+display:grid;
+grid-template-columns:1fr 1.1fr;
+gap:50px;
+align-items:stretch;
+margin-top:44px;
+}
+
+.contact-panel{
+background:linear-gradient(135deg,var(--ink),var(--ink-deep));
+border-radius:14px;
+padding:40px 36px;
+color:white;
+display:flex;
+flex-direction:column;
+box-shadow:0 20px 50px rgba(14,42,71,0.18);
+}
+
+.contact-panel h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.contact-panel > p{
+color:rgba(255,255,255,.78);
+font-size:15px;
+margin-bottom:30px;
+}
+
+.contact-line{
+display:flex;
+align-items:flex-start;
+gap:14px;
+margin-bottom:22px;
+}
+
+.contact-line .ico{
+width:38px;height:38px;flex-shrink:0;
+border-radius:9px;
+background:rgba(255,122,0,.15);
+color:var(--accent);
+display:flex;align-items:center;justify-content:center;
+}
+
+.contact-line .lbl{
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:.4px;
+color:rgba(255,255,255,.55);
+margin-bottom:3px;
+}
+
+.contact-line a{
+color:white;
+font-weight:600;
+text-decoration:none;
+font-size:15px;
+}
+.contact-line a:hover{color:var(--accent);}
+
+.contact-cta-row{
+margin-top:auto;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+padding-top:20px;
+}
+
+.contact-cta-row a{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:11px 18px;
+border-radius:8px;
+font-weight:600;
+font-size:14px;
+text-decoration:none;
+}
+
+.cta-email{background:rgba(255,255,255,.10);color:white;border:1px solid rgba(255,255,255,.16);}
+.cta-email:hover{background:rgba(255,255,255,.18);}
+.cta-wa{background:#25D366;color:white;}
+.cta-wa:hover{opacity:.9;}
+
+.contact-form-card{
+background:white;
+padding:38px;
+border-radius:14px;
+box-shadow:0 20px 50px rgba(14,42,71,0.10);
+border:1px solid var(--line);
+}
+
+.contact-form-card .form-title{
+font-size:13px;
+font-weight:700;
+color:var(--accent-dark);
+text-transform:uppercase;
+letter-spacing:.4px;
+margin-bottom:6px;
+}
+
+.contact-form-card .form-sub{
+font-size:14px;
+color:var(--slate);
+margin-bottom:24px;
+}
+
+.field-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.contact-form-card input,
+.contact-form-card textarea{
+width:100%;
+padding:13px 14px;
+margin-bottom:14px;
+border:1px solid #dfe4ea;
+border-radius:8px;
+font-family:var(--font-body);
+font-size:14px;
+background:#fbfcfe;
+transition:border-color .2s ease, box-shadow .2s ease;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus{
+outline:none;
+border-color:var(--accent);
+box-shadow:0 0 0 3px rgba(255,122,0,.14);
+background:white;
+}
+
+.contact-form-card textarea{height:110px;resize:vertical;}
+
+.contact-submit{
+width:100%;
+background:var(--accent);
+color:white;
+padding:15px;
+border:none;
+border-radius:8px;
+font-weight:700;
+font-size:15px;
+cursor:pointer;
+box-shadow:0 14px 30px rgba(255,122,0,.28);
+transition:transform .2s ease, box-shadow .2s ease;
+}
+.contact-submit:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(255,122,0,.34);}
+
+@media(max-width:900px){
+.contact-wrap{grid-template-columns:1fr;}
+.field-row{grid-template-columns:1fr;}
 }
 
 footer{
@@ -586,6 +754,63 @@ opacity:0.75;
 @media(max-width:900px){
 .bid-top{
 flex-direction:column;
+}
+}
+
+/* ABOUT */
+.about-wrap{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:start;
+margin-top:10px;
+}
+
+.about-copy p{
+color:var(--slate);
+font-size:16px;
+line-height:1.75;
+margin-bottom:16px;
+}
+
+.about-facts{
+display:flex;
+flex-direction:column;
+gap:0;
+border-top:1px solid var(--line);
+}
+
+.about-fact{
+display:grid;
+grid-template-columns:110px 1fr;
+gap:18px;
+padding:18px 0;
+border-bottom:1px solid var(--line);
+}
+
+.about-fact-label{
+font-size:12px;
+font-weight:600;
+color:var(--accent-dark);
+text-transform:uppercase;
+letter-spacing:.4px;
+padding-top:2px;
+}
+
+.about-fact-value{
+font-size:15px;
+color:var(--ink);
+font-weight:500;
+line-height:1.6;
+}
+
+@media(max-width:900px){
+.about-wrap{
+grid-template-columns:1fr;
+gap:30px;
+}
+.about-fact{
+grid-template-columns:90px 1fr;
 }
 }
 
@@ -1128,9 +1353,10 @@ max-width:100%;
 <a href="#workflow">Workflow</a>
 <a href="#works">Works</a>
 <a href="#bids">Bids</a>
-<a href="#bid-drafting">Bid Drafting</a>
-<a href="#pricing">Pricing</a>
-<a href="#insights">Insights</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="team.html">Team</a>
+<a href="pricing.html">Pricing</a>
+<a href="blog.html">Insights</a>
 <a href="#contact">Contact</a>
 </div>
 </div>
@@ -1157,6 +1383,7 @@ Dedicated Back Office Support for Regional & National Preservation Vendors
 </p>
 
 <a href="#contact" class="btn">Start With One Trial Order</a>
+<p class="hero-trust">20,000+ work orders processed since 2020</p>
 </div>
 
 <div>
@@ -1174,33 +1401,6 @@ Dedicated Back Office Support for Regional & National Preservation Vendors
 </div>
 
 </div>
-</div>
-</div>
-
-<!-- PROOF STRIP -->
-<div class="proof-strip">
-<div class="container proof-grid">
-
-<div class="proof-item">
-<div class="stat-num">20,000+</div>
-<div class="proof-label">Work Orders Processed</div>
-</div>
-
-<div class="proof-item">
-<div class="stat-num">7</div>
-<div class="proof-label">Active Contractor Clients</div>
-</div>
-
-<div class="proof-item">
-<div class="stat-num">10</div>
-<div class="proof-label">States Covered</div>
-</div>
-
-<div class="proof-item">
-<div class="stat-num">2020</div>
-<div class="proof-label">Processing Since</div>
-</div>
-
 </div>
 </div>
 
@@ -1496,57 +1696,13 @@ No portal access required.
 </div>
 </section>
 
-<section id="pricing">
-<div class="container">
+<section id="pricing" style="background:#eef2f7;">
+<div class="container" style="text-align:center;">
 <h2>Simple, Per-Order Pricing</h2>
-<p>
-No monthly fees. No long-term contracts. You only pay for the orders we process.
+<p style="max-width:520px;margin:0 auto;">
+No monthly fees. No long-term contracts. You only pay for the orders we process — full breakdown on the pricing page.
 </p>
-
-<div class="pricing-table">
-
-<div class="pricing-row head">
-<span>Order Type</span>
-<span>Base Charge</span>
-<span>Additional Bids / Tasks</span>
-</div>
-
-<div class="pricing-row">
-<span class="pricing-type">Maintenance Orders</span>
-<span class="pricing-base">$3.50</span>
-<span class="pricing-extra">+$1.00 per additional bid/task</span>
-</div>
-
-<div class="pricing-row">
-<span class="pricing-type">Lock &amp; Winterization (Initial)</span>
-<span class="pricing-base">$8.50</span>
-<span class="pricing-extra">+$1.00 per additional bid/task</span>
-</div>
-
-<div class="pricing-row">
-<span class="pricing-type">Grass / Snow Orders</span>
-<span class="pricing-base">$2.50</span>
-<span class="pricing-extra">+$1.00 per additional bid/task</span>
-</div>
-
-<div class="pricing-row">
-<span class="pricing-type">Occupied / Vacant Property</span>
-<span class="pricing-base">$2.00</span>
-<span class="pricing-extra"></span>
-</div>
-
-<div class="pricing-row">
-<span class="pricing-type">REO / Reopens / Disputes / Note Only</span>
-<span class="pricing-base">$1.00</span>
-<span class="pricing-extra">+$1.00 per additional bid/task, if applicable</span>
-</div>
-
-</div>
-
-<p class="pricing-fine">
-First work completion or first bid request is included in the base charge. A bid/task is any additional work or bid submitted in the order — winterization, debris removal, repairs, or any work requiring before/during/after photos.
-</p>
-
+<a href="pricing.html" class="btn">View Pricing</a>
 </div>
 </section>
 
@@ -1630,81 +1786,78 @@ closeVideo();
 </script>
 
 <!-- CONTACT -->
-<section id="contact" style="background:#eef2f7;">
+<section id="contact" class="contact-section">
 <div class="container">
 
-<h2 style="text-align:center;margin-bottom:50px;">
+<h2 style="text-align:center;margin-bottom:10px;">
 Start With One Trial Order
 </h2>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;">
-
-<!-- LEFT SIDE -->
-<div>
-
-<h3 style="margin-bottom:15px;color:#0e2a47;">
-Let’s Handle Your Portal Work
-</h3>
-
-<p style="margin-bottom:25px;">
+<p style="text-align:center;color:var(--slate);max-width:520px;margin:0 auto;">
 Send us one work order and experience clean processing, structured scope writing and proper portal updates.
 </p>
 
-<div style="background:white;padding:25px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+<div class="contact-wrap">
 
-<p style="margin-bottom:15px;">
-<strong>Email:</strong><br>
-<a href="mailto:feuernoutsourcing@gmail.com" style="color:#ff7a00;text-decoration:none;">
-feuernoutsourcing@gmail.com
-</a>
-</p>
+<!-- LEFT PANEL -->
+<div class="contact-panel">
 
-<p style="margin-bottom:15px;">
-<strong>WhatsApp:</strong><br>
-+8801410271226
-</p>
+<h3>Let's Handle Your Portal Work</h3>
+<p>Reach out directly, or fill out the form and we'll follow up about your workflow.</p>
 
-<div style="margin-top:15px;">
-<a href="mailto:feuernoutsourcing@gmail.com" 
-style="display:inline-flex;align-items:center;gap:8px;margin-right:10px;background:#0e2a47;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
+<div class="contact-line">
+<div class="ico">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
+</div>
+<div>
+<div class="lbl">Email</div>
+<a href="mailto:feuernoutsourcing@gmail.com">feuernoutsourcing@gmail.com</a>
+</div>
+</div>
+
+<div class="contact-line">
+<div class="ico">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.9-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+</div>
+<div>
+<div class="lbl">WhatsApp</div>
+<a href="https://wa.me/8801410271226">+880 1410 271226</a>
+</div>
+</div>
+
+<div class="contact-cta-row">
+<a href="mailto:feuernoutsourcing@gmail.com" class="cta-email">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
 Email Now
 </a>
-
-<a href="https://wa.me/8801410271226" 
-style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.9-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+<a href="https://wa.me/8801410271226" class="cta-wa">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.9-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
 WhatsApp Now
 </a>
 </div>
 
 </div>
 
+<!-- RIGHT: FORM -->
+<div class="contact-form-card">
+
+<div class="form-title">Trial Order Request</div>
+<div class="form-sub">Tell us a bit about your workflow and we'll follow up shortly.</div>
+
+<form action="https://formsubmit.co/feuernoutsourcing@gmail.com" method="POST">
+
+<div class="field-row">
+<input type="text" name="Name" placeholder="Your Name" required>
+<input type="text" name="Company" placeholder="Company Name">
 </div>
 
-<!-- RIGHT SIDE FORM -->
-<div>
+<div class="field-row">
+<input type="text" name="Portal" placeholder="Portal Used (Safeguard, MCS, etc)">
+<input type="text" name="Volume" placeholder="Orders Per Week">
+</div>
 
-<form action="https://formsubmit.co/feuernoutsourcing@gmail.com" method="POST"
-style="background:white;padding:35px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+<textarea name="Message" placeholder="Tell us about your workflow"></textarea>
 
-<input type="text" name="Name" placeholder="Your Name" required
-style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #dcdcdc;border-radius:6px;">
-
-<input type="text" name="Company" placeholder="Company Name"
-style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #dcdcdc;border-radius:6px;">
-
-<input type="text" name="Portal" placeholder="Portal Used (Safeguard, MCS, etc)"
-style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #dcdcdc;border-radius:6px;">
-
-<input type="text" name="Volume" placeholder="Orders Per Week"
-style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #dcdcdc;border-radius:6px;">
-
-<textarea name="Message" placeholder="Tell us about your workflow"
-style="width:100%;padding:14px;margin-bottom:20px;border:1px solid #dcdcdc;border-radius:6px;height:120px;"></textarea>
-
-<button type="submit"
-style="width:100%;background:#ff7a00;color:white;padding:14px;border:none;border-radius:6px;font-weight:600;font-size:16px;cursor:pointer;">
+<button type="submit" class="contact-submit">
 Send Trial Request
 </button>
 
