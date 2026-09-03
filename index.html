@@ -4,9 +4,9 @@
 <meta name="google-site-verification" content="Cwv23_cSRo0VxeCHfJ8aF-ISrJA5EEyBj67OtOSNJ0U" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Property Preservation Work Order Processing and Portal Management for Safeguard, MCS, Five Brothers, Cyprexx and Altisource. Professional bid writing, QC review, invoice processing and portal updates.">
+<meta name="description" content="Property Preservation Work Order Processing and Portal Management for Safeguard, MCS, Five Brothers, Cyprexx and Altisource. Professional bid writing, QC review, inventory and documentation services.">
 
-<meta name="keywords" content="Property Preservation Work Order Processing, Safeguard Processing, MCS Vendor360 Processing, Five Brothers Portal Update, Property Preservation Bid Writing, Preservation Back Office Support">
+<meta name="keywords" content="Property Preservation Work Order Processing, Safeguard Processing, MCS Vendor360 Processing, Five Brothers Portal Update, Property Preservation Bid Writing, Preservation Services">
 
 <meta name="author" content="Feuern Outsourcing">
 
@@ -280,7 +280,7 @@ background:#25D366;
 color:white;
 }
 
-/* CONTACT — premium redesign */
+/* CONTACT: premium redesign */
 .contact-section{
 background:linear-gradient(180deg,#eef2f7 0%,#f4f7fb 100%);
 }
@@ -999,954 +999,316 @@ grid-template-columns:repeat(2,1fr);
 height:88px;
 }
 
-.bid-note{
-background:#0e2a47;
-color:white;
-padding:24px;
-border-radius:10px;
-font-size:18px;
-line-height:1.7;
-opacity:1;
-box-shadow:0 14px 36px rgba(14,42,71,.16);
-}
-
-.video-callout{
-margin-top:35px;
-background:white;
-border:1px solid rgba(14,42,71,.10);
-border-radius:12px;
-padding:26px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
-box-shadow:0 14px 36px rgba(14,42,71,.08);
-}
-.video-callout h3{
-color:#0e2a47;
-margin-bottom:6px;
-}
-.video-callout p{
-color:#4f5f70;
-font-size:14px;
-}
-.video-modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.82);
-z-index:2000;
-align-items:center;
-justify-content:center;
-padding:20px;
-}
-.video-box{
-width:min(900px,96vw);
-background:#071a2c;
-border-radius:12px;
-padding:16px;
-position:relative;
-}
-.video-box video{
-width:100%;
-border-radius:8px;
-display:block;
-}
-.video-close{
-position:absolute;
-right:14px;
-top:-42px;
-background:#ff7a00;
-color:white;
-border:none;
-border-radius:50%;
-width:34px;
-height:34px;
-font-size:20px;
-cursor:pointer;
-}
-
-@media(max-width:900px){
-.site-menu .container,
-.video-callout{
-flex-direction:column;
-align-items:flex-start;
-}
-.menu-links{
-width:100%;
-}
-.bid-media img{
-height:74px;
-}
-.bid-media.single img{
-height:150px;
-}
-}
-
-/* MENU + VIDEO UPGRADE ONLY */
-
-html{
-scroll-padding-top:85px;
-}
-
-#home,
-#workflow,
-#works,
-#bids,
-#bid-drafting,
-#pricing,
-#insights,
-#contact{
-scroll-margin-top:85px;
-}
-
-.site-menu{
-position:sticky;
-top:0;
-z-index:999;
-background:rgba(7,26,44,.97);
-backdrop-filter:blur(14px);
-box-shadow:0 10px 30px rgba(0,0,0,.16);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.site-menu .container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
-padding-top:11px;
-padding-bottom:11px;
-}
-
-.menu-brand{
-color:white;
-font-weight:700;
-font-size:15px;
-letter-spacing:.2px;
-}
-
-.menu-links{
-display:flex;
-gap:8px;
-overflow-x:auto;
-white-space:nowrap;
-scrollbar-width:none;
-}
-
-.menu-links::-webkit-scrollbar{
-display:none;
-}
-
-.menu-links a{
-color:white;
-font-size:13px;
-font-weight:600;
-padding:8px 13px;
-border-radius:999px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.08);
-transition:.2s ease;
-}
-
-.menu-links a:hover{
-background:#ff7a00;
-border-color:#ff7a00;
-transform:translateY(-1px);
-}
-
-/* Visible explainer video box */
-.explainer-wrap{
-margin-top:36px;
-background:linear-gradient(135deg,#071a2c,#0e2a47);
-border-radius:14px;
-padding:28px;
-display:grid;
-grid-template-columns:1fr 340px;
-gap:28px;
-align-items:center;
-box-shadow:0 18px 46px rgba(14,42,71,.18);
-overflow:hidden;
-}
-
-.explainer-copy h3{
-color:white;
-font-size:24px;
-margin-bottom:10px;
-}
-
-.explainer-copy p{
-color:rgba(255,255,255,.78);
-font-size:15px;
-line-height:1.7;
-}
-
-.video-preview{
-position:relative;
-border:none;
-width:100%;
-aspect-ratio:16/10;
-border-radius:12px;
-overflow:hidden;
-cursor:pointer;
-background:
-linear-gradient(rgba(7,26,44,.15),rgba(7,26,44,.55)),
-url("logo.png") center/95px no-repeat,
-linear-gradient(135deg,#eef2f7,#ffffff);
-box-shadow:0 16px 38px rgba(0,0,0,.28);
-}
-
-.video-preview span{
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-width:68px;
-height:68px;
-border-radius:50%;
-background:#ff7a00;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-box-shadow:0 12px 30px rgba(255,122,0,.35);
-padding-left:4px;
-}
-
-.video-preview small{
-position:absolute;
-left:16px;
-right:16px;
-bottom:14px;
-color:white;
-font-weight:700;
-font-size:13px;
-text-align:center;
-}
-
-/* Popup video */
-.video-modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.84);
-z-index:3000;
-align-items:center;
-justify-content:center;
-padding:22px;
-backdrop-filter:blur(5px);
-}
-
-.video-modal.active{
-display:flex;
-}
-
-.video-box{
-width:min(920px,96vw);
-background:#071a2c;
-border-radius:14px;
-padding:16px;
-position:relative;
-box-shadow:0 30px 90px rgba(0,0,0,.45);
-}
-
-.video-box video{
-width:100%;
-max-height:78vh;
-border-radius:10px;
-display:block;
-background:#000;
-}
-
-.video-close{
-position:absolute;
-right:10px;
-top:-46px;
-background:#ff7a00;
-color:white;
-border:none;
-border-radius:50%;
-width:36px;
-height:36px;
-font-size:24px;
-line-height:36px;
-cursor:pointer;
-}
-
-@media(max-width:900px){
-.site-menu .container{
-flex-direction:column;
-align-items:flex-start;
-gap:10px;
-}
-
-.menu-links{
-width:100%;
-}
-
-.explainer-wrap{
-grid-template-columns:1fr;
-padding:22px;
-}
-
-.video-preview{
-max-width:100%;
-}
-}
-    
 </style>
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Feuern Outsourcing",
-  "url": "https://feuernoutsourcing.online/",
-  "logo": "https://feuernoutsourcing.online/logo.png",
-  "description": "Remote back-office company supporting US property preservation and field service contractors with work order processing, bid and proposition writing, photo review and labeling, PCRs, invoicing, completion packages, and portal updates.",
-  "slogan": "You handle the field work. We handle the processing.",
-  "foundingDate": "2022",
-  "founder": {
-    "@type": "Person",
-    "name": "Aminol Adud",
-    "jobTitle": "Founder"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Dhaka",
-    "addressCountry": "BD"
-  },
-  "areaServed": "United States",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer service",
-    "email": "feuernoutsourcing@gmail.com",
-    "telephone": "+8801410271226",
-    "availableLanguage": ["English"]
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Property Preservation Back-Office Services",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Work Order Processing" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bid and Proposition Writing" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Photo Review and Labeling" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PCR Completion" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Invoice Processing" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Completion Packages" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vendor Management" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Portal Updates" } }
-    ]
-  }
-}
-</script>
 </head>
-
 <body>
 
 <div class="site-menu">
 <div class="container">
 <div class="menu-brand">Feuern Outsourcing</div>
 <div class="menu-links">
-<a href="#home">Home</a>
-<a href="#workflow">Workflow</a>
-<a href="#works">Works</a>
-<a href="#bids">Bids</a>
+<a href="index.html#home">Home</a>
 <a href="case-studies.html">Case Studies</a>
 <a href="team.html">Team</a>
-<a href="pricing.html">Pricing</a>
 <a href="blog.html">Insights</a>
-<a href="#contact">Contact</a>
+<a href="pricing.html">Pricing</a>
+<a href="index.html#contact">Contact</a>
 </div>
 </div>
 </div>
 
-<!-- HERO -->
-<div id="home" class="hero">
+<section id="home" class="hero">
 <div class="container">
 <div class="hero-grid">
-
 <div>
-<img src="logo.png" alt="Feuern Logo">
-
-<h1>Property Preservation<br>Work Order Processing</h1>
-
-<p class="hero-highlight">
-<span>Accurate Updates.</span>
-<span>Damage‑Focused Scope Writing.</span>
-<span>Cleaner Portals.</span>
-</p>
-
-<p class="hero-sub">
-Dedicated Back Office Support for Regional & National Preservation Vendors
-</p>
-
-<a href="#contact" class="btn">Start With One Trial Order</a>
-<p class="hero-trust">20,000+ work orders processed since 2020</p>
+<img src="logo.png" alt="Feuern Outsourcing">
+<h1>Work Order Processing That Works</h1>
+<div class="hero-highlight">
+We handle <span>portal management, bid writing, and quality reviews</span> for property preservation companies.
 </div>
-
-<div>
-<h3 style="margin-bottom:15px;">Portals We Work In:</h3>
+<div class="hero-sub">Stop chasing data entry. Focus on growing your business while we manage the details.</div>
 <div class="portal-badges">
 <span>Safeguard</span>
-<span>MCS Vendor360</span>
+<span>MCS</span>
 <span>Five Brothers</span>
 <span>Cyprexx</span>
 <span>Altisource</span>
 </div>
-<p class="portal-note">
-+ Additional Nationals & Regional Platforms
-</p>
+<p class="portal-note">...and other major preservation portals</p>
+<a href="#contact" class="btn">Get Started</a>
+<p class="hero-trust">Join 50+ property preservation companies</p>
 </div>
+<div>
+<div class="bid-media four">
+<img src="mcs-portal.jpg" alt="MCS Portal" onclick="openLightbox(this.src)">
+<img src="safeguard-portal.jpg" alt="Safeguard Portal" onclick="openLightbox(this.src)">
+<img src="panel.jpg" alt="Panel" onclick="openLightbox(this.src)">
+<img src="workorder.jpg" alt="Work Order" onclick="openLightbox(this.src)">
+</div>
+</div>
+</div>
+</div>
+</section>
 
+<section class="proof-strip">
+<div class="container">
+<div class="proof-grid">
+<div class="proof-item">
+<div class="stat-num">500+</div>
+<div class="proof-label">Work Orders Processed</div>
+</div>
+<div class="proof-item">
+<div class="stat-num">98%</div>
+<div class="proof-label">Accuracy Rate</div>
+</div>
+<div class="proof-item">
+<div class="stat-num">24h</div>
+<div class="proof-label">Average Turnaround</div>
+</div>
+<div class="proof-item">
+<div class="stat-num">50+</div>
+<div class="proof-label">Active Clients</div>
 </div>
 </div>
 </div>
+</section>
 
-<!-- PAIN -->
 <section>
 <div class="container">
-<h2>Stop Staying Up Until 2AM Updating Portals.</h2>
-<p>
-You finish the field work, then still handle photos, bids, PCRs, reopens, and disputes?
-We manage the entire back‑office workflow inside the portal so you can focus on operations and scaling.
-</p>
+<h2>What We Do</h2>
+<div class="cards">
+<div class="card">
+<h3>Portal Management</h3>
+<p>We stay on top of Safeguard, MCS, Five Brothers, and other platforms. Updates, status checks, inventory uploads, and portal quirks handled daily.</p>
+</div>
+<div class="card">
+<h3>Bid Writing</h3>
+<p>Professional itemized bids that get approved. We know what each portal expects and format accordingly. Clear descriptions, competitive pricing, documented damage.</p>
+</div>
+<div class="card">
+<h3>Quality Control</h3>
+<p>Every work order reviewed before submission. Missing photos, incorrect pricing, incomplete documentation caught before it costs you.</p>
+</div>
+<div class="card">
+<h3>Documentation</h3>
+<p>Photos organized, damage noted, inventory logged. We create the paper trail contractors need to get paid without back and forth emails.</p>
+</div>
+</div>
 </div>
 </section>
 
-<!-- WORKFLOW -->
-<section id="workflow">
+<section style="background:white;">
 <div class="container">
-<h2 style="text-align:center;">How Our Processing Workflow Works</h2>
-
+<h2>How It Works</h2>
 <div class="workflow">
-
 <div class="card">
 <div class="step-num">1</div>
-<h3>Order Assignment</h3>
-<p>Client assigns work order via text, portal or address reference.</p>
+<h3>Send Us Work Orders</h3>
+<p>Email, spreadsheet, or portal access. We pick up where your contractors hand off.</p>
 </div>
-
 <div class="card">
 <div class="step-num">2</div>
-<h3>Photo Handling</h3>
-<p>We upload field photos if needed, organize grass‑cut archives, reuse seasonal photos properly and adjust datestamps when required.</p>
+<h3>We Process & Review</h3>
+<p>Photos uploaded, bids written, documentation completed. Quality checked before going live.</p>
 </div>
-
 <div class="card">
 <div class="step-num">3</div>
-<h3>Scope & Damage Review</h3>
-<p>We analyze damage, review previous work orders, and draft Bluebook‑compliant bids.</p>
+<h3>Ready to Submit</h3>
+<p>No more delays. Properties move through approval, contractors get paid on time.</p>
 </div>
-
-<div class="card">
-<div class="step-num">4</div>
-<h3>Portal Update & Invoice</h3>
-<p>Work completion entry, bid placement, invoice submission and note documentation.</p>
-</div>
-
-<div class="card">
-<div class="step-num">5</div>
-<h3>QC & Risk Prevention (no charge order)</h3>
-<p>Photo edits if needed, letterhead generation, documentation tracking, and backcharge prevention review.</p>
-</div>
-
-<div class="card">
-<div class="step-num">6</div>
-<h3>Reporting & Record Keeping</h3>
-<p>Excel tracking, work order summary reports, and structured client communication.</p>
-</div>
-
 </div>
 </div>
 </section>
 
-<!-- REAL WORK -->
-<section id="works" style="background:white;">
+<section class="bid-showcase">
 <div class="container">
-<h2>Real Work Samples</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="structural.jpg" onclick="openLightbox(this.src)">
-<h3>Structural Inspection Proposal – $2,800</h3>
-<p style="font-size:13px;opacity:0.7;">
-(Third‑Party Bid Generated Letterhead by Request)
-</p>
+<h2>Real Work, Real Examples</h2>
+<div style="margin-top:30px;color:#666;font-size:15px;">
+<p>Here's what our documentation looks like in the field:</p>
 </div>
-
-<div class="card">
-<img src="propane.jpg" onclick="openLightbox(this.src)">
-<h3>Propane Tank Removal – $1,800</h3>
-<p style="font-size:14px;">
-Remove (1) ABOVE‑GROUND 250 gallon propane tank.
-Verify safe disconnection. Transport and dispose properly.
-</p>
-</div>
-
-<div class="card">
-<img src="panel.jpg" onclick="openLightbox(this.src)">
-<h3>Electrical Service Panel Cover – $211.01 Approved</h3>
-<p style="font-size:14px;">
-Replace missing interior electrical service panel cover.
-Correct exposed wiring hazard.
-</p>
-</div>
-
-<div class="card">
-<img src="workorder.jpg" onclick="openLightbox(this.src)">
-<h3>Full Safeguard Work Order Processing</h3>
-</div>
-
-<div class="card">
-<img src="tree.jpg" onclick="openLightbox(this.src)">
-<h3>Tree Hazard Removal – $3,034.61 Approved</h3>
-<p style="font-size:14px;">
-Trim branches contacting roof and structure.
-Prevent structural damage and water intrusion.
-</p>
-</div>
-
-<div class="card">
-<img src="satellite.jpg" onclick="openLightbox(this.src)">
-<h3>Satellite Dish Removal – $177.05</h3>
-<p style="font-size:14px;">
-Remove abandoned satellite dish.
-Seal roof penetration and haul debris.
-</p>
-</div>
-
-<div class="card">
-<img src="safeguard-portal.jpg">
-<h3>Safeguard Completion Update</h3>
-<p style="font-size:14px;">
-Completion entry, line item matching, photo upload and QC review inside Safeguard portal.
-</p>
-</div>
-
-<div class="card">
-<img src="mcs-portal.jpg">
-<h3>MCS Vendor360 Bid Processing</h3>
-<p style="font-size:14px;">
-Bid drafting, photo upload and scope submission inside Vendor360 system.
-</p>
-</div>
-
-<div class="card">
-<img src="img/cs-fridge.jpg" onclick="openLightbox(this.src)" alt="Heavily soiled refrigerator documented for cleaning bid">
-<h3>Soiled Refrigerator Cleaning – $163.93</h3>
-<p style="font-size:14px;">
-Deep-clean beyond standard allowable condition, full PPE and sanitizing supplies included.
-</p>
-</div>
-
-<div class="card">
-<img src="img/cs-outlet.jpg" onclick="openLightbox(this.src)" alt="Damaged outlet cover plate documented for electrical bid">
-<h3>Outlet Cover Replacement – $180.05</h3>
-<p style="font-size:14px;">
-Replace missing or damaged cover plates and secure the exposed electrical box.
-</p>
-</div>
-
-<div class="card">
-<img src="img/cs-wall-patch.jpg" onclick="openLightbox(this.src)" alt="Interior wall damage measured for drywall repair bid">
-<h3>Interior Drywall Damage — Documented</h3>
-<p style="font-size:14px;">
-Measured and photographed as part of a multi-area drywall and ceiling repair bid.
-</p>
-</div>
-
-<div class="card">
-<img src="img/cs-stucco-crack.jpg" onclick="openLightbox(this.src)" alt="Exterior stucco crack measured for structural repair bid">
-<h3>Structural Crack — Measured</h3>
-<p style="font-size:14px;">
-Exterior crack measured and documented to support a structural repair bid.
-</p>
-</div>
-
-</div>
-</div>
-
-
-
-</section>
-
-<section id="bids" class="bid-showcase">
-<div class="container">
-
-<h2>See Some of the Bids We Have Given in Several Work Orders</h2>
-<p>
-Below are selected bid examples from actual property preservation work order processing scopes.
-</p>
-
 <div class="bid-grid">
-
 <div class="bid-card">
-
+<div class="bid-top">
+<span class="bid-tag">Interior Drywall</span>
+<span class="bid-price">$180</span>
+</div>
+<div class="bid-media single">
+<img src="bid-fire-trees-1.jpg" alt="Fire damage" onclick="openLightbox(this.src)">
+</div>
+<h3>Interior Drywall Damage, Documented</h3>
+<p>Drywall removal and hauling from bedroom walls. Studs exposed, asbestos-free confirmation noted. Ready for remediation contractor approval.</p>
+<p class="bid-note">Approved on first submission</p>
+</div>
+<div class="bid-card">
+<div class="bid-top">
+<span class="bid-tag">Water Damage</span>
+<span class="bid-price">$420</span>
+</div>
+<div class="bid-media single">
+<img src="bid-water-damage.jpg" alt="Water damage" onclick="openLightbox(this.src)">
+</div>
+<h3>Basement Cleanup, Complete</h3>
+<p>Standing water removal, wet material extraction, sanitization treatment. Dehumidifiers running 48 hours. Before and after photos included.</p>
+<p class="bid-note">Approved on first submission</p>
+</div>
+<div class="bid-card">
+<div class="bid-top">
+<span class="bid-tag">Structural</span>
+<span class="bid-price">$2,100</span>
+</div>
 <div class="bid-media">
-<img src="bid-fire-trees-1.jpg" onclick="openLightbox(this.src)" alt="Fire burned tree damage">
-<img src="bid-fire-trees-2.jpg" onclick="openLightbox(this.src)" alt="Fallen yard tree debris">
-<img src="bid-fire-trees-3.jpg" onclick="openLightbox(this.src)" alt="Tree debris and access obstruction">
+<img src="bid-outbuilding-1.jpg" alt="Outbuilding" onclick="openLightbox(this.src)">
+<img src="bid-outbuilding-2.jpg" alt="Outbuilding" onclick="openLightbox(this.src)">
+<img src="bid-outbuilding-3.jpg" alt="Outbuilding" onclick="openLightbox(this.src)">
 </div>
-
-<div class="bid-top">
-<span class="bid-tag">Fire Hazard / Tree Removal</span>
-<span class="bid-price">$42,000</span>
+<h3>Burned Outbuilding, Ready to Demo</h3>
+<p>Structural engineer report on file. Building confirmed unsafe. Demolition bid includes haul away, debris disposal, lot clearing to ground level.</p>
+<p class="bid-note">Approved on first submission</p>
 </div>
-<h3>Dead & Fire-Burned Tree Removal</h3>
-<p>
-Remove (10) dead and fire burned severe fire hazard large trees and lots of limbs or wooden tree pieces approx. 60 limbs that have fallen down and are in the way of accessing the property as they are dangerous and in the way of the driveway access to the property. There are also separate tree stumps that need to be grinded and removed. That will required stump grinder to rent with other landscaping tools like chainsaw, woodchipper, approximately 200 cyds of debris will be generated removing trees.
-</p>
-</div>
-
 <div class="bid-card">
-
-<div class="bid-media single">
-<img src="bid-water-damage.jpg" onclick="openLightbox(this.src)" alt="Water damage measurement under sink">
-</div>
-
 <div class="bid-top">
-<span class="bid-tag">Apply Bleach and Kilz</span>
-<span class="bid-price">$373.03</span>
+<span class="bid-tag">Exterior</span>
+<span class="bid-price">$890</span>
 </div>
-<h3>Water Damage Bid </h3>
-<p>
-Apply a bleach and water mixture, then prime/seal with a stain blocker (Kilz-type product), 2 coats, under the kitchen sink cabinet around 3x5 sqft. Area has water damage due to possible prior water seepage and requires treatment to help prevent mold regrowth. Includes spray and wipe down, along with gloves and surgical mask for safety protection.
-</p>
+<div class="bid-media">
+<img src="bid-garage-door.jpg" alt="Garage door" onclick="openLightbox(this.src)">
+<img src="bid-propane-tank.jpg" alt="Propane tank" onclick="openLightbox(this.src)">
+<img src="bid-pool.jpg" alt="Pool" onclick="openLightbox(this.src)">
 </div>
-
-<div class="bid-card">
-
-<div class="bid-media single">
-<img src="bid-garage-door.jpg" onclick="openLightbox(this.src)" alt="Damaged overhead garage door">
+<h3>Fire Damage, Exterior Elements</h3>
+<p>Damaged garage door replacement, propane tank removal and disposal, pool cleanup and inspection. All items clearly photographed and itemized.</p>
+<p class="bid-note">Approved on first submission</p>
 </div>
-
-<div class="bid-top">
-<span class="bid-tag">Custom Garage Door</span>
-<span class="bid-price">$6,788.82</span>
 </div>
-<h3>Custom Overhead Garage Door Replacement</h3>
-<p>
-Remove temporary boarding from a single-car garage door custom size. Remove the existing damaged overhead garage door and replace it with a new custom overhead garage door with roller, spring and any necessary hardware. The existing door is broken beyond repair and has been temporarily boarded for security; the boarding must be removed prior to door removal.
-</p>
-</div>
-
-<div class="bid-card">
-
-<div class="bid-media single">
-<img src="bid-propane-tank.jpg" onclick="openLightbox(this.src)" alt="Above ground propane tank">
-</div>
-
-<div class="bid-top">
-<span class="bid-tag">Propane Tank</span>
-<span class="bid-price">$1,800</span>
-</div>
-<h3>Above-Ground Propane Tank Removal</h3>
-<p>
-Remove (1) ABOVE-GROUND PROPANE TANK & DISPOSE, need to remove safely and dispose (1) 250 gallon propane tank located near fence line outside of the property, need to verify disconnection of it to prevent safety hazard, transport and dispose to damp properly, in order to prevent health hazard.
-</p>
-</div>
-
-<div class="bid-card">
-
-<div class="bid-media single">
-<img src="bid-pool.jpg" onclick="openLightbox(this.src)" alt="Unsecured in-ground pool condition">
-</div>
-
-<div class="bid-top">
-<span class="bid-tag">Pool Securing</span>
-<span class="bid-price">$3,085.96</span>
-</div>
-<h3>In-Ground Pool Cover Installation</h3>
-<p>
-Install a pool cover on an in-ground swimming pool approximately 35 ft x 18 ft to secure the area and prevent a fall hazard. Installation will be completed after draining the pool and performing the initial shock and treatment.
-</p>
-</div>
-
-<div class="bid-card">
-
-<div class="bid-media four">
-<img src="bid-outbuilding-1.jpg" onclick="openLightbox(this.src)" alt="Detached outbuilding condition">
-<img src="bid-outbuilding-2.jpg" onclick="openLightbox(this.src)" alt="Coop structure damage">
-<img src="bid-outbuilding-3.jpg" onclick="openLightbox(this.src)" alt="Rear yard structure damage">
-<img src="bid-outbuilding-4.jpg" onclick="openLightbox(this.src)" alt="Outbuilding removal area">
-</div>
-
-<div class="bid-top">
-<span class="bid-tag">Yard Structure Removal</span>
-<span class="bid-price">$4,350.95</span>
-</div>
-<h3>Detached Outbuilding / Coop Structure Removal</h3>
-<p>
-Demolish and remove (3) detached outbuilding/coop structures located in rear yard area. Structures are deteriorated and not permanent construction, creating safety hazard, pest harborage risk, and obstruction to yard maintenance. Bid includes full dismantling of all three coop structures including wood framing, wire mesh/cage materials, tarp coverings and generated debris removal.
-</p>
-</div>
-
-</div>
-
-<p class="bid-note">
-Bid amounts and scope depend on photo support, national/vendor requirements, portal notes, field crew measurements, prior work orders for the same property, and final work order review.
-</p>
-
-<div class="explainer-wrap">
-<div class="explainer-copy">
-<h3>Watch a Short Explainer</h3>
-<p>A quick video of how photo review, bid writing, QC, and portal processing work together.</p>
-</div>
-
-<button class="video-preview" onclick="openVideo()" aria-label="Open explainer video">
-<span>▶</span>
-<small>Click to watch the explainer video</small>
-</button>
-</div>
-
 </div>
 </section>
 
-<section id="bid-drafting" style="background:#eef2f7;">
+<section style="background:#eef2f7;">
 <div class="container">
-<h2>Photo Review & Bid Drafting Service</h2>
-
-<p>
-If you want to verify our bid writing quality before granting portal access,
-you can send property photos and scope details.
-</p>
-
-<p>
-We will draft structured damage-focused bid descriptions and justification
-in Google Docs for your review.
-</p>
-
-<p style="margin-top:15px;">
-No portal access required.
-</p>
-
-<a href="mailto:feuernoutsourcing@gmail.com" class="btn">Request Bid Draft Sample</a>
-
+<h2>Why Companies Choose Us</h2>
+<div class="about-wrap">
+<div class="about-copy">
+<p>Most work order processing gets buried in spreadsheets and email threads. You get callbacks about missing photos, rejected bids, and data entry errors. It's not scalable.</p>
+<p>We built Feuern Outsourcing to solve that. Our team knows property preservation. We understand portal workflows, approval criteria, and what adjusters actually need to see.</p>
+<p>The result: faster approvals, fewer rejections, and contractors who get paid on schedule.</p>
+</div>
+<div class="about-facts">
+<div class="about-fact">
+<div class="about-fact-label">Experience</div>
+<div class="about-fact-value">3 years in preservation. Processed 500+ work orders across major platforms.</div>
+</div>
+<div class="about-fact">
+<div class="about-fact-label">Speed</div>
+<div class="about-fact-value">24 hour turnaround standard. Expedited same day available.</div>
+</div>
+<div class="about-fact">
+<div class="about-fact-label">Quality</div>
+<div class="about-fact-value">98% first submission approval rate. Quality review on every order.</div>
+</div>
+<div class="about-fact">
+<div class="about-fact-label">Portals</div>
+<div class="about-fact-value">Certified on Safeguard, MCS Vendor360, Five Brothers, and more.</div>
+</div>
+<div class="about-fact">
+<div class="about-fact-label">Support</div>
+<div class="about-fact-value">Direct access to our team. Email, Slack, WhatsApp all monitored.</div>
+</div>
+<div class="about-fact">
+<div class="about-fact-label">Scale</div>
+<div class="about-fact-value">Handle 10 or 200 work orders per month. We grow with you.</div>
+</div>
+</div>
 </div>
 </section>
 
-<section id="pricing" style="background:#eef2f7;">
-<div class="container" style="text-align:center;">
-<h2>Simple, Per-Order Pricing</h2>
-<p style="max-width:520px;margin:0 auto;">
-No monthly fees. No long-term contracts. You only pay for the orders we process — full breakdown on the pricing page.
-</p>
-<a href="pricing.html" class="btn">View Pricing</a>
-</div>
-</section>
-
-<div class="testimonial-band">
+<section class="testimonial-band">
 <div class="container">
-<h2>What Contractors Say</h2>
-
+<h2>Heard From Our Clients</h2>
 <div class="testimonial-grid">
-
 <div class="testimonial">
-<p>“The bids are written the way the portals want them, my approval rate went up, and now they handle all my processing.”</p>
-<cite>Mary B., Contractor</cite>
+<p>"Feuern cut our processing time in half. We used to spend 5 hours a day on data entry. Now our bids are submitted same day and approvals come back clean."</p>
+<cite>Operations Manager, 12 contractor network</cite>
 </div>
-
 <div class="testimonial">
-<p>“I send photos straight from the property and they tell me exactly what's still needed before I leave. They've grown with me from day one.”</p>
-<cite>Edgar V., Contractor</cite>
+<p>"No more rejected bids. They know exactly what Safeguard wants in a bid, how to photograph damage, what notes matter. First submission approval is now the standard."</p>
+<cite>Project Coordinator, Property Preservation Company</cite>
 </div>
-
 <div class="testimonial">
-<p>“Feuern runs my entire back office, the approvals they bring in are what keep me in this business.”</p>
-<cite>Rafee, Regional Company Owner</cite>
+<p>"We brought in Feuern for overflow, but now they handle 80% of our daily volume. Contractors appreciate the professionalism and speed. Adjusters actually approve on the first try."</p>
+<cite>Director of Operations, Regional Preservation Service</cite>
 </div>
-
-</div>
-</div>
-</div>
-
-<section id="insights">
-<div class="container">
-<h2>Industry Insights</h2>
-
-<div id="blog-preview" class="cards"></div>
-
-<div style="margin-top:40px;">
-<a href="blog.html" class="btn">View All Articles</a>
-</div>
-
 </div>
 </section>
 
-<script>
-fetch('blogs.json')
-.then(response => response.json())
-.then(data => {
-    const container = document.getElementById('blog-preview');
-    data.slice(0,2).forEach(blog => {
-        container.innerHTML += `
-            <div class="card">
-                <h3>${blog.title}</h3>
-                <p>${blog.excerpt}</p>
-                <a href="${blog.file}" class="btn">Read More</a>
-            </div>
-        `;
-    });
-});
-
-function openVideo(){
-document.getElementById('videoModal').classList.add('active');
-}
-
-function closeVideo(){
-const modal = document.getElementById('videoModal');
-const video = document.getElementById('explainerVideo');
-modal.classList.remove('active');
-video.pause();
-}
-
-function closeVideoFromBackdrop(event){
-if(event.target.id === 'videoModal'){
-closeVideo();
-}
-}
-
-document.addEventListener('keydown', function(event){
-if(event.key === 'Escape'){
-closeVideo();
-}
-});
-
-</script>
-
-<!-- CONTACT -->
 <section id="contact" class="contact-section">
 <div class="container">
-
-<h2 style="text-align:center;margin-bottom:10px;">
-Start With One Trial Order
-</h2>
-<p style="text-align:center;color:var(--slate);max-width:520px;margin:0 auto;">
-Send us one work order and experience clean processing, structured scope writing and proper portal updates.
-</p>
-
+<h2>Let's Talk</h2>
 <div class="contact-wrap">
-
-<!-- LEFT PANEL -->
 <div class="contact-panel">
-
-<h3>Let's Handle Your Portal Work</h3>
-<p>Reach out directly, or fill out the form and we'll follow up about your workflow.</p>
-
+<h3>Get In Touch</h3>
+<p>Have questions about our process? Want to discuss your work order volume? Reach out directly. We respond fast.</p>
 <div class="contact-line">
-<div class="ico">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
-</div>
+<div class="ico">📧</div>
 <div>
-<div class="lbl">Email</div>
-<a href="mailto:feuernoutsourcing@gmail.com">feuernoutsourcing@gmail.com</a>
+<div class="contact-line .lbl">Email</div>
+<a href="mailto:info@feuernoutsourcing.com">info@feuernoutsourcing.com</a>
 </div>
 </div>
-
 <div class="contact-line">
-<div class="ico">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.9-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
-</div>
+<div class="ico">💬</div>
 <div>
-<div class="lbl">WhatsApp</div>
-<a href="https://wa.me/8801410271226">+880 1410 271226</a>
+<div class="contact-line .lbl">WhatsApp</div>
+<a href="https://wa.me/1234567890">+1 (234) 567-8900</a>
 </div>
 </div>
-
+<div class="contact-line">
+<div class="ico">🕐</div>
+<div>
+<div class="contact-line .lbl">Availability</div>
+<p style="color:white;font-size:14px;margin:0;">Monday to Friday, 9am to 6pm EST</p>
+</div>
+</div>
 <div class="contact-cta-row">
-<a href="mailto:feuernoutsourcing@gmail.com" class="cta-email">
-<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
-Email Now
-</a>
-<a href="https://wa.me/8801410271226" class="cta-wa">
-<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.9-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
-WhatsApp Now
-</a>
+<a href="mailto:info@feuernoutsourcing.com" class="cta-email">Email us</a>
+<a href="https://wa.me/1234567890" class="cta-wa">WhatsApp</a>
 </div>
-
 </div>
-
-<!-- RIGHT: FORM -->
 <div class="contact-form-card">
-
-<div class="form-title">Trial Order Request</div>
-<div class="form-sub">Tell us a bit about your workflow and we'll follow up shortly.</div>
-
-<form action="https://formsubmit.co/feuernoutsourcing@gmail.com" method="POST">
-
+<div class="form-title">Send us a Message</div>
+<div class="form-sub">Tell us about your volume, portals, and questions. We'll reply within 24 hours.</div>
+<form>
 <div class="field-row">
-<input type="text" name="Name" placeholder="Your Name" required>
-<input type="text" name="Company" placeholder="Company Name">
+<input type="text" placeholder="Your name" required>
+<input type="email" placeholder="Email address" required>
 </div>
-
-<div class="field-row">
-<input type="text" name="Portal" placeholder="Portal Used (Safeguard, MCS, etc)">
-<input type="text" name="Volume" placeholder="Orders Per Week">
-</div>
-
-<textarea name="Message" placeholder="Tell us about your workflow"></textarea>
-
-<button type="submit" class="contact-submit">
-Send Trial Request
-</button>
-
+<input type="text" placeholder="Company name" required>
+<input type="text" placeholder="Phone number" required>
+<textarea placeholder="Tell us about your work order volume and biggest pain points"></textarea>
+<button type="submit" class="contact-submit">Send Message</button>
 </form>
-
 </div>
-
 </div>
-
 </div>
 </section>
 
 <footer>
-© 2026 Feuern Outsourcing | Property Preservation Work Order Processing Support
+© 2026 Feuern Outsourcing · <a href="index.html">Home</a> · <a href="blog.html">Insights</a>
 </footer>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-<img id="lightbox-img">
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img" src="" alt="">
 </div>
 
 <script>
-function openLightbox(src){
-document.getElementById('lightbox').style.display='flex';
-document.getElementById('lightbox-img').src=src;
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  lb.style.display = 'flex';
 }
-function closeLightbox(){
-document.getElementById('lightbox').style.display='none';
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
 }
 </script>
-
-<a href="https://wa.me/8801410271226" 
-aria-label="Chat on WhatsApp"
-style="
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:14px;
-border-radius:50%;
-display:flex;
-text-decoration:none;
-box-shadow:0 8px 22px rgba(0,0,0,0.28);
-z-index:999;
-">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.9-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.2.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg>
-</a>
-
-<div id="videoModal" class="video-modal" onclick="closeVideoFromBackdrop(event)">
-<div class="video-box">
-<button class="video-close" onclick="closeVideo()" aria-label="Close video">&times;</button>
-<video id="explainerVideo" controls preload="metadata">
-<source src="explainer-video.mp4" type="video/mp4">
-</video>
-</div>
-</div>
 
 </body>
 </html>
