@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A real client engagement: how Feuern Outsourcing scaled property preservation back-office support from a solo operator to a multi-crew field operation — photo review, bid drafting, portal updates and QC.">
+<meta name="author" content="Feuern Outsourcing">
+<title>Case Study: Scaling a Field Operation's Back Office | Feuern Outsourcing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+
+:root{
+--ink:#0e2a47;
+--ink-deep:#071a2c;
+--accent:#ff7a00;
+--accent-dark:#e06800;
+--paper:#f6f7fb;
+--slate:#4f5f70;
+--line:rgba(14,42,71,0.10);
+--font-body:'Inter',sans-serif;
+--font-display:'Archivo','Inter',sans-serif;
+}
+
+body{
+font-family:var(--font-body);
+background:linear-gradient(180deg,#f7f9fc 0%,#eef3f8 100%);
+color:#1a1a1a;
+line-height:1.6;
+}
+
+h1,h2,h3{font-family:var(--font-display);}
+
+.container{max-width:1150px;margin:auto;padding:0 20px;}
+section{padding:90px 0;}
+
+@media(max-width:900px){section{padding:60px 0;}}
+
+/* NAV */
+.site-menu{
+position:sticky;top:0;z-index:999;
+background:rgba(7,26,44,.97);
+backdrop-filter:blur(14px);
+box-shadow:0 10px 30px rgba(0,0,0,.16);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+.site-menu .container{
+display:flex;align-items:center;justify-content:space-between;gap:20px;
+padding-top:11px;padding-bottom:11px;
+}
+.menu-brand{color:white;font-family:var(--font-display);font-weight:700;font-size:15px;}
+.menu-links{display:flex;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;}
+.menu-links::-webkit-scrollbar{display:none;}
+.menu-links a{
+color:white;font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;
+background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);
+text-decoration:none;transition:.2s ease;
+}
+.menu-links a:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px);}
+
+/* PAGE HERO */
+.case-hero{
+background:
+radial-gradient(circle at top right,rgba(255,122,0,0.18),transparent 32%),
+linear-gradient(135deg,var(--ink),var(--ink-deep));
+color:white;
+padding:100px 0 70px;
+}
+.case-hero .tag{
+display:inline-block;
+color:var(--accent);
+font-size:13px;
+font-weight:600;
+margin-bottom:14px;
+}
+.case-hero h1{
+font-size:42px;
+line-height:1.15;
+letter-spacing:-0.5px;
+max-width:800px;
+}
+.case-hero p{
+margin-top:18px;
+font-size:17px;
+color:rgba(255,255,255,.80);
+max-width:680px;
+}
+
+.chip-row{
+display:flex;
+gap:14px;
+margin-top:36px;
+flex-wrap:wrap;
+}
+.chip{
+display:flex;
+align-items:center;
+gap:10px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+padding:10px 18px 10px 10px;
+border-radius:999px;
+}
+.chip-num{
+width:26px;height:26px;border-radius:50%;
+background:var(--accent);color:white;
+font-family:var(--font-display);font-weight:700;font-size:13px;
+display:flex;align-items:center;justify-content:center;
+}
+.chip span.label{font-size:14px;font-weight:600;}
+
+.outcome-box{
+margin-top:40px;
+background:rgba(255,255,255,.06);
+border-left:3px solid var(--accent);
+border-radius:8px;
+padding:22px 26px;
+max-width:760px;
+}
+.outcome-box .k{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:.3px;margin-bottom:8px;display:block;}
+.outcome-box p{color:rgba(255,255,255,.9);font-size:16px;line-height:1.7;margin:0;}
+
+/* SECTION HEADS */
+h2{font-size:30px;font-weight:700;color:var(--ink);letter-spacing:-0.4px;margin-bottom:14px;}
+.lede{color:var(--slate);font-size:16px;max-width:680px;margin-bottom:40px;}
+
+/* ICON CARD GRID */
+.icon-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:24px;
+}
+.icon-card{
+background:white;
+border:1px solid var(--line);
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 12px 30px rgba(14,42,71,0.06);
+}
+.icon-card .photo{
+width:100%;
+height:170px;
+object-fit:cover;
+display:block;
+}
+.icon-card .body{padding:20px 24px;}
+.icon-card .dot{display:none;}
+.icon-card h3{font-size:16px;color:var(--ink);margin-bottom:8px;}
+.icon-card p{font-size:14px;color:var(--slate);line-height:1.6;}
+
+.privacy-note{
+margin-top:30px;
+background:#fff4e8;
+border:1px solid rgba(255,122,0,.25);
+color:#7a4200;
+font-size:13px;
+font-weight:600;
+padding:14px 20px;
+border-radius:8px;
+}
+
+/* LEDGER TABLE (bid scope excerpt) */
+.ledger{
+margin-top:10px;
+background:white;
+border:1px solid var(--line);
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 14px 36px rgba(14,42,71,0.07);
+}
+.ledger-row{
+display:grid;
+grid-template-columns:.9fr 2fr .55fr;
+gap:16px;
+padding:20px 26px;
+border-bottom:1px solid var(--line);
+align-items:center;
+}
+.ledger-row:last-child{border-bottom:none;}
+.ledger-row.head{
+background:var(--ink-deep);
+color:rgba(255,255,255,.75);
+font-size:12px;
+font-weight:600;
+letter-spacing:.3px;
+padding:14px 26px;
+}
+.ledger-row.head span:first-child{color:white;}
+.ledger-task{font-weight:600;color:var(--ink);font-size:14px;}
+.ledger-desc{font-size:14px;color:var(--slate);line-height:1.6;}
+.ledger-amt{font-family:var(--font-display);font-weight:700;color:var(--accent-dark);font-size:15px;text-align:right;}
+@media(max-width:700px){
+.ledger-row{grid-template-columns:1fr;gap:6px;}
+.ledger-row.head{display:none;}
+.ledger-amt{text-align:left;font-size:17px;}
+}
+
+/* MORE FIELD EVIDENCE STRIP */
+.strip-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:10px;
+}
+.strip-item{
+background:white;
+border:1px solid var(--line);
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 26px rgba(14,42,71,0.06);
+}
+.strip-item img{
+width:100%;
+height:150px;
+object-fit:cover;
+display:block;
+}
+.strip-item span{
+display:block;
+padding:12px 14px;
+font-size:13px;
+font-weight:600;
+color:var(--ink);
+}
+@media(max-width:700px){
+.strip-grid{grid-template-columns:1fr 1fr;}
+}
+
+/* COORDINATION STEPS */
+.coord-row{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:0;
+margin-top:10px;
+}
+.coord-step{
+position:relative;
+padding:0 24px 0 0;
+}
+.coord-step .num{
+width:34px;height:34px;border-radius:50%;
+background:var(--ink);color:white;
+font-family:var(--font-display);font-weight:700;font-size:14px;
+display:flex;align-items:center;justify-content:center;
+margin-bottom:14px;
+}
+.coord-step h3{font-size:16px;color:var(--ink);margin-bottom:8px;}
+.coord-step p{font-size:14px;color:var(--slate);line-height:1.6;}
+.coord-step:not(:last-child)::after{
+content:"→";
+position:absolute;
+right:-6px;
+top:6px;
+color:var(--accent);
+font-size:18px;
+font-weight:700;
+}
+@media(max-width:900px){
+.coord-row{grid-template-columns:1fr;gap:30px;}
+.coord-step:not(:last-child)::after{display:none;}
+}
+
+/* CHAT MOCKUP (illustrative example — not real client data) */
+.chat-mock-wrap{
+margin-top:50px;
+display:grid;
+grid-template-columns:.9fr 1.3fr;
+gap:34px;
+align-items:center;
+}
+.chat-mock-label{
+font-size:13px;
+color:var(--slate);
+line-height:1.7;
+}
+.chat-mock-label b{color:var(--ink);}
+.chat-mock-label .fictional-tag{
+display:inline-block;
+margin-top:14px;
+font-size:11px;
+font-weight:700;
+letter-spacing:.4px;
+text-transform:uppercase;
+color:var(--accent-dark);
+background:rgba(255,122,0,.10);
+padding:6px 12px;
+border-radius:999px;
+}
+.chat-phone{
+background:var(--ink-deep);
+border-radius:18px;
+padding:14px;
+box-shadow:0 24px 60px rgba(14,42,71,0.22);
+max-width:400px;
+}
+.chat-header{
+color:white;
+font-size:13px;
+font-weight:600;
+padding:8px 10px 14px;
+border-bottom:1px solid rgba(255,255,255,.10);
+margin-bottom:12px;
+}
+.chat-header span{display:block;font-weight:400;font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
+.chat-body{display:flex;flex-direction:column;gap:10px;padding:2px 6px 10px;}
+.bubble{
+max-width:82%;
+padding:10px 14px;
+border-radius:14px;
+font-size:13px;
+line-height:1.5;
+}
+.bubble.in{
+background:#1a3554;
+color:#e8edf3;
+align-self:flex-start;
+border-bottom-left-radius:4px;
+}
+.bubble.out{
+background:var(--accent);
+color:white;
+align-self:flex-end;
+border-bottom-right-radius:4px;
+}
+.bubble.photos{
+display:flex;
+gap:6px;
+background:none;
+padding:0;
+align-self:flex-start;
+}
+.bubble.photos span{
+width:52px;height:52px;border-radius:8px;
+background:rgba(255,255,255,.10);
+display:flex;align-items:center;justify-content:center;
+color:rgba(255,255,255,.5);
+}
+
+@media(max-width:900px){
+.chat-mock-wrap{grid-template-columns:1fr;}
+.chat-phone{max-width:100%;}
+}
+
+/* TWO COLUMN GROW */
+.grow-wrap{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:10px;
+}
+.grow-card{
+background:white;
+border-radius:10px;
+padding:30px;
+border-top:4px solid var(--accent);
+box-shadow:0 14px 36px rgba(14,42,71,0.07);
+}
+.grow-card:nth-child(2){border-top-color:var(--ink);}
+.grow-card h3{font-size:17px;color:var(--ink);margin-bottom:16px;}
+.grow-card ul{list-style:none;}
+.grow-card li{
+font-size:14px;
+color:var(--slate);
+padding:8px 0;
+border-bottom:1px solid var(--line);
+}
+.grow-card li:last-child{border-bottom:none;}
+@media(max-width:900px){.grow-wrap{grid-template-columns:1fr;}}
+
+.story-band{
+margin-top:40px;
+background:var(--ink-deep);
+color:white;
+border-radius:10px;
+padding:26px 30px;
+font-size:16px;
+line-height:1.6;
+}
+.story-band b{color:var(--accent);}
+
+/* FINAL CTA */
+.final-cta{
+background:linear-gradient(135deg,var(--ink),var(--ink-deep));
+color:white;
+text-align:center;
+padding:80px 0;
+}
+.final-cta h2{color:white;}
+.final-cta p{color:rgba(255,255,255,.78);max-width:560px;margin:0 auto 30px;}
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:var(--accent);
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+box-shadow:0 12px 28px rgba(255,122,0,0.28);
+}
+
+footer{
+background:linear-gradient(135deg,var(--ink-deep),var(--ink));
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+footer a{color:rgba(255,255,255,.7);}
+</style>
+</head>
+
+<body>
+
+<div class="site-menu">
+<div class="container">
+<div class="menu-brand">Feuern Outsourcing</div>
+<div class="menu-links">
+<a href="index.html#home">Home</a>
+<a href="index.html#workflow">Workflow</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="team.html">Team</a>
+<a href="pricing.html">Pricing</a>
+<a href="blog.html">Insights</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="case-hero">
+<div class="container">
+<span class="tag">Confidential client example — anonymized for public use</span>
+<h1>Scaling the Back Office Behind a Growing Field Operation</h1>
+<p>Remote work order processing, photo review, bid drafting, and completion support for a US property preservation contractor — from a solo operator to a multi-crew business.</p>
+
+<div class="chip-row">
+<div class="chip"><div class="chip-num">1</div><span class="label">Photos — field evidence in</span></div>
+<div class="chip"><div class="chip-num">2</div><span class="label">Review — condition checked</span></div>
+<div class="chip"><div class="chip-num">3</div><span class="label">Draft — clear bid scope out</span></div>
+</div>
+
+<div class="outcome-box">
+<span class="k">CLIENT OUTCOME</span>
+<p>The support engagement scaled with the client from a solo operator to a multi-crew operation, while field photos and requirements were checked before crews left the property.</p>
+</div>
+</div>
+</div>
+
+<!-- CONDITION REVIEW -->
+<section>
+<div class="container">
+<h2>Turning Scattered Field Evidence Into a Usable Record</h2>
+<p class="lede">Each image is reviewed for the visible condition, location context, measurement evidence, and follow-up needed for the bid or completion package.</p>
+
+<div class="icon-grid">
+<div class="icon-card">
+<img class="photo" src="img/cs-fridge.jpg" alt="Heavily soiled refrigerator interior documented for cleaning bid">
+<div class="body">
+<h3>Appliance Condition</h3>
+<p>Documented heavy soil and interior condition against portal requirements.</p>
+</div>
+</div>
+<div class="icon-card">
+<img class="photo" src="img/cs-outlet.jpg" alt="Damaged outlet cover plate documented for electrical safety bid">
+<div class="body">
+<h3>Electrical Detail</h3>
+<p>Captured missing or damaged outlet-cover detail with safety context.</p>
+</div>
+</div>
+<div class="icon-card">
+<img class="photo" src="img/cs-wall-patch.jpg" alt="Interior wall damage measured with tape measure for repair bid">
+<div class="body">
+<h3>Surface Damage</h3>
+<p>Used measurement evidence to describe wall repair scope accurately.</p>
+</div>
+</div>
+<div class="icon-card">
+<img class="photo" src="img/cs-foundation-vent.jpg" alt="Exterior foundation vent opening measured for repair bid">
+<div class="body">
+<h3>Exterior Opening</h3>
+<p>Recorded opening, debris, and approximate dimensions for the bid.</p>
+</div>
+</div>
+</div>
+
+<div class="privacy-note">
+Real field photos shown — no addresses, order numbers, portal screens, client names, phone numbers, or contractor codes.
+</div>
+</div>
+</section>
+
+<!-- BID SCOPE -->
+<section style="background:white;">
+<div class="container">
+<h2>From Photos to Clear Bid Scope</h2>
+<p class="lede">The four line items in a typical case study slide make it look small — it isn't. Orders like this routinely carry ten, fifteen, or more line items, each needing its own measurement, photo justification, and cost breakdown. Below is a wider real sample. Addresses, order numbers, and internal estimator IDs are removed.</p>
+
+<div class="ledger">
+
+<div class="ledger-row head">
+<span>Task</span>
+<span>Scope Prepared From Field Evidence</span>
+<span>Bid</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Drywall &amp; Ceiling Repair</span>
+<span class="ledger-desc">Repair damaged interior drywall across multiple areas; seal and caulk affected joints to prevent further moisture intrusion.</span>
+<span class="ledger-amt">$823.96</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Handrail Installation</span>
+<span class="ledger-desc">Install a new exterior handrail matching existing hardware to provide safe, secure access to the staircase.</span>
+<span class="ledger-amt">$1,478.50</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Cabinet Replacement</span>
+<span class="ledger-desc">Replace a missing kitchen cabinet section and drawers to restore a functional, complete kitchen.</span>
+<span class="ledger-amt">$692.33</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Wasp Nest Removal</span>
+<span class="ledger-desc">Safely exterminate and remove an active wasp nest attached to the exterior wall, PPE included.</span>
+<span class="ledger-amt">$333.10</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Tile Replacement</span>
+<span class="ledger-desc">Remove and replace broken kitchen floor tiles creating a trip hazard; haul away debris.</span>
+<span class="ledger-amt">$240.64</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Exposed-Wire Securing</span>
+<span class="ledger-desc">Secure loose or exposed wiring at two documented locations to remove a shock hazard.</span>
+<span class="ledger-amt">$199.98</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Exterior Siding Repair</span>
+<span class="ledger-desc">Scrape and repaint peeling exterior siding to restore a weather-resistant finish.</span>
+<span class="ledger-amt">$199.30</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Soiled Refrigerator Cleaning</span>
+<span class="ledger-desc">Deep-clean a refrigerator beyond standard allowable condition, full PPE and sanitizing supplies included.</span>
+<span class="ledger-amt">$163.93</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Outlet-Cover Replacement</span>
+<span class="ledger-desc">Replace missing or damaged cover plates and secure the affected electrical opening.</span>
+<span class="ledger-amt">$180.05</span>
+</div>
+
+<div class="ledger-row">
+<span class="ledger-task">Address Numbers Posting</span>
+<span class="ledger-desc">Install replacement address digits where existing numbers are torn or missing from the mailbox.</span>
+<span class="ledger-amt">$40.00</span>
+</div>
+
+</div>
+
+<p class="lede" style="margin-top:24px;margin-bottom:0;font-size:14px;">
+Ten line items, one order, real bid amounts — from a $40 address posting to a $1,478 handrail install. This is what "we handle the processing" actually looks like in practice.
+</p>
+
+</div>
+</section>
+
+<!-- MORE FIELD EVIDENCE -->
+<section style="background:var(--paper);">
+<div class="container">
+<h2>More From the Field</h2>
+<p class="lede">A few more examples of what comes in on a given order — storm damage, structural cracks, pest entry points, and general wear. Every one gets measured, photographed, and matched to a bid line before it goes into the portal.</p>
+
+<div class="strip-grid">
+<div class="strip-item"><img src="img/cs-stucco-crack.jpg" alt="Exterior stucco crack measured for structural repair bid"><span>Structural crack, measured</span></div>
+<div class="strip-item"><img src="img/cs-eave-paint.jpg" alt="Peeling exterior eave paint documented for repaint bid"><span>Exterior paint failure</span></div>
+<div class="strip-item"><img src="img/cs-foundation-spall.jpg" alt="Foundation stem wall spalling documented for repair bid"><span>Foundation spalling</span></div>
+<div class="strip-item"><img src="img/cs-yard-debris.jpg" alt="Overgrown yard with debris and structures documented for cleanup bid"><span>Yard debris &amp; overgrowth</span></div>
+<div class="strip-item"><img src="img/cs-loose-wire.jpg" alt="Loose interior wiring documented for electrical safety bid"><span>Loose interior wiring</span></div>
+<div class="strip-item"><img src="img/cs-mailbox-debris.jpg" alt="Storm debris near mailbox documented for debris removal bid"><span>Storm debris removal</span></div>
+</div>
+
+</div>
+</section>
+
+<!-- COORDINATION -->
+<section>
+<div class="container">
+<h2>The Crew Sends the Photos. Feuern Checks What's Still Missing.</h2>
+<p class="lede">This working rhythm helped the owner stay focused on field operations while the back office reviewed order instructions, photo coverage, bids, and submission details.</p>
+
+
+<div class="coord-row">
+
+<div class="coord-step">
+<div class="num">1</div>
+<h3>Send</h3>
+<p>Photos and order instructions arrive from the property.</p>
+</div>
+
+<div class="coord-step">
+<div class="num">2</div>
+<h3>Review</h3>
+<p>Visible conditions, measurements, and requirements are checked.</p>
+</div>
+
+<div class="coord-step">
+<div class="num">3</div>
+<h3>Prepare</h3>
+<p>Bids, notes, completion entries, and invoices are organized.</p>
+</div>
+
+<div class="coord-step">
+<div class="num">4</div>
+<h3>Confirm</h3>
+<p>The owner gets a clear list of anything still needed before leaving.</p>
+</div>
+
+</div>
+
+<div class="chat-mock-wrap">
+<div class="chat-mock-label">
+<p>Most of what a crew needs to send is a quick photo bundle and a line or two of context. We turn that into a reviewed, submission-ready order — this is what that exchange typically looks like.</p>
+<span class="fictional-tag">Illustrative example — not a real order</span>
+</div>
+
+<div class="chat-phone">
+<div class="chat-header">Field Crew ↔ Feuern Outsourcing<span>Example exchange, for illustration only</span></div>
+<div class="chat-body">
+<div class="bubble in">Order assigned — 3BR vacant property. Sending condition photos now.</div>
+<div class="bubble photos"><span>📷</span><span>📷</span><span>📷</span></div>
+<div class="bubble out">Received — reviewing against portal requirements now.</div>
+<div class="bubble out">Confirmed, no exterior debris. Fascia paint is peeling and isn't in the original scope — want me to add a bid for it?</div>
+<div class="bubble in">Yes, add it.</div>
+<div class="bubble out">Bid submitted. You're clear to leave the property.</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- GROW -->
+<section style="background:white;">
+<div class="container">
+<h2>One Operating Layer Across Photos, Bids, Portals, and Records</h2>
+<p class="lede">The engagement combined day-to-day work order processing with responsive field support — so the client could add crews without carrying every documentation task alone.</p>
+
+<div class="grow-wrap">
+
+<div class="grow-card">
+<h3>Work Covered</h3>
+<ul>
+<li>Work order intake and tracking</li>
+<li>Photo review, labeling, and archive organization</li>
+<li>Bid and proposition drafting</li>
+<li>Completion entries and invoice support</li>
+<li>Monthly reporting and follow-up</li>
+</ul>
+</div>
+
+<div class="grow-card">
+<h3>Value to the Client</h3>
+<ul>
+<li>Fewer field interruptions</li>
+<li>Clearer scopes tied to documented conditions</li>
+<li>Consistent records across recurring work</li>
+<li>A second set of eyes before the crew leaves</li>
+<li>Back-office capacity that scaled with growth</li>
+</ul>
+</div>
+
+</div>
+
+<div class="story-band">
+<b>Client story:</b> Support grew from a solo operation into a multi-crew workflow.
+</div>
+</div>
+</section>
+
+<div class="final-cta">
+<div class="container">
+<h2>Want This Kind of Support on Your Orders?</h2>
+<p>Send one work order and see the processing quality firsthand — clean scope writing, proper portal updates, no long-term contract.</p>
+<a href="index.html#contact" class="btn">Start With One Trial Order</a>
+</div>
+</div>
+
+<footer>
+© 2026 Feuern Outsourcing | <a href="index.html">Back to Home</a>
+</footer>
+
+</body>
+</html>
