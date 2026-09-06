@@ -1,15 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Practical guides and behind-the-scenes stories on property preservation work order processing, bid writing, and portal management from Feuern Outsourcing.">
-<meta name="author" content="Feuern Outsourcing">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Practical guides and behind the scenes stories on property preservation work order processing, bid writing, and portal management from Feuern Outsourcing." name="description"/>
+<meta content="Feuern Outsourcing" name="author"/>
 <title>Insights | Feuern Outsourcing</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="/favicon.ico" rel="icon"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
 :root{
@@ -54,7 +53,6 @@ footer a{color:rgba(255,255,255,.7);}
 </style>
 </head>
 <body>
-
 <div class="site-menu">
 <div class="inner">
 <div class="menu-brand">Feuern Outsourcing</div>
@@ -68,25 +66,21 @@ footer a{color:rgba(255,255,255,.7);}
 </div>
 </div>
 </div>
-
 <div class="page-hero">
 <div class="container">
 <h1>Insights</h1>
 <p>Practical guides and real stories from processing property preservation work orders, portal quirks, bid writing, and what actually gets approved.</p>
 </div>
 </div>
-
 <section>
 <div class="container">
-<div id="post-grid" class="post-grid"></div>
-<p id="empty-note" class="empty-note" style="display:none;">New posts are on the way, check back soon.</p>
+<div class="post-grid" id="post-grid"></div>
+<p class="empty-note" id="empty-note" style="display:none;">New posts are on the way, check back soon.</p>
 </div>
 </section>
-
 <footer>
 © 2026 Feuern Outsourcing · <a href="index.html">Home</a>
 </footer>
-
 <script>
 fetch('blogs.json')
 .then(r => r.json())
@@ -114,6 +108,5 @@ fetch('blogs.json')
   document.getElementById('empty-note').style.display='block';
 });
 </script>
-
 </body>
 </html>
