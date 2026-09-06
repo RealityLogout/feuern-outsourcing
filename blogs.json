@@ -1,14 +1,9 @@
 [
   {
-    "title": "How to Reduce Bid Rejections in Safeguard",
-    "file": "blogs/blog-safeguard-bid-rejections.html",
-    "excerpt": "Common mistakes vendors make when submitting hazard bids and how to avoid costly reopens.",
-    "date": "June 2026"
-  },
-  {
-    "title": "Grass Cut Season Processing Strategy",
-    "file": "blogs/blog2.html",
-    "excerpt": "How to manage recurring grass cuts using organized photo archives and seasonal documentation.",
-    "date": "June 2026"
+    "title": "Why Safeguard Rejects Bids (and How to Write Ones That Get Approved)",
+    "excerpt": "The most common reasons Safeguard bids bounce back, and the scope writing habits that get them approved the first time.",
+    "file": "blog-safeguard-bid-rejections.html",
+    "date": "2026-09-02",
+    "category": "Portal and Process Guide"
   }
 ]
