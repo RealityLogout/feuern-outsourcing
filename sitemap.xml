@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://feuernoutsourcing.online/</loc>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://feuernoutsourcing.online/blog.html</loc>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://feuernoutsourcing.online/</loc><lastmod>2026-09-09</lastmod><priority>1.0</priority></url>
+  <url><loc>https://feuernoutsourcing.online/team.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://feuernoutsourcing.online/case-studies.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://feuernoutsourcing.online/pricing.html</loc><lastmod>2026-09-06</lastmod><priority>0.6</priority></url>
+  <url><loc>https://feuernoutsourcing.online/blog.html</loc><lastmod>2026-09-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://feuernoutsourcing.online/blog-safeguard-bid-rejections.html</loc><lastmod>2026-09-06</lastmod><priority>0.6</priority></url>
+  <url><loc>https://feuernoutsourcing.online/feuern_factsheet_public_web.html</loc><lastmod>2026-09-03</lastmod><priority>0.5</priority></url>
 </urlset>
