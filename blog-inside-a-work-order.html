@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="What we actually need from a client, what happens between receiving a completed work order and submitting it, and what causes the most delays, rejections, and chargebacks along the way." name="description"/>
+<meta content="Feuern Outsourcing" name="author"/>
+<title>Inside a Work Order: What Actually Happens Before It Gets Submitted | Feuern Outsourcing</title>
+<link href="https://feuernoutsourcing.online/blog-inside-a-work-order.html" rel="canonical"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="/favicon.ico" rel="icon"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+:root{
+--ink:#0e2a47;--ink-deep:#071a2c;--accent:#ff7a00;--accent-dark:#e06800;
+--paper:#f6f7fb;--slate:#4f5f70;--line:rgba(14,42,71,0.10);
+--font-body:'Inter',sans-serif;--font-display:'Archivo','Inter',sans-serif;
+}
+body{font-family:var(--font-body);background:#f7f9fc;color:#1a1a1a;line-height:1.7;}
+h1,h2,h3{font-family:var(--font-display);color:var(--ink);}
+.container{max-width:760px;margin:auto;padding:0 20px;}
+
+.site-menu{position:sticky;top:0;z-index:999;background:rgba(7,26,44,.97);backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.16);}
+.site-menu .inner{max-width:1150px;margin:auto;padding:11px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.menu-brand{color:white;font-family:var(--font-display);font-weight:700;font-size:15px;}
+.menu-links{display:flex;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;}
+.menu-links::-webkit-scrollbar{display:none;}
+.menu-links a{color:white;font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;}
+.menu-links a:hover{background:var(--accent);}
+
+.post-hero{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;padding:70px 0 50px;}
+.post-cat{color:var(--accent);font-size:13px;font-weight:600;}
+.post-hero h1{font-size:34px;line-height:1.2;margin-top:12px;letter-spacing:-0.4px;color:white;}
+.post-meta{margin-top:16px;color:rgba(255,255,255,.65);font-size:14px;}
+
+article{padding:60px 0 40px;}
+article h2{font-size:22px;margin:36px 0 14px;}
+article h3{font-size:18px;margin:26px 0 10px;}
+article p{margin-bottom:18px;font-size:16px;color:#2a3746;}
+article ul{margin:0 0 20px 22px;}
+article li{margin-bottom:10px;font-size:16px;color:#2a3746;}
+article strong{color:var(--ink);}
+
+.callout{
+background:white;border-left:3px solid var(--accent);border-radius:8px;
+padding:20px 24px;margin:28px 0;box-shadow:0 10px 26px rgba(14,42,71,0.06);
+}
+.callout p{margin:0;font-size:15px;color:var(--slate);}
+.callout p+p{margin-top:12px;}
+
+.stat-row{display:flex;gap:16px;margin:28px 0;flex-wrap:wrap;}
+.stat-box{
+flex:1;min-width:180px;background:white;border:1px solid var(--line);border-radius:10px;
+padding:20px;text-align:center;box-shadow:0 10px 26px rgba(14,42,71,0.06);
+}
+.stat-box .num{font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--accent);}
+.stat-box .lbl{font-size:13px;color:var(--slate);margin-top:6px;}
+
+.faq-item{margin-bottom:26px;}
+.faq-item h3{color:var(--ink);font-size:17px;margin-bottom:8px;}
+.faq-item p{color:#2a3746;}
+
+.cta-band{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;padding:56px 0;text-align:center;margin-top:20px;}
+.cta-band h3{color:white;font-size:22px;margin-bottom:10px;}
+.cta-band p{color:rgba(255,255,255,.78);margin-bottom:24px;}
+.btn{display:inline-block;padding:14px 30px;background:var(--accent);color:white;text-decoration:none;border-radius:6px;font-weight:600;}
+
+footer{background:linear-gradient(135deg,var(--ink-deep),var(--ink));color:white;text-align:center;padding:36px 20px;font-size:14px;}
+footer a{color:rgba(255,255,255,.7);}
+
+@media(max-width:700px){
+.post-hero h1{font-size:26px;}
+.stat-row{flex-direction:column;}
+}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What percentage of property preservation work orders have some kind of problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Around 10 percent of orders have issues serious enough that submitting without fixing them risks rejection or a backcharge. Separately, across the industry, national portals reopen, reject, or request corrections on roughly half of all submitted orders at some point, depending heavily on the portal, order type, and how closely the field crew followed instructions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How different are the requirements between Safeguard, MCS, Cyprexx, and Five Brothers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All national portals share a common basic process: property condition reporting, photos, bids for damage, documentation of completed work, and invoicing. But the systems differ significantly. Safeguard and Cyprexx are largely web based, MCS uses an app called Vendor360, and Five Brothers uses Zephyr for some workflows. Estimating systems differ too, Safeguard uses Bluebook and Cost Estimator, MCS uses RepairBase related tools, and Altisource uses Xactimate, so a processor needs portal specific experience, not just general property preservation knowledge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a processor do useful work without direct access to the portal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. From work order instructions, field notes, and photos alone, a processor can review property condition, prepare property condition report answers, identify missing documentation, organize photos, and draft bids. The final submission still needs portal access, but most of the actual review and preparation work can happen beforehand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if a processor misses something and an incorrect work order gets submitted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the severity. A small documentation gap usually just means the order gets reopened for correction, which delays payment. A pricing mistake can be more costly, if a bid is submitted too low and approved, the vendor may have to absorb the difference. Missing significant damage, like roof or water damage, can lead to a chargeback or force the vendor to complete the work at their own cost if a later inspection finds it. Missing a submission deadline can also lead to reassignment."
+      }
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="site-menu">
+<div class="inner">
+<div class="menu-brand">Feuern Outsourcing</div>
+<div class="menu-links">
+<a href="index.html#home">Home</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="team.html">Team</a>
+<a href="blog.html">Insights</a>
+<a href="pricing.html">Pricing</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</div>
+</div>
+<div class="post-hero">
+<div class="container">
+<span class="post-cat">Behind the Scenes</span>
+<h1>Inside a Work Order: What Actually Happens Before It Gets Submitted</h1>
+<div class="post-meta">Feuern Outsourcing · Work Order Processing</div>
+</div>
+</div>
+<article>
+<div class="container">
+<p>A contractor recently asked us to walk through, in detail, what actually happens to a work order once it lands in our queue. Not the marketing version, the real one: what we need from a client, what we check, what takes the most time, and what happens when something gets missed. Here is the honest answer.</p>
+<h2>What we need to get started</h2>
+<p>The first thing we need is portal access, the vendor code, password, and which national platform the client uses, Safeguard, MCS, Five Brothers, Cyprexx, and so on. Once we are in, we can see the queue directly rather than relying on the client to describe every order.</p>
+<p>Beyond that, we usually just need to know which order was completed, the address, work order number, or even just the road name is often enough. Photos are frequently already uploaded to the portal by the field crew. If not, they arrive by Dropbox, WhatsApp, Telegram, PPW, or Pruvan along with the property details.</p>
+<p>We read the work order instructions directly from the portal, so those rarely need to be repeated. What genuinely helps is a field note when something did not go according to plan, for example, the crew could not gain interior access because the property was occupied or there was no key or code available.</p>
+<h2>From photos to a submission ready order</h2>
+<p>Once we have what we need, the process generally runs in this order:</p>
+<ul>
+<li><strong>Organize and upload photos.</strong> Field crews often send a batch of unsorted photos covering several different tasks. We sort them by what they support, completed work, bids, or both, and check whether what was requested (winterization photos, for example) actually arrived.</li>
+<li><strong>Fill gaps where possible.</strong> If a required documentation photo like the address or street sign is missing, we check previous orders for the same property before asking the crew to go back out. In some cases a formatted map image can stand in when the portal allows it.</li>
+<li><strong>Complete the Property Condition Report.</strong> Most portals require detailed condition reporting, home type, garage, windows, boarding, AC equipment, trees touching the structure, interior systems, and more, each answer backed by the matching photo.</li>
+<li><strong>Prepare the bids.</strong> Every bid needs the correct line item in that portal's estimating system, whether that is Bluebook, RepairBase, Xactimate, or Integrated Cost Estimator, plus a description detailed enough to justify the price. See the example below.</li>
+<li><strong>Document completed work and invoice.</strong> Before, during, and after photos get matched to the right line items, and the invoice reflects what was actually completed against that portal's allowables.</li>
+<li><strong>Notes and optional review.</strong> Anything that needs explaining goes into a note to the national or client. If the client wants to review before submission, we send a work order and invoice summary first, otherwise we submit directly.</li>
+</ul>
+<div class="callout">
+<p><strong>What a real bid description looks like:</strong></p>
+<p>"Trim (2) large trees, each approximately 38 inches in trunk diameter. One tree is approximately 35 feet tall, the other approximately 25 feet tall. Both are touching the roof and structure, one at the front of the home, one over the covered back patio, causing damage. Both will be trimmed back to provide a minimum clearance of 12 inches from the roof and exterior walls. Scope includes complete cleanup, haul away, and disposal of all debris. Requires chainsaw use, ladder or stair access, and a crew of two workers for approximately six hours."</p>
+</div>
+<h2>What actually takes the most time</h2>
+<p>It depends heavily on the portal. Safeguard lock, winterization, and initial orders often carry large property condition reports with many questions to answer against the photos. Bids take roughly five minutes each once you count line item selection, description writing, pricing, and photo attachment, and that adds up fast on an order with several bids.</p>
+<p>The single biggest time cost, more than any portal's complexity, is unorganized photos. When a crew completes several tasks and sends one unsorted batch, someone has to identify every photo and match it to the right task before any real processing can start. MCS adds its own friction here since Vendor360 is app based rather than browser based, which slows down photo handling and often means preparing bids outside the portal first.</p>
+<h2>What gets checked on almost every order</h2>
+<p>We start by verifying the property itself, checking the address against Zillow or similar listings to confirm the home type, garage configuration, and general layout, so we know the photos we received actually match the property. From there we review the condition photos against the portal's questions, and compare everything against what was reported on previous orders for the same address.</p>
+<p>That history matters more than it might seem. If a prior order documented a hot water heater in the utility room but the current photos do not include that room, we do not assume it is gone, that would be reporting something we cannot actually see. But if the utility room is shown and the heater is missing, that gets reported. The same logic applies to avoiding duplicate bids, if a satellite dish removal was already bid on a previous order, we do not rebid it unless specifically asked to.</p>
+<h2>What most often blocks an order from closing immediately</h2>
+<p>The most common issue is simply that the field crew's work does not fully match the instructions. After that, it is missing documentation, most often:</p>
+<ul>
+<li>Address or street sign photos</li>
+<li>Front, rear, and side exterior photos</li>
+<li>Roof photos</li>
+<li>Full interior condition photos per room</li>
+<li>Before, during, and after photos for completed work</li>
+<li>Correct supporting photos matched to each bid</li>
+</ul>
+<h2>Frequently asked questions</h2>
+<div class="faq-item">
+<h3>What percentage of orders have some kind of problem?</h3>
+<p>Around 10 percent have issues serious enough that submitting without addressing them risks rejection or a backcharge. Looking at the wider picture, national portals reopen or request corrections on roughly half of all orders industry wide at some point, depending on the portal, order type, and how closely instructions were followed.</p>
+</div>
+<div class="stat-row">
+<div class="stat-box"><div class="num">~10%</div><div class="lbl">Orders with a real risk of rejection if submitted as is</div></div>
+<div class="stat-box"><div class="num">~50%</div><div class="lbl">Orders that get reopened or corrected somewhere industry wide</div></div>
+</div>
+<div class="faq-item">
+<h3>How different are Safeguard, MCS, Cyprexx, and Five Brothers, really?</h3>
+<p>The basic concept is the same everywhere, condition reporting, photos, bids, completed work documentation, and invoicing. The execution is not. Safeguard and Cyprexx run mostly through the browser, MCS runs through an app called Vendor360, and Five Brothers uses Zephyr for parts of its workflow. Estimating tools differ too, Bluebook and Cost Estimator on Safeguard, RepairBase related tools on MCS, Xactimate on Altisource. Knowing property preservation in general is not the same as knowing a specific portal's quirks.</p>
+</div>
+<div class="faq-item">
+<h3>Can processing happen without direct access to the portal?</h3>
+<p>Yes, a meaningful amount of it. Given the work order instructions, field notes, and photos, we can review condition, prepare property condition report answers, flag missing documentation, organize photos, and draft bids ready to enter. Only the final submission strictly requires portal access.</p>
+</div>
+<div class="faq-item">
+<h3>What actually happens if a mistake gets submitted?</h3>
+<p>It scales with the mistake. A small documentation gap usually just means a reopened order and a delayed payment. An underpriced bid that gets approved can mean the vendor absorbs the difference themselves, with no guarantee a dispute will change that. Missing real damage, like roof or water damage, can surface later during a national inspection and turn into a chargeback or unpaid corrective work. Missing a deadline can trigger reassignment. The common thread is that careful documentation up front is far cheaper than a correction after the fact.</p>
+</div>
+</div>
+</article>
+<div class="cta-band">
+<div class="container">
+<h3>Want This Level of Detail Applied to Your Orders?</h3>
+<p>Send one work order and see how it gets handled from intake to submission.</p>
+<a class="btn" href="index.html#contact">Start With One Trial Order</a>
+</div>
+</div>
+<footer>
+© 2026 Feuern Outsourcing · <a href="blog.html">More Insights</a> · <a href="index.html">Home</a>
+</footer>
+</body>
+</html>
