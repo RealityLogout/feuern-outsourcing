@@ -7,6 +7,7 @@
 <meta content="Simple, transparent per order pricing for property preservation work order processing, bid writing, and portal updates. No monthly fees, no long term contracts." name="description"/>
 <meta content="Feuern Outsourcing" name="author"/>
 <title>Pricing | Feuern Outsourcing</title>
+<link rel="canonical" href="https://feuernoutsourcing.online/pricing.html"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="/favicon.ico" rel="icon"/>
 <style>
@@ -99,6 +100,63 @@ font-weight:700;font-family:var(--font-display);
 
 @media(max-width:700px){.assurance-grid{grid-template-columns:1fr;}}
 
+/* VIDEO EXPLAINER */
+.video-section{margin-top:60px;}
+.explainer-wrap{
+background:linear-gradient(135deg,var(--ink),var(--ink-deep));
+border-radius:14px;
+padding:30px;
+display:grid;
+grid-template-columns:1fr 340px;
+gap:30px;
+align-items:center;
+box-shadow:0 18px 46px rgba(14,42,71,.18);
+}
+.explainer-copy h3{color:white;font-size:22px;margin-bottom:10px;}
+.explainer-copy p{color:rgba(255,255,255,.78);font-size:15px;line-height:1.7;}
+.video-preview{
+position:relative;
+border:none;
+width:100%;
+aspect-ratio:16/10;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+background:linear-gradient(135deg,#eef2f7,#ffffff);
+box-shadow:0 16px 38px rgba(0,0,0,.28);
+}
+.video-preview span{
+position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:64px;height:64px;border-radius:50%;
+background:var(--accent);color:white;
+display:flex;align-items:center;justify-content:center;
+font-size:28px;box-shadow:0 12px 30px rgba(255,122,0,.35);
+padding-left:4px;
+}
+.video-preview small{
+position:absolute;left:14px;right:14px;bottom:12px;
+color:white;font-weight:700;font-size:12px;text-align:center;
+}
+.video-modal{
+display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);
+z-index:3000;align-items:center;justify-content:center;padding:20px;
+backdrop-filter:blur(5px);
+}
+.video-modal.active{display:flex;}
+.video-box{
+width:min(720px,96vw);background:var(--ink-deep);border-radius:14px;
+padding:14px;position:relative;box-shadow:0 30px 90px rgba(0,0,0,.45);
+}
+.video-box video{width:100%;max-height:78vh;border-radius:10px;display:block;background:#000;}
+.video-close{
+position:absolute;right:8px;top:-44px;background:var(--accent);color:white;
+border:none;border-radius:50%;width:34px;height:34px;font-size:22px;
+line-height:34px;cursor:pointer;
+}
+@media(max-width:800px){
+.explainer-wrap{grid-template-columns:1fr;}
+}
+
 .final-cta{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;text-align:center;padding:70px 0;}
 .final-cta h2{color:white;margin-bottom:12px;}
 .final-cta p{color:rgba(255,255,255,.78);max-width:480px;margin:0 auto 28px;}
@@ -154,7 +212,7 @@ footer a{color:rgba(255,255,255,.7);}
 <div class="pricing-row">
 <span class="pricing-type">Occupied / Vacant Property</span>
 <span class="pricing-base">$2.00</span>
-<span class="pricing-extra"> </span>
+<span class="pricing-extra"></span>
 </div>
 <div class="pricing-row">
 <span class="pricing-type">REO / Reopens / Disputes / Note Only</span>
@@ -182,6 +240,20 @@ First work completion or first bid request is included in the base charge. A bid
 <p>Additional bids or tasks are a flat +$1.00, no surprise line items.</p>
 </div>
 </div>
+
+<div class="video-section">
+<div class="explainer-wrap">
+<div class="explainer-copy">
+<h3>See How We Work</h3>
+<p>A quick look at how Feuern Outsourcing handles work order processing, from field photos to a submitted bid.</p>
+</div>
+<button class="video-preview" onclick="openVideo()" aria-label="Open overview video">
+<span>▶</span>
+<small>Click to watch</small>
+</button>
+</div>
+</div>
+
 </div>
 </section>
 <div class="final-cta">
@@ -194,5 +266,37 @@ First work completion or first bid request is included in the base charge. A bid
 <footer>
 © 2026 Feuern Outsourcing · <a href="index.html">Home</a>
 </footer>
+
+<div id="videoModal" class="video-modal" onclick="closeVideoFromBackdrop(event)">
+<div class="video-box">
+<button class="video-close" onclick="closeVideo()" aria-label="Close video">&times;</button>
+<video id="overviewVideo" controls preload="metadata">
+<source src="feuern-overview.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<script>
+function openVideo(){
+document.getElementById('videoModal').classList.add('active');
+}
+function closeVideo(){
+const modal = document.getElementById('videoModal');
+const video = document.getElementById('overviewVideo');
+modal.classList.remove('active');
+video.pause();
+}
+function closeVideoFromBackdrop(event){
+if(event.target.id === 'videoModal'){
+closeVideo();
+}
+}
+document.addEventListener('keydown', function(event){
+if(event.key === 'Escape'){
+closeVideo();
+}
+});
+</script>
+
 </body>
 </html>
