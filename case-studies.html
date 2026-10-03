@@ -7,6 +7,7 @@
 <meta content="A real client engagement: how Feuern Outsourcing scaled property preservation back office support from a solo operator to a multi crew field operation, photo review, bid drafting, portal updates and QC." name="description"/>
 <meta content="Feuern Outsourcing" name="author"/>
 <title>Case Study: Scaling a Field Operation's Back Office | Feuern Outsourcing</title>
+<link href="https://feuernoutsourcing.online/case-studies.html" rel="canonical"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -148,9 +149,11 @@ width:100%;
 height:170px;
 object-fit:cover;
 display:block;
+cursor:pointer;
+transition:transform .35s ease;
 }
+.icon-card .photo:hover{transform:scale(1.03);}
 .icon-card .body{padding:20px 24px;}
-.icon-card .dot{display:none;}
 .icon-card h3{font-size:16px;color:var(--ink);margin-bottom:8px;}
 .icon-card p{font-size:14px;color:var(--slate);line-height:1.6;}
 
@@ -220,7 +223,10 @@ width:100%;
 height:150px;
 object-fit:cover;
 display:block;
+cursor:pointer;
+transition:transform .35s ease;
 }
+.strip-item img:hover{transform:scale(1.03);}
 .strip-item span{
 display:block;
 padding:12px 14px;
@@ -342,6 +348,27 @@ display:flex;align-items:center;justify-content:center;
 color:rgba(255,255,255,.5);
 }
 
+/* REAL COORDINATION EXAMPLE */
+.real-coord{
+margin-top:40px;
+}
+.real-coord img{
+width:100%;
+max-width:560px;
+border-radius:14px;
+box-shadow:0 20px 50px rgba(14,42,71,0.16);
+display:block;
+cursor:pointer;
+transition:transform .35s ease;
+}
+.real-coord img:hover{transform:scale(1.01);}
+.real-coord .cap{
+margin-top:14px;
+font-size:13px;
+color:var(--slate);
+max-width:560px;
+}
+
 @media(max-width:900px){
 .chat-mock-wrap{grid-template-columns:1fr;}
 .chat-phone{max-width:100%;}
@@ -411,6 +438,47 @@ text-align:center;
 padding:40px 20px;
 }
 footer a{color:rgba(255,255,255,.7);}
+
+/* SCROLL REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(26px);
+transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+.reveal-group .reveal:nth-child(1){transition-delay:0s;}
+.reveal-group .reveal:nth-child(2){transition-delay:.08s;}
+.reveal-group .reveal:nth-child(3){transition-delay:.16s;}
+.reveal-group .reveal:nth-child(4){transition-delay:.24s;}
+@media(prefers-reduced-motion:reduce){
+.reveal{opacity:1;transform:none;transition:none;}
+}
+
+/* LIGHTBOX */
+.lightbox{
+display:none;
+position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;
+background:rgba(5,14,26,0.92);
+justify-content:center;align-items:center;
+backdrop-filter:blur(6px);
+opacity:0;
+transition:opacity .25s ease;
+}
+.lightbox.active{display:flex;opacity:1;}
+.lightbox img{
+max-width:90%;max-height:85%;border-radius:10px;
+box-shadow:0 30px 90px rgba(0,0,0,0.55);
+transform:scale(.92);
+transition:transform .3s cubic-bezier(.2,.9,.3,1.2);
+}
+.lightbox.active img{transform:scale(1);}
+.lightbox-close{
+position:fixed;top:24px;right:28px;width:44px;height:44px;border-radius:50%;
+background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:white;
+font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+transition:.2s ease;z-index:1001;
+}
+.lightbox-close:hover{background:var(--accent);border-color:var(--accent);transform:rotate(90deg);}
 </style>
 </head>
 <body>
@@ -419,7 +487,7 @@ footer a{color:rgba(255,255,255,.7);}
 <div class="menu-brand">Feuern Outsourcing</div>
 <div class="menu-links">
 <a href="index.html#home">Home</a>
-<a href="index.html#workflow">Workflow</a>
+<a href="index.html#services">Services</a>
 <a href="case-studies.html">Case Studies</a>
 <a href="team.html">Team</a>
 <a href="pricing.html">Pricing</a>
@@ -450,30 +518,30 @@ footer a{color:rgba(255,255,255,.7);}
 <div class="container">
 <h2>Turning Scattered Field Evidence Into a Usable Record</h2>
 <p class="lede">Each image is reviewed for the visible condition, location context, measurement evidence, and follow up needed for the bid or completion package.</p>
-<div class="icon-grid">
-<div class="icon-card">
-<img alt="Heavily soiled refrigerator interior documented for cleaning bid" class="photo" src="img/cs-fridge.jpg"/>
+<div class="icon-grid reveal-group">
+<div class="icon-card reveal">
+<img alt="Heavily soiled refrigerator interior documented for cleaning bid" class="photo" onclick="openLightbox(this.src)" src="img/cs-fridge.jpg"/>
 <div class="body">
 <h3>Appliance Condition</h3>
 <p>Documented heavy soil and interior condition against portal requirements.</p>
 </div>
 </div>
-<div class="icon-card">
-<img alt="Damaged outlet cover plate documented for electrical safety bid" class="photo" src="img/cs-outlet.jpg"/>
+<div class="icon-card reveal">
+<img alt="Damaged outlet cover plate documented for electrical safety bid" class="photo" onclick="openLightbox(this.src)" src="img/cs-outlet.jpg"/>
 <div class="body">
 <h3>Electrical Detail</h3>
 <p>Captured missing or damaged outlet cover detail with safety context.</p>
 </div>
 </div>
-<div class="icon-card">
-<img alt="Interior wall damage measured with tape measure for repair bid" class="photo" src="img/cs-wall-patch.jpg"/>
+<div class="icon-card reveal">
+<img alt="Interior wall damage measured with tape measure for repair bid" class="photo" onclick="openLightbox(this.src)" src="img/cs-wall-patch.jpg"/>
 <div class="body">
 <h3>Surface Damage</h3>
 <p>Used measurement evidence to describe wall repair scope accurately.</p>
 </div>
 </div>
-<div class="icon-card">
-<img alt="Exterior foundation vent opening measured for repair bid" class="photo" src="img/cs-foundation-vent.jpg"/>
+<div class="icon-card reveal">
+<img alt="Exterior foundation vent opening measured for repair bid" class="photo" onclick="openLightbox(this.src)" src="img/cs-foundation-vent.jpg"/>
 <div class="body">
 <h3>Exterior Opening</h3>
 <p>Recorded opening, debris, and approximate dimensions for the bid.</p>
@@ -489,7 +557,7 @@ Real field photos shown, no addresses, order numbers, portal screens, client nam
 <section style="background:white;">
 <div class="container">
 <h2>From Photos to Clear Bid Scope</h2>
-<p class="lede">The four line items in a typical case study slide make it look small, it isn't. Orders like this routinely carry ten, fifteen, or more line items, each needing its own measurement, photo justification, and cost breakdown. Below is a wider real sample. Addresses, order numbers, and internal estimator IDs are removed.</p>
+<p class="lede">The four line items in a typical case study slide make it look small, it is not. Orders like this routinely carry ten, fifteen, or more line items, each needing its own measurement, photo justification, and cost breakdown. Below is a wider real sample. Addresses, order numbers, and internal estimator IDs are removed.</p>
 <div class="ledger">
 <div class="ledger-row head">
 <span>Task</span>
@@ -498,7 +566,7 @@ Real field photos shown, no addresses, order numbers, portal screens, client nam
 </div>
 <div class="ledger-row">
 <span class="ledger-task">Drywall &amp; Ceiling Repair</span>
-<span class="ledger-desc">Repair damaged interior drywall across multiple areas; seal and caulk affected joints to prevent further moisture intrusion.</span>
+<span class="ledger-desc">Repair damaged interior drywall across multiple areas, seal and caulk affected joints to prevent further moisture intrusion.</span>
 <span class="ledger-amt">$823.96</span>
 </div>
 <div class="ledger-row">
@@ -518,7 +586,7 @@ Real field photos shown, no addresses, order numbers, portal screens, client nam
 </div>
 <div class="ledger-row">
 <span class="ledger-task">Tile Replacement</span>
-<span class="ledger-desc">Remove and replace broken kitchen floor tiles creating a trip hazard; haul away debris.</span>
+<span class="ledger-desc">Remove and replace broken kitchen floor tiles creating a trip hazard, haul away debris.</span>
 <span class="ledger-amt">$240.64</span>
 </div>
 <div class="ledger-row">
@@ -557,13 +625,13 @@ Ten line items, one order, real bid amounts, from a $40 address posting to a $1,
 <div class="container">
 <h2>More From the Field</h2>
 <p class="lede">A few more examples of what comes in on a given order, storm damage, structural cracks, pest entry points, and general wear. Every one gets measured, photographed, and matched to a bid line before it goes into the portal.</p>
-<div class="strip-grid">
-<div class="strip-item"><img alt="Exterior stucco crack measured for structural repair bid" src="img/cs-stucco-crack.jpg"/><span>Structural crack, measured</span></div>
-<div class="strip-item"><img alt="Peeling exterior eave paint documented for repaint bid" src="img/cs-eave-paint.jpg"/><span>Exterior paint failure</span></div>
-<div class="strip-item"><img alt="Foundation stem wall spalling documented for repair bid" src="img/cs-foundation-spall.jpg"/><span>Foundation spalling</span></div>
-<div class="strip-item"><img alt="Overgrown yard with debris and structures documented for cleanup bid" src="img/cs-yard-debris.jpg"/><span>Yard debris &amp; overgrowth</span></div>
-<div class="strip-item"><img alt="Loose interior wiring documented for electrical safety bid" src="img/cs-loose-wire.jpg"/><span>Loose interior wiring</span></div>
-<div class="strip-item"><img alt="Storm debris near mailbox documented for debris removal bid" src="img/cs-mailbox-debris.jpg"/><span>Storm debris removal</span></div>
+<div class="strip-grid reveal-group">
+<div class="strip-item reveal"><img alt="Exterior stucco crack measured for structural repair bid" onclick="openLightbox(this.src)" src="img/cs-stucco-crack.jpg"/><span>Structural crack, measured</span></div>
+<div class="strip-item reveal"><img alt="Peeling exterior eave paint documented for repaint bid" onclick="openLightbox(this.src)" src="img/cs-eave-paint.jpg"/><span>Exterior paint failure</span></div>
+<div class="strip-item reveal"><img alt="Foundation stem wall spalling documented for repair bid" onclick="openLightbox(this.src)" src="img/cs-foundation-spall.jpg"/><span>Foundation spalling</span></div>
+<div class="strip-item reveal"><img alt="Overgrown yard with debris and structures documented for cleanup bid" onclick="openLightbox(this.src)" src="img/cs-yard-debris.jpg"/><span>Yard debris &amp; overgrowth</span></div>
+<div class="strip-item reveal"><img alt="Loose interior wiring documented for electrical safety bid" onclick="openLightbox(this.src)" src="img/cs-loose-wire.jpg"/><span>Loose interior wiring</span></div>
+<div class="strip-item reveal"><img alt="Storm debris near mailbox documented for debris removal bid" onclick="openLightbox(this.src)" src="img/cs-mailbox-debris.jpg"/><span>Storm debris removal</span></div>
 </div>
 </div>
 </section>
@@ -611,6 +679,10 @@ Ten line items, one order, real bid amounts, from a $40 address posting to a $1,
 </div>
 </div>
 </div>
+<div class="real-coord">
+<img alt="Real coordination thread showing client instructions and field updates" onclick="openLightbox(this.src)" src="img/svc-coordination.png"/>
+<p class="cap">A real coordination thread from an active engagement, lightly cropped. This is the day to day channel between the field crew, the client, and the processing team.</p>
+</div>
 </div>
 </section>
 <!-- GROW -->
@@ -653,7 +725,42 @@ Ten line items, one order, real bid amounts, from a $40 address posting to a $1,
 </div>
 </div>
 <footer>
-© 2026 Feuern Outsourcing | <a href="index.html">Back to Home</a>
+© 2026 Feuern Outsourcing · <a href="index.html">Back to Home</a>
 </footer>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<button aria-label="Close" class="lightbox-close" onclick="closeLightbox();event.stopPropagation();">×</button>
+<img id="lightbox-img" onclick="event.stopPropagation();">
+</img></div>
+<script>
+function openLightbox(src){
+document.getElementById('lightbox').classList.add('active');
+document.getElementById('lightbox-img').src=src;
+document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+document.getElementById('lightbox').classList.remove('active');
+document.body.style.overflow='';
+}
+document.addEventListener('keydown', function(event){
+if(event.key === 'Escape'){closeLightbox();}
+});
+
+(function(){
+var revealEls = document.querySelectorAll('.reveal');
+if(!('IntersectionObserver' in window)){
+revealEls.forEach(function(el){el.classList.add('in-view');});
+return;
+}
+var observer = new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add('in-view');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(function(el){observer.observe(el);});
+})();
+</script>
 </body>
 </html>
