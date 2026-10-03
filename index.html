@@ -80,6 +80,35 @@ align-items:center;
 width:120px;
 margin-bottom:25px;
 opacity:0.95;
+animation:logoFloat 5s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+0%,100%{transform:translateY(0) rotate(0deg);filter:drop-shadow(0 6px 16px rgba(255,122,0,0.15));}
+50%{transform:translateY(-6px) rotate(-2deg);filter:drop-shadow(0 14px 26px rgba(255,122,0,0.30));}
+}
+
+/* SCROLL REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(26px);
+transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.in-view{
+opacity:1;
+transform:translateY(0);
+}
+.reveal-group .reveal:nth-child(1){transition-delay:0s;}
+.reveal-group .reveal:nth-child(2){transition-delay:.08s;}
+.reveal-group .reveal:nth-child(3){transition-delay:.16s;}
+.reveal-group .reveal:nth-child(4){transition-delay:.24s;}
+.reveal-group .reveal:nth-child(5){transition-delay:.32s;}
+.reveal-group .reveal:nth-child(6){transition-delay:.4s;}
+.reveal-group .reveal:nth-child(7){transition-delay:.48s;}
+.reveal-group .reveal:nth-child(8){transition-delay:.56s;}
+@media(prefers-reduced-motion:reduce){
+.reveal{opacity:1;transform:none;transition:none;}
+.hero img{animation:none;}
 }
 
 .hero h1{
@@ -504,6 +533,18 @@ background:white;
 
 .contact-form-card textarea{height:110px;resize:vertical;}
 
+.input-icon-wrap{position:relative;}
+.input-icon-wrap svg{
+position:absolute;
+left:14px;
+top:19px;
+color:#aab4c2;
+pointer-events:none;
+transition:color .2s ease;
+}
+.input-icon-wrap input{padding-left:40px;}
+.input-icon-wrap:focus-within svg{color:var(--accent);}
+
 .contact-submit{
 width:100%;
 background:var(--accent);
@@ -541,15 +582,56 @@ left:0;
 top:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.85);
+background:rgba(5,14,26,0.92);
 justify-content:center;
 align-items:center;
+backdrop-filter:blur(6px);
+opacity:0;
+transition:opacity .25s ease;
+}
+
+.lightbox.active{
+display:flex;
+opacity:1;
 }
 
 .lightbox img{
-max-width:95%;
-max-height:90%;
-border-radius:8px;
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+box-shadow:0 30px 90px rgba(0,0,0,0.55);
+transform:scale(.92);
+transition:transform .3s cubic-bezier(.2,.9,.3,1.2);
+}
+
+.lightbox.active img{
+transform:scale(1);
+}
+
+.lightbox-close{
+position:fixed;
+top:24px;
+right:28px;
+width:44px;
+height:44px;
+border-radius:50%;
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.25);
+color:white;
+font-size:24px;
+line-height:1;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:.2s ease;
+z-index:1001;
+}
+
+.lightbox-close:hover{
+background:var(--accent);
+border-color:var(--accent);
+transform:rotate(90deg);
 }
 
 @media(max-width:900px){
@@ -1592,15 +1674,15 @@ We manage the entire back office workflow inside the portal so you can focus on 
 <h2 style="text-align:center;">How Our Processing Workflow Works</h2>
 <p class="portal-note" style="text-align:center;opacity:1;color:var(--slate);">From intake to a recorded submission, eight steps, every time.</p>
 <img alt="Feuern Outsourcing work order workflow: receive and confirm, preflight review, organize evidence, process and prepare, update portal, QC review, client review, submit and record" class="workflow-visual" src="img/workflow-infographic.png"/>
-<div class="workflow-textgrid">
-<div class="wf-item"><div class="n">01</div><h4>Receive &amp; Confirm</h4><p>Receive the order and confirm the correct property or work order.</p></div>
-<div class="wf-item"><div class="n">02</div><h4>Preflight Review</h4><p>Check instructions, photos, notes and required evidence before processing.</p></div>
-<div class="wf-item"><div class="n">03</div><h4>Organize Evidence</h4><p>Sort photos and documents by order, task, bid and portal section.</p></div>
-<div class="wf-item"><div class="n">04</div><h4>Process &amp; Prepare</h4><p>Complete PCRs, prepare scopes, select line items and match evidence.</p></div>
-<div class="wf-item"><div class="n">05</div><h4>Update Portal</h4><p>Enter photos, bids, notes, completed work and invoice information.</p></div>
-<div class="wf-item"><div class="n">06</div><h4>QC Review</h4><p>Check requirements, task placement, photos, bids, invoices and deadlines.</p></div>
-<div class="wf-item"><div class="n">07</div><h4>Client Review</h4><p>Send a summary for approval when the client requests a review.</p></div>
-<div class="wf-item"><div class="n">08</div><h4>Submit &amp; Record</h4><p>Submit when authorized and record the order for follow up.</p></div>
+<div class="workflow-textgrid reveal-group">
+<div class="wf-item reveal"><div class="n">01</div><h4>Receive &amp; Confirm</h4><p>Receive the order and confirm the correct property or work order.</p></div>
+<div class="wf-item reveal"><div class="n">02</div><h4>Preflight Review</h4><p>Check instructions, photos, notes and required evidence before processing.</p></div>
+<div class="wf-item reveal"><div class="n">03</div><h4>Organize Evidence</h4><p>Sort photos and documents by order, task, bid and portal section.</p></div>
+<div class="wf-item reveal"><div class="n">04</div><h4>Process &amp; Prepare</h4><p>Complete PCRs, prepare scopes, select line items and match evidence.</p></div>
+<div class="wf-item reveal"><div class="n">05</div><h4>Update Portal</h4><p>Enter photos, bids, notes, completed work and invoice information.</p></div>
+<div class="wf-item reveal"><div class="n">06</div><h4>QC Review</h4><p>Check requirements, task placement, photos, bids, invoices and deadlines.</p></div>
+<div class="wf-item reveal"><div class="n">07</div><h4>Client Review</h4><p>Send a summary for approval when the client requests a review.</p></div>
+<div class="wf-item reveal"><div class="n">08</div><h4>Submit &amp; Record</h4><p>Submit when authorized and record the order for follow up.</p></div>
 </div>
 </div>
 </section>
@@ -1609,58 +1691,58 @@ We manage the entire back office workflow inside the portal so you can focus on 
 <div class="container">
 <h2>Services</h2>
 <p class="portal-note" style="opacity:1;color:var(--slate);">What actually happens inside your portal, handled end to end.</p>
-<div class="svc-grid">
-<div class="svc-card">
-<img alt="Safeguard SafeView and portal bid entry screens showing work order processing" class="thumb" src="img/svc-work-order-processing.png"/>
+<div class="svc-grid reveal-group">
+<div class="svc-card reveal">
+<img alt="Safeguard SafeView and portal bid entry screens showing work order processing" class="thumb" onclick="openLightbox(this.src)" src="img/svc-work-order-processing.png"/>
 <div class="svc-body">
 <h3>Work Order Processing</h3>
 <p>End to end handling inside the portal, from order assignment through photo upload, bids, completed work entries, and final submission.</p>
 </div>
 </div>
-<div class="svc-card">
-<img alt="Bid documents and property photos being reviewed against work order requirements" class="thumb" src="img/svc-photo-document-review.png"/>
+<div class="svc-card reveal">
+<img alt="Bid documents and property photos being reviewed against work order requirements" class="thumb" onclick="openLightbox(this.src)" src="img/svc-photo-document-review.png"/>
 <div class="svc-body">
 <h3>Photo &amp; Document Review</h3>
 <p>Every photo and document checked against the work order instructions before anything is submitted, so nothing gets missed.</p>
 </div>
 </div>
-<div class="svc-card">
-<img alt="Property Condition Report screen with detailed condition questions and supporting photos" class="thumb" src="img/svc-pcr.png"/>
+<div class="svc-card reveal">
+<img alt="Property Condition Report screen with detailed condition questions and supporting photos" class="thumb" onclick="openLightbox(this.src)" src="img/svc-pcr.png"/>
 <div class="svc-body">
 <h3>Property Condition Reports</h3>
 <p>Detailed condition reporting completed section by section, home type, systems, damage, and more, each answer matched to the supporting photo.</p>
 </div>
 </div>
-<div class="svc-card">
-<img alt="Bid entry form showing task name, description, measurements, and bid amount" class="thumb" src="img/svc-bid-scope-writing.png"/>
+<div class="svc-card reveal">
+<img alt="Bid entry form showing task name, description, measurements, and bid amount" class="thumb" onclick="openLightbox(this.src)" src="img/svc-bid-scope-writing.png"/>
 <div class="svc-body">
 <h3>Bid &amp; Scope Writing</h3>
 <p>Approval ready bids with the correct line item, accurate measurements, and a description detailed enough to justify the price on the first submission.</p>
 </div>
 </div>
-<div class="svc-card">
-<img alt="Field photos marked up and labeled against a portal reference media viewer" class="thumb" src="img/svc-photo-markup.png"/>
+<div class="svc-card reveal">
+<img alt="Field photos marked up and labeled against a portal reference media viewer" class="thumb" onclick="openLightbox(this.src)" src="img/svc-photo-markup.png"/>
 <div class="svc-body">
 <h3>Photo Markup &amp; Scope Reference</h3>
 <p>Field photos marked up and labeled so the scope of damage is clear at a glance, matched against portal reference libraries for consistent, defensible bids.</p>
 </div>
 </div>
-<div class="svc-card">
-<img alt="Team messages coordinating client instructions and field updates" class="thumb" src="img/svc-coordination.png"/>
+<div class="svc-card reveal">
+<img alt="Team messages coordinating client instructions and field updates" class="thumb" onclick="openLightbox(this.src)" src="img/svc-coordination.png"/>
 <div class="svc-body">
 <h3>Field Team &amp; Client Coordination</h3>
 <p>Direct, responsive communication with your crew and your office, so instructions, updates, and missing requirements never sit unanswered.</p>
 </div>
 </div>
-<div class="svc-card">
-<img alt="Third party inspection letterhead documents and a processing checklist" class="thumb" src="img/svc-letterhead-checklist.png"/>
+<div class="svc-card reveal">
+<img alt="Third party inspection letterhead documents and a processing checklist" class="thumb" onclick="openLightbox(this.src)" src="img/svc-letterhead-checklist.png"/>
 <div class="svc-body">
 <h3>Letterhead, Checklists &amp; Third Party Bid Packages</h3>
 <p>Structured checklists, dumpsite receipts, and third party inspection packages assembled with the scope, evidence, and documentation a portal expects.</p>
 </div>
 </div>
-<div class="svc-card">
-<img alt="Logos of Safeguard, MCS, Five Brothers, Cyprexx, Altisource, and PPW" class="thumb" src="img/svc-portals-2x.png"/>
+<div class="svc-card reveal">
+<img alt="Logos of Safeguard, MCS, Five Brothers, Cyprexx, Altisource, and PPW" class="thumb" onclick="openLightbox(this.src)" src="img/svc-portals-2x.png"/>
 <div class="svc-body">
 <h3>Portals We Work In</h3>
 <p>Direct, hands on experience across Safeguard, MCS Vendor360, Five Brothers, Cyprexx, Altisource, PPW, and more.</p>
@@ -1675,8 +1757,8 @@ We manage the entire back office workflow inside the portal so you can focus on 
 <p>
 Below are selected bid examples from actual property preservation work order processing scopes.
 </p>
-<div class="bid-grid">
-<div class="bid-card">
+<div class="bid-grid reveal-group">
+<div class="bid-card reveal">
 <div class="bid-media">
 <img alt="Fire burned tree damage" onclick="openLightbox(this.src)" src="bid-fire-trees-1.jpg"/>
 <img alt="Fallen yard tree debris" onclick="openLightbox(this.src)" src="bid-fire-trees-2.jpg"/>
@@ -1691,7 +1773,7 @@ Below are selected bid examples from actual property preservation work order pro
 Remove (10) dead and fire burned severe fire hazard large trees and lots of limbs or wooden tree pieces approx. 60 limbs that have fallen down and are in the way of accessing the property as they are dangerous and in the way of the driveway access to the property. There are also separate tree stumps that need to be grinded and removed. That will required stump grinder to rent with other landscaping tools like chainsaw, woodchipper, approximately 200 cyds of debris will be generated removing trees.
 </p>
 </div>
-<div class="bid-card">
+<div class="bid-card reveal">
 <div class="bid-media single">
 <img alt="Water damage measurement under sink" onclick="openLightbox(this.src)" src="bid-water-damage.jpg"/>
 </div>
@@ -1704,7 +1786,7 @@ Remove (10) dead and fire burned severe fire hazard large trees and lots of limb
 Apply a bleach and water mixture, then prime/seal with a stain blocker (Kilz type product), 2 coats, under the kitchen sink cabinet around 3x5 sqft. Area has water damage due to possible prior water seepage and requires treatment to help prevent mold regrowth. Includes spray and wipe down, along with gloves and surgical mask for safety protection.
 </p>
 </div>
-<div class="bid-card">
+<div class="bid-card reveal">
 <div class="bid-media single">
 <img alt="Damaged overhead garage door" onclick="openLightbox(this.src)" src="bid-garage-door.jpg"/>
 </div>
@@ -1717,7 +1799,7 @@ Apply a bleach and water mixture, then prime/seal with a stain blocker (Kilz typ
 Remove temporary boarding from a single car garage door custom size. Remove the existing damaged overhead garage door and replace it with a new custom overhead garage door with roller, spring and any necessary hardware. The existing door is broken beyond repair and has been temporarily boarded for security; the boarding must be removed prior to door removal.
 </p>
 </div>
-<div class="bid-card">
+<div class="bid-card reveal">
 <div class="bid-media single">
 <img alt="Above ground propane tank" onclick="openLightbox(this.src)" src="bid-propane-tank.jpg"/>
 </div>
@@ -1730,7 +1812,7 @@ Remove temporary boarding from a single car garage door custom size. Remove the 
 Remove (1) ABOVE GROUND PROPANE TANK &amp; DISPOSE, need to remove safely and dispose (1) 250 gallon propane tank located near fence line outside of the property, need to verify disconnection of it to prevent safety hazard, transport and dispose to damp properly, in order to prevent health hazard.
 </p>
 </div>
-<div class="bid-card">
+<div class="bid-card reveal">
 <div class="bid-media single">
 <img alt="Unsecured in ground pool condition" onclick="openLightbox(this.src)" src="bid-pool.jpg"/>
 </div>
@@ -1743,7 +1825,7 @@ Remove (1) ABOVE GROUND PROPANE TANK &amp; DISPOSE, need to remove safely and di
 Install a pool cover on an in ground swimming pool approximately 35 ft x 18 ft to secure the area and prevent a fall hazard. Installation will be completed after draining the pool and performing the initial shock and treatment.
 </p>
 </div>
-<div class="bid-card">
+<div class="bid-card reveal">
 <div class="bid-media four">
 <img alt="Detached outbuilding condition" onclick="openLightbox(this.src)" src="bid-outbuilding-1.jpg"/>
 <img alt="Coop structure damage" onclick="openLightbox(this.src)" src="bid-outbuilding-2.jpg"/>
@@ -1811,16 +1893,16 @@ No monthly fees. No long term contracts. You only pay for the orders we process,
 </div>
 <!-- End TrustBox widget -->
 </div>
-<div class="testimonial-grid">
-<div class="testimonial">
+<div class="testimonial-grid reveal-group">
+<div class="testimonial reveal">
 <p>"The bids are written the way the portals want them, my approval rate went up, and now they handle all my processing. Great company to work with. They have made my office work much lighter, always professional and timely."</p>
 <cite>Mary, Property Preservation Company Owner, verified on Trustpilot</cite>
 </div>
-<div class="testimonial">
+<div class="testimonial reveal">
 <p>"Very hard working, adequate timing of work completed, friendly, courteous, great communication."</p>
 <cite>Schilingno, Assistant Manager, Property Preservation, LLC, verified on Trustpilot</cite>
 </div>
-<div class="testimonial">
+<div class="testimonial reveal">
 <p>"I send photos straight from the property and they tell me exactly what's still needed before I leave. They've grown with me from day one."</p>
 <cite>Confidential U.S. Property Preservation Contractor</cite>
 </div>
@@ -1926,12 +2008,24 @@ WhatsApp Now
 <div class="form-sub">Tell us a bit about your workflow and we'll follow up shortly.</div>
 <form action="https://formsubmit.co/feuernoutsourcing@gmail.com" method="POST">
 <div class="field-row">
+<div class="input-icon-wrap">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
 <input name="Name" placeholder="Your Name" required="" type="text"/>
+</div>
+<div class="input-icon-wrap">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path></svg>
 <input name="Company" placeholder="Company Name" type="text"/>
 </div>
+</div>
 <div class="field-row">
+<div class="input-icon-wrap">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 9h18"></path></svg>
 <input name="Portal" placeholder="Portal Used (Safeguard, MCS, etc)" type="text"/>
+</div>
+<div class="input-icon-wrap">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M3 3v18h18"></path><path d="M7 15l4-6 4 3 5-8"></path></svg>
 <input name="Volume" placeholder="Orders Per Week" type="text"/>
+</div>
 </div>
 <textarea name="Message" placeholder="Tell us about your workflow"></textarea>
 <button class="contact-submit" type="submit">
@@ -1947,16 +2041,24 @@ Send Trial Request
 </footer>
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<img id="lightbox-img"/>
+<button aria-label="Close" class="lightbox-close" onclick="closeLightbox();event.stopPropagation();">×</button>
+<img id="lightbox-img" onclick="event.stopPropagation();"/>
 </div>
 <script>
 function openLightbox(src){
-document.getElementById('lightbox').style.display='flex';
+document.getElementById('lightbox').classList.add('active');
 document.getElementById('lightbox-img').src=src;
+document.body.style.overflow='hidden';
 }
 function closeLightbox(){
-document.getElementById('lightbox').style.display='none';
+document.getElementById('lightbox').classList.remove('active');
+document.body.style.overflow='';
 }
+document.addEventListener('keydown', function(event){
+if(event.key === 'Escape'){
+closeLightbox();
+}
+});
 </script>
 <a aria-label="Chat on WhatsApp" href="https://wa.me/8801410271226" style="
 position:fixed;
@@ -1981,5 +2083,23 @@ z-index:999;
 </video>
 </div>
 </div>
+<script>
+(function(){
+var revealEls = document.querySelectorAll('.reveal');
+if(!('IntersectionObserver' in window)){
+revealEls.forEach(function(el){el.classList.add('in-view');});
+return;
+}
+var observer = new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add('in-view');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(function(el){observer.observe(el);});
+})();
+</script>
 </body>
 </html>
