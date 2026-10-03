@@ -7,7 +7,7 @@
 <meta content="Simple, transparent per order pricing for property preservation work order processing, bid writing, and portal updates. No monthly fees, no long term contracts." name="description"/>
 <meta content="Feuern Outsourcing" name="author"/>
 <title>Pricing | Feuern Outsourcing</title>
-<link rel="canonical" href="https://feuernoutsourcing.online/pricing.html"/>
+<link href="https://feuernoutsourcing.online/pricing.html" rel="canonical"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="/favicon.ico" rel="icon"/>
 <style>
@@ -26,8 +26,8 @@ h1,h2,h3{font-family:var(--font-display);}
 .menu-brand{color:white;font-family:var(--font-display);font-weight:700;font-size:15px;}
 .menu-links{display:flex;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;}
 .menu-links::-webkit-scrollbar{display:none;}
-.menu-links a{color:white;font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;}
-.menu-links a:hover{background:var(--accent);}
+.menu-links a{color:white;font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;transition:.2s ease;}
+.menu-links a:hover{background:var(--accent);transform:translateY(-1px);}
 
 .page-hero{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;padding:70px 0 56px;text-align:center;}
 .page-hero h1{font-size:38px;letter-spacing:-0.4px;color:white;}
@@ -86,7 +86,9 @@ border-radius:10px;
 padding:24px;
 text-align:center;
 box-shadow:0 12px 30px rgba(14,42,71,0.06);
+transition:.25s ease;
 }
+.assurance:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(14,42,71,0.12);}
 .assurance .mark{
 width:40px;height:40px;border-radius:50%;
 background:rgba(255,122,0,.12);
@@ -122,8 +124,14 @@ aspect-ratio:16/10;
 border-radius:12px;
 overflow:hidden;
 cursor:pointer;
-background:linear-gradient(135deg,#eef2f7,#ffffff);
+background-size:cover;
+background-position:center;
 box-shadow:0 16px 38px rgba(0,0,0,.28);
+}
+.video-preview::before{
+content:"";
+position:absolute;inset:0;
+background:linear-gradient(rgba(7,26,44,.1),rgba(7,26,44,.65));
 }
 .video-preview span{
 position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
@@ -132,27 +140,35 @@ background:var(--accent);color:white;
 display:flex;align-items:center;justify-content:center;
 font-size:28px;box-shadow:0 12px 30px rgba(255,122,0,.35);
 padding-left:4px;
+z-index:1;
+transition:.25s ease;
 }
+.video-preview:hover span{transform:translate(-50%,-50%) scale(1.08);}
 .video-preview small{
 position:absolute;left:14px;right:14px;bottom:12px;
 color:white;font-weight:700;font-size:12px;text-align:center;
+z-index:1;
 }
 .video-modal{
-display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);
+display:none;position:fixed;inset:0;background:rgba(5,14,26,.92);
 z-index:3000;align-items:center;justify-content:center;padding:20px;
-backdrop-filter:blur(5px);
+backdrop-filter:blur(6px);
+opacity:0;transition:opacity .25s ease;
 }
-.video-modal.active{display:flex;}
+.video-modal.active{display:flex;opacity:1;}
 .video-box{
 width:min(720px,96vw);background:var(--ink-deep);border-radius:14px;
 padding:14px;position:relative;box-shadow:0 30px 90px rgba(0,0,0,.45);
+transform:scale(.94);transition:transform .3s cubic-bezier(.2,.9,.3,1.2);
 }
+.video-modal.active .video-box{transform:scale(1);}
 .video-box video{width:100%;max-height:78vh;border-radius:10px;display:block;background:#000;}
 .video-close{
 position:absolute;right:8px;top:-44px;background:var(--accent);color:white;
 border:none;border-radius:50%;width:34px;height:34px;font-size:22px;
-line-height:34px;cursor:pointer;
+line-height:34px;cursor:pointer;transition:.2s ease;
 }
+.video-close:hover{transform:rotate(90deg);}
 @media(max-width:800px){
 .explainer-wrap{grid-template-columns:1fr;}
 }
@@ -160,10 +176,19 @@ line-height:34px;cursor:pointer;
 .final-cta{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;text-align:center;padding:70px 0;}
 .final-cta h2{color:white;margin-bottom:12px;}
 .final-cta p{color:rgba(255,255,255,.78);max-width:480px;margin:0 auto 28px;}
-.btn{display:inline-block;padding:14px 30px;background:var(--accent);color:white;text-decoration:none;border-radius:6px;font-weight:600;box-shadow:0 12px 28px rgba(255,122,0,.28);}
+.btn{display:inline-block;padding:14px 30px;background:var(--accent);color:white;text-decoration:none;border-radius:6px;font-weight:600;box-shadow:0 12px 28px rgba(255,122,0,.28);transition:.2s ease;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(255,122,0,.34);}
 
 footer{background:linear-gradient(135deg,var(--ink-deep),var(--ink));color:white;text-align:center;padding:36px 20px;font-size:14px;}
 footer a{color:rgba(255,255,255,.7);}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+.reveal-group .reveal:nth-child(1){transition-delay:0s;}
+.reveal-group .reveal:nth-child(2){transition-delay:.08s;}
+.reveal-group .reveal:nth-child(3){transition-delay:.16s;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 </style>
 </head>
 <body>
@@ -172,6 +197,7 @@ footer a{color:rgba(255,255,255,.7);}
 <div class="menu-brand">Feuern Outsourcing</div>
 <div class="menu-links">
 <a href="index.html#home">Home</a>
+<a href="index.html#services">Services</a>
 <a href="case-studies.html">Case Studies</a>
 <a href="team.html">Team</a>
 <a href="pricing.html">Pricing</a>
@@ -223,37 +249,35 @@ footer a{color:rgba(255,255,255,.7);}
 <p class="pricing-fine">
 First work completion or first bid request is included in the base charge. A bid/task is any additional work or bid submitted in the order, winterization, debris removal, repairs, or any work requiring before/during/after photos.
 </p>
-<div class="assurance-grid">
-<div class="assurance">
+<div class="assurance-grid reveal-group">
+<div class="assurance reveal">
 <div class="mark">$</div>
 <h3>Pay Per Order</h3>
 <p>No retainers, no seat licenses, you're billed for what actually gets processed.</p>
 </div>
-<div class="assurance">
+<div class="assurance reveal">
 <div class="mark">✕</div>
 <h3>No Contracts</h3>
 <p>Start with one trial order. Stop anytime, nothing locks you in.</p>
 </div>
-<div class="assurance">
+<div class="assurance reveal">
 <div class="mark">✓</div>
 <h3>Transparent Add Ons</h3>
 <p>Additional bids or tasks are a flat +$1.00, no surprise line items.</p>
 </div>
 </div>
-
 <div class="video-section">
 <div class="explainer-wrap">
 <div class="explainer-copy">
 <h3>See How We Work</h3>
 <p>A quick look at how Feuern Outsourcing handles work order processing, from field photos to a submitted bid.</p>
 </div>
-<button class="video-preview" onclick="openVideo()" aria-label="Open overview video">
+<button aria-label="Open overview video" class="video-preview" onclick="openVideo()" style="background-image:url('img/video-poster.jpg');">
 <span>▶</span>
 <small>Click to watch</small>
 </button>
 </div>
 </div>
-
 </div>
 </section>
 <div class="final-cta">
@@ -266,16 +290,14 @@ First work completion or first bid request is included in the base charge. A bid
 <footer>
 © 2026 Feuern Outsourcing · <a href="index.html">Home</a>
 </footer>
-
-<div id="videoModal" class="video-modal" onclick="closeVideoFromBackdrop(event)">
+<div class="video-modal" id="videoModal" onclick="closeVideoFromBackdrop(event)">
 <div class="video-box">
-<button class="video-close" onclick="closeVideo()" aria-label="Close video">&times;</button>
-<video id="overviewVideo" controls preload="metadata">
-<source src="feuern-overview.mp4" type="video/mp4">
+<button aria-label="Close video" class="video-close" onclick="closeVideo()">×</button>
+<video controls="" id="overviewVideo" poster="img/video-poster.jpg" preload="metadata">
+<source src="feuern-overview.mp4" type="video/mp4"/>
 </video>
 </div>
 </div>
-
 <script>
 function openVideo(){
 document.getElementById('videoModal').classList.add('active');
@@ -296,7 +318,23 @@ if(event.key === 'Escape'){
 closeVideo();
 }
 });
-</script>
 
+(function(){
+var revealEls = document.querySelectorAll('.reveal');
+if(!('IntersectionObserver' in window)){
+revealEls.forEach(function(el){el.classList.add('in-view');});
+return;
+}
+var observer = new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add('in-view');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(function(el){observer.observe(el);});
+})();
+</script>
 </body>
 </html>
