@@ -8,14 +8,14 @@
 <meta content="Feuern Outsourcing" name="author"/>
 <title>Pricing | Feuern Outsourcing</title>
 <link href="https://feuernoutsourcing.online/pricing.html" rel="canonical"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="/favicon.ico" rel="icon"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
 :root{
---ink:#0e2a47;--ink-deep:#071a2c;--accent:#ff7a00;--accent-dark:#e06800;
---paper:#f6f7fb;--slate:#4f5f70;--line:rgba(14,42,71,0.10);
---font-body:'Inter',sans-serif;--font-display:'Archivo','Inter',sans-serif;
+--ink:#0e2a47;--ink-deep:#071a2c;--accent:#f39e05;--accent-dark:#c98300;
+--paper:#f8f9fb;--slate:#4f5f70;--line:#e5e7eb;
+--font-body:'Inter',sans-serif;--font-display:'Sora','Inter',sans-serif;
 }
 body{font-family:var(--font-body);background:linear-gradient(180deg,#f7f9fc 0%,#eef3f8 100%);color:#1a1a1a;line-height:1.6;}
 h1,h2,h3{font-family:var(--font-display);}
@@ -91,7 +91,7 @@ transition:.25s ease;
 .assurance:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(14,42,71,0.12);}
 .assurance .mark{
 width:40px;height:40px;border-radius:50%;
-background:rgba(255,122,0,.12);
+background:rgba(243,158,5,.12);
 color:var(--accent);
 display:flex;align-items:center;justify-content:center;
 margin:0 auto 14px;
@@ -138,7 +138,7 @@ position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
 width:64px;height:64px;border-radius:50%;
 background:var(--accent);color:white;
 display:flex;align-items:center;justify-content:center;
-font-size:28px;box-shadow:0 12px 30px rgba(255,122,0,.35);
+font-size:28px;box-shadow:0 12px 30px rgba(243,158,5,.35);
 padding-left:4px;
 z-index:1;
 transition:.25s ease;
@@ -176,8 +176,8 @@ line-height:34px;cursor:pointer;transition:.2s ease;
 .final-cta{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;text-align:center;padding:70px 0;}
 .final-cta h2{color:white;margin-bottom:12px;}
 .final-cta p{color:rgba(255,255,255,.78);max-width:480px;margin:0 auto 28px;}
-.btn{display:inline-block;padding:14px 30px;background:var(--accent);color:white;text-decoration:none;border-radius:6px;font-weight:600;box-shadow:0 12px 28px rgba(255,122,0,.28);transition:.2s ease;}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(255,122,0,.34);}
+.btn{display:inline-block;padding:14px 30px;background:var(--accent);color:white;text-decoration:none;border-radius:6px;font-weight:600;box-shadow:0 12px 28px rgba(243,158,5,.28);transition:.2s ease;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(243,158,5,.34);}
 
 footer{background:linear-gradient(135deg,var(--ink-deep),var(--ink));color:white;text-align:center;padding:36px 20px;font-size:14px;}
 footer a{color:rgba(255,255,255,.7);}
@@ -189,6 +189,17 @@ footer a{color:rgba(255,255,255,.7);}
 .reveal-group .reveal:nth-child(2){transition-delay:.08s;}
 .reveal-group .reveal:nth-child(3){transition-delay:.16s;}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+/* secondary button */
+.btn-outline{display:inline-block;padding:12px 26px;border:2px solid var(--accent);color:var(--ink);background:transparent;text-decoration:none;border-radius:6px;font-weight:600;transition:.2s ease;}
+.btn-outline:hover{background:var(--accent);color:#071a2c;transform:translateY(-2px);}
+
+/* nav and footer additions */
+.menu-links{gap:6px;}
+.menu-links a{padding:8px 11px;font-size:12.5px;}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:14px;}
+.footer-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;}
+.footer-links a:hover{color:#f39e05;}
 </style>
 </head>
 <body>
@@ -202,6 +213,9 @@ footer a{color:rgba(255,255,255,.7);}
 <a href="team.html">Team</a>
 <a href="pricing.html">Pricing</a>
 <a href="blog.html">Insights</a>
+<a href="vendor-guide.html">Vendor Guide</a>
+<a href="faq.html">FAQ</a>
+<a href="about.html">About</a>
 <a href="index.html#contact">Contact</a>
 </div>
 </div>
@@ -288,6 +302,18 @@ First work completion or first bid request is included in the base charge. A bid
 </div>
 </div>
 <footer>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="index.html#services">Services</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="pricing.html">Pricing</a>
+<a href="vendor-guide.html">Vendor Guide</a>
+<a href="faq.html">FAQ</a>
+<a href="about.html">About</a>
+<a href="blog.html">Insights</a>
+<a href="team.html">Team</a>
+</div>
+
 © 2026 Feuern Outsourcing · <a href="index.html">Home</a>
 </footer>
 <div class="video-modal" id="videoModal" onclick="closeVideoFromBackdrop(event)">
