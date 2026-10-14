@@ -8,14 +8,14 @@
 <meta content="Feuern Outsourcing" name="author"/>
 <title>Inside a Work Order: What Actually Happens Before It Gets Submitted | Feuern Outsourcing</title>
 <link href="https://feuernoutsourcing.online/blog-inside-a-work-order.html" rel="canonical"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="/favicon.ico" rel="icon"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
 :root{
---ink:#0e2a47;--ink-deep:#071a2c;--accent:#ff7a00;--accent-dark:#e06800;
---paper:#f6f7fb;--slate:#4f5f70;--line:rgba(14,42,71,0.10);
---font-body:'Inter',sans-serif;--font-display:'Archivo','Inter',sans-serif;
+--ink:#0e2a47;--ink-deep:#071a2c;--accent:#f39e05;--accent-dark:#c98300;
+--paper:#f8f9fb;--slate:#4f5f70;--line:#e5e7eb;
+--font-body:'Inter',sans-serif;--font-display:'Sora','Inter',sans-serif;
 }
 body{font-family:var(--font-body);background:#f7f9fc;color:#1a1a1a;line-height:1.7;}
 h1,h2,h3{font-family:var(--font-display);color:var(--ink);}
@@ -73,6 +73,17 @@ footer a{color:rgba(255,255,255,.7);}
 .post-hero h1{font-size:26px;}
 .stat-row{flex-direction:column;}
 }
+
+/* secondary button */
+.btn-outline{display:inline-block;padding:12px 26px;border:2px solid var(--accent);color:var(--ink);background:transparent;text-decoration:none;border-radius:6px;font-weight:600;transition:.2s ease;}
+.btn-outline:hover{background:var(--accent);color:#071a2c;transform:translateY(-2px);}
+
+/* nav and footer additions */
+.menu-links{gap:6px;}
+.menu-links a{padding:8px 11px;font-size:12.5px;}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:14px;}
+.footer-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;}
+.footer-links a:hover{color:#f39e05;}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -123,6 +134,9 @@ footer a{color:rgba(255,255,255,.7);}
 <a href="team.html">Team</a>
 <a href="blog.html">Insights</a>
 <a href="pricing.html">Pricing</a>
+<a href="vendor-guide.html">Vendor Guide</a>
+<a href="faq.html">FAQ</a>
+<a href="about.html">About</a>
 <a href="index.html#contact">Contact</a>
 </div>
 </div>
@@ -202,6 +216,18 @@ footer a{color:rgba(255,255,255,.7);}
 </div>
 </div>
 <footer>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="index.html#services">Services</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="pricing.html">Pricing</a>
+<a href="vendor-guide.html">Vendor Guide</a>
+<a href="faq.html">FAQ</a>
+<a href="about.html">About</a>
+<a href="blog.html">Insights</a>
+<a href="team.html">Team</a>
+</div>
+
 © 2026 Feuern Outsourcing · <a href="blog.html">More Insights</a> · <a href="index.html">Home</a>
 </footer>
 </body>
