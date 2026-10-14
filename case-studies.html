@@ -8,7 +8,7 @@
 <meta content="Feuern Outsourcing" name="author"/>
 <title>Case Study: Scaling a Field Operation's Back Office | Feuern Outsourcing</title>
 <link href="https://feuernoutsourcing.online/case-studies.html" rel="canonical"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -20,13 +20,13 @@
 :root{
 --ink:#0e2a47;
 --ink-deep:#071a2c;
---accent:#ff7a00;
---accent-dark:#e06800;
---paper:#f6f7fb;
+--accent:#f39e05;
+--accent-dark:#c98300;
+--paper:#f8f9fb;
 --slate:#4f5f70;
---line:rgba(14,42,71,0.10);
+--line:#e5e7eb;
 --font-body:'Inter',sans-serif;
---font-display:'Archivo','Inter',sans-serif;
+--font-display:'Sora','Inter',sans-serif;
 }
 
 body{
@@ -68,7 +68,7 @@ text-decoration:none;transition:.2s ease;
 /* PAGE HERO */
 .case-hero{
 background:
-radial-gradient(circle at top right,rgba(255,122,0,0.18),transparent 32%),
+radial-gradient(circle at top right,rgba(243,158,5,0.18),transparent 32%),
 linear-gradient(135deg,var(--ink),var(--ink-deep));
 color:white;
 padding:100px 0 70px;
@@ -160,7 +160,7 @@ transition:transform .35s ease;
 .privacy-note{
 margin-top:30px;
 background:#fff4e8;
-border:1px solid rgba(255,122,0,.25);
+border:1px solid rgba(243,158,5,.25);
 color:#7a4200;
 font-size:13px;
 font-weight:600;
@@ -294,7 +294,7 @@ font-weight:700;
 letter-spacing:.4px;
 text-transform:uppercase;
 color:var(--accent-dark);
-background:rgba(255,122,0,.10);
+background:rgba(243,158,5,.10);
 padding:6px 12px;
 border-radius:999px;
 }
@@ -428,7 +428,7 @@ color:white;
 text-decoration:none;
 border-radius:6px;
 font-weight:600;
-box-shadow:0 12px 28px rgba(255,122,0,0.28);
+box-shadow:0 12px 28px rgba(243,158,5,0.28);
 }
 
 footer{
@@ -479,6 +479,17 @@ font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;just
 transition:.2s ease;z-index:1001;
 }
 .lightbox-close:hover{background:var(--accent);border-color:var(--accent);transform:rotate(90deg);}
+
+/* secondary button */
+.btn-outline{display:inline-block;padding:12px 26px;border:2px solid var(--accent);color:var(--ink);background:transparent;text-decoration:none;border-radius:6px;font-weight:600;transition:.2s ease;}
+.btn-outline:hover{background:var(--accent);color:#071a2c;transform:translateY(-2px);}
+
+/* nav and footer additions */
+.menu-links{gap:6px;}
+.menu-links a{padding:8px 11px;font-size:12.5px;}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:14px;}
+.footer-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;}
+.footer-links a:hover{color:#f39e05;}
 </style>
 </head>
 <body>
@@ -492,6 +503,9 @@ transition:.2s ease;z-index:1001;
 <a href="team.html">Team</a>
 <a href="pricing.html">Pricing</a>
 <a href="blog.html">Insights</a>
+<a href="vendor-guide.html">Vendor Guide</a>
+<a href="faq.html">FAQ</a>
+<a href="about.html">About</a>
 <a href="index.html#contact">Contact</a>
 </div>
 </div>
@@ -725,6 +739,18 @@ Ten line items, one order, real bid amounts, from a $40 address posting to a $1,
 </div>
 </div>
 <footer>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="index.html#services">Services</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="pricing.html">Pricing</a>
+<a href="vendor-guide.html">Vendor Guide</a>
+<a href="faq.html">FAQ</a>
+<a href="about.html">About</a>
+<a href="blog.html">Insights</a>
+<a href="team.html">Team</a>
+</div>
+
 © 2026 Feuern Outsourcing · <a href="index.html">Back to Home</a>
 </footer>
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
