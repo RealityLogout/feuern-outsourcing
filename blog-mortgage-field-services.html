@@ -615,5 +615,50 @@ footer a{color:rgba(255,255,255,.7);}
 <footer>
 © 2026 Feuern Outsourcing · <a href="blog.html">More Insights</a> · <a href="index.html">Home</a>
 </footer>
+  <!-- 1. The Global Full View Modal Structure -->
+<div id="blogImageModal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(7, 26, 44, 0.95); align-items: center; justify-content: center; overflow: hidden;" onclick="closeBlogModal()">
+    <!-- The Close Cross Symbol -->
+    <span style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 50px; font-weight: 300; cursor: pointer; user-select: none; line-height: 1; transition: color 0.2s;" onmouseover="this.style.color='#ff7a00'" onmouseout="this.style.color='#fff'">&times;</span>
+    <!-- The Expanded Image Box -->
+    <img id="blogModalImg" style="margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; border-radius: 6px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); animation: blogZoomIn 0.25s ease-out;">
+</div>
+
+<!-- 2. The Dynamic Lightbox Script -->
+<style>
+    /* Smooth zoom-in animation helper */
+    @keyframes blogZoomIn {
+        from { transform: scale(0.85); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    /* Changes cursor to magnifying glass over blog photos to signal they are clickable */
+    article figure img { cursor: zoom-in !important; }
+</style>
+
+<script>
+    const blogModal = document.getElementById("blogImageModal");
+    const blogModalImg = document.getElementById("blogModalImg");
+
+    // Automatically find all images inside <figure> elements across the entire guide
+    document.querySelectorAll("article figure img").forEach(image => {
+        image.addEventListener("click", function() {
+            blogModal.style.display = "flex";
+            blogModalImg.src = this.src;
+            blogModalImg.alt = this.alt;
+        });
+    });
+
+    // Function to close the full view
+    function closeBlogModal() {
+        blogModal.style.display = "none";
+    }
+
+    // Safeguard: Close modal instantly if user hits the 'Escape' key
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeBlogModal();
+        }
+    });
+</script>
+
 </body>
 </html>
