@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Practical guides and behind the scenes stories on property preservation work order processing, bid writing, and portal management from Feuern Outsourcing." name="description"/>
+<meta content="Feuern Outsourcing" name="author"/>
+<title>Property Preservation Insights and Guides | Feuern Outsourcing</title>
+<link rel="canonical" href="https://feuernoutsourcing.online/blog.html"/>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Feuern Outsourcing">
+<meta property="og:title" content="Property Preservation Insights and Guides | Feuern Outsourcing">
+<meta property="og:description" content="Practical guides and behind the scenes stories on property preservation work order processing, bid writing, and portal management from Feuern Outsourcing.">
+<meta property="og:url" content="https://feuernoutsourcing.online/blog.html">
+<meta property="og:image" content="https://feuernoutsourcing.online/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Feuern Outsourcing, property preservation work order processing">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Property Preservation Insights and Guides | Feuern Outsourcing">
+<meta name="twitter:description" content="Practical guides and behind the scenes stories on property preservation work order processing, bid writing, and portal management from Feuern Outsourcing.">
+<meta name="twitter:image" content="https://feuernoutsourcing.online/images/og-cover.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="/favicon.ico" rel="icon"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+:root{
+--ink:#0e2a47;--ink-deep:#071a2c;--accent:#f39e05;--accent-dark:#c98300;
+--paper:#f8f9fb;--slate:#4f5f70;--line:#e5e7eb;
+--font-body:'Inter',sans-serif;--font-display:'Sora','Inter',sans-serif;
+}
+body{font-family:var(--font-body);background:linear-gradient(180deg,#f7f9fc 0%,#eef3f8 100%);color:#1a1a1a;line-height:1.6;}
+h1,h2,h3{font-family:var(--font-display);color:var(--ink);}
+.container{max-width:1000px;margin:auto;padding:0 20px;}
+
+.site-menu{position:sticky;top:0;z-index:999;background:rgba(7,26,44,.97);backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.16);}
+.site-menu .inner{max-width:1150px;margin:auto;padding:11px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.menu-brand{color:white;font-family:var(--font-display);font-weight:700;font-size:15px;}
+.menu-links{display:flex;gap:8px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;}
+.menu-links::-webkit-scrollbar{display:none;}
+.menu-links a{color:white;font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;}
+.menu-links a:hover{background:var(--accent);}
+
+.page-hero{background:linear-gradient(135deg,var(--ink),var(--ink-deep));color:white;padding:70px 0 50px;}
+.page-hero h1{font-size:36px;letter-spacing:-0.4px;color:white;}
+.page-hero p{margin-top:14px;color:rgba(255,255,255,.78);max-width:560px;}
+
+section{padding:60px 0 90px;}
+
+.post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:10px;}
+.post-card{
+background:white;border:1px solid var(--line);border-radius:10px;padding:26px;
+box-shadow:0 12px 30px rgba(14,42,71,0.06);text-decoration:none;display:block;
+transition:.25s ease;
+}
+.post-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(14,42,71,0.12);}
+.post-card .cat{color:var(--accent-dark);font-size:12px;font-weight:600;}
+.post-card h3{font-size:18px;margin:10px 0 10px;line-height:1.35;}
+.post-card p{font-size:14px;color:var(--slate);line-height:1.6;}
+.post-card .date{margin-top:14px;font-size:12px;color:#9aa7b5;}
+
+.empty-note{color:var(--slate);font-size:15px;margin-top:20px;}
+
+footer{background:linear-gradient(135deg,var(--ink-deep),var(--ink));color:white;text-align:center;padding:36px 20px;font-size:14px;}
+footer a{color:rgba(255,255,255,.7);}
+
+/* secondary button */
+.btn-outline{display:inline-block;padding:12px 26px;border:2px solid var(--accent);color:var(--ink);background:transparent;text-decoration:none;border-radius:6px;font-weight:600;transition:.2s ease;}
+.btn-outline:hover{background:var(--accent);color:#071a2c;transform:translateY(-2px);}
+
+/* nav and footer additions */
+.menu-links{gap:6px;}
+.menu-links a{padding:8px 11px;font-size:12.5px;}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:14px;}
+.footer-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;}
+.footer-links a:hover{color:#f39e05;}
+
+/* WS4 animation layer */
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth;}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+.reveal.done{transition:transform .25s ease,box-shadow .25s ease,opacity .25s ease;transition-delay:0s;}
+/* hover lift, one standard */
+.card,.bid-card,.svc-card,.wf-item,.icon-card,.strip-item,.team-card,.post-card,.assurance,.grow-card,.checklist li,.mistakes li{transition:transform .25s ease,box-shadow .25s ease;}
+.card:hover,.bid-card:hover,.svc-card:hover,.wf-item:hover,.icon-card:hover,.strip-item:hover,.team-card:hover,.post-card:hover,.assurance:hover,.grow-card:hover,.checklist li:hover,.mistakes li:hover,
+.card.reveal.in-view:hover,.bid-card.reveal.in-view:hover,.svc-card.reveal.in-view:hover,.wf-item.reveal.in-view:hover,.icon-card.reveal.in-view:hover,.strip-item.reveal.in-view:hover,.team-card.reveal.in-view:hover,.post-card.reveal.in-view:hover,.assurance.reveal.in-view:hover,.grow-card.reveal.in-view:hover,.checklist li.reveal.in-view:hover,.mistakes li.reveal.in-view:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(14,42,71,.12);}
+/* header shrink */
+.site-menu{box-shadow:0 1px 0 rgba(255,255,255,.06);transition:box-shadow .25s ease;}
+.site-menu .container,.site-menu .inner{transition:padding .25s ease;}
+.site-menu .menu-brand{transition:font-size .25s ease;}
+.site-menu.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.28);}
+.site-menu.scrolled .container,.site-menu.scrolled .inner{padding-top:6px;padding-bottom:6px;}
+.site-menu.scrolled .menu-brand{font-size:14px;}
+/* back to top */
+.to-top{position:fixed;right:24px;bottom:24px;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,visibility .3s,background .2s ease,color .2s ease;z-index:990;box-shadow:0 10px 26px rgba(7,26,44,.3);}
+.to-top.show{opacity:1;visibility:visible;transform:none;}
+.to-top:hover{background:#f39e05;color:#071a2c;}
+body.has-wa .to-top{bottom:86px;}
+.to-top svg{width:20px;height:20px;}
+/* workflow connectors and dots */
+.wf-item .n{width:28px;height:28px;border-radius:50%;background:#f39e05;color:#071a2c;display:flex;align-items:center;justify-content:center;font-size:12px;margin-bottom:12px;}
+.wf-item::after{content:"";position:absolute;top:31px;left:54px;right:-38px;height:2px;background:linear-gradient(90deg,#f39e05,rgba(243,158,5,.25));transform-origin:left;pointer-events:none;}
+.wf-item.reveal::after{transform:scaleX(0);transition:transform .6s ease .35s;}
+.wf-item.reveal.in-view::after{transform:scaleX(1);}
+.wf-item.reveal .n{opacity:0;transform:scale(.4);}
+.wf-item.reveal.in-view .n{opacity:1;transform:scale(1);transition:opacity .4s ease .15s,transform .4s ease-out .15s;}
+.wf-item:nth-child(4n)::after{display:none;}
+@media(max-width:900px){.wf-item:nth-child(4n)::after{display:block;}.wf-item:nth-child(2n)::after{display:none;}}
+@media(max-width:560px){.wf-item::after{display:none;}}
+@media (prefers-reduced-motion: reduce){
+.reveal,.reveal.in-view{opacity:1;transform:none;transition:none;}
+.wf-item.reveal::after{transform:none;transition:none;}
+.wf-item.reveal .n{opacity:1;transform:none;transition:none;}
+.site-menu,.site-menu .container,.site-menu .inner,.site-menu .menu-brand,.to-top,.card,.bid-card,.svc-card,.wf-item,.icon-card,.strip-item,.team-card,.post-card,.assurance,.grow-card{transition:none;}
+}
+
+/* WS5 layout */
+.container{max-width:1120px;}
+.post-card .more{display:inline-block;margin-top:14px;font-weight:600;color:var(--accent-dark);font-size:14px;}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://feuernoutsourcing.online/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://feuernoutsourcing.online/blog.html"
+    }
+  ]
+}</script>
+</head>
+<body>
+<div class="site-menu">
+<div class="inner">
+<div class="menu-brand">Feuern Outsourcing</div>
+<div class="menu-links">
+<a href="index.html#home">Home</a>
+<a href="index.html#services">Services</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="team.html">Team</a>
+<a href="pricing.html">Pricing</a>
+<a href="blog.html">Insights</a>
+<a href="vendor-guide.html">Vendor Guide</a>
+<a href="faq.html">FAQ</a>
+<a href="about.html">About</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</div>
+</div>
+<div class="page-hero">
+<div class="container">
+<h1>Insights</h1>
+<p>Practical guides and real stories from processing property preservation work orders, portal quirks, bid writing, and what actually gets approved.</p>
+</div>
+</div>
+<section>
+<div class="container">
+<h2 class="sr-only">All articles</h2>
+<div class="post-grid" id="post-grid">
+<a class="post-card" href="blog-mortgage-field-services.html"><span class="cat">Industry Guide</span><h3>From Missed Payments to Field Work Orders: How the Mortgage Field Services Industry Actually Works</h3><p>A complete guide to the mortgage field services industry: how property preservation works, who the national companies are, how to become a vendor, and how bids and allowables work.</p><div class="date">October 15, 2026</div><span class="more">Read more</span></a>
+<a class="post-card" href="blog-inside-a-work-order.html"><span class="cat">Behind the Scenes</span><h3>Inside a Work Order: What Actually Happens Before It Gets Submitted</h3><p>What we need from a client, what happens between a completed work order and a submitted one, and what causes rejections, reopens, and chargebacks.</p><div class="date">September 11, 2026</div><span class="more">Read more</span></a>
+<a class="post-card" href="blog-safeguard-bid-rejections.html"><span class="cat">Portal and Process Guide</span><h3>Why Safeguard Rejects Bids (and How to Write Ones That Get Approved)</h3><p>The most common reasons Safeguard bids bounce back, and the scope writing habits that get them approved the first time.</p><div class="date">September 2, 2026</div><span class="more">Read more</span></a>
+</div>
+<p class="empty-note" id="empty-note" style="display:none;">New posts are on the way, check back soon.</p>
+</div>
+</section>
+<footer>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="index.html#services">Services</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="pricing.html">Pricing</a>
+<a href="vendor-guide.html">Vendor Guide</a>
+<a href="faq.html">FAQ</a>
+<a href="about.html">About</a>
+<a href="blog.html">Insights</a>
+<a href="team.html">Team</a>
+</div>
+
+© 2026 Feuern Outsourcing · <a href="index.html">Home</a>
+</footer>
+<script>
+fetch('blogs.json')
+.then(r => r.json())
+.then(data => {
+  const grid = document.getElementById('post-grid');
+  const have = new Set([...grid.querySelectorAll('a.post-card')].map(a => a.getAttribute('href')));
+  const same = data.length === have.size && data.every(p => have.has(p.file));
+  if(same) return;
+  grid.innerHTML = '';
+  data.sort((a,b) => new Date(b.date) - new Date(a.date)).forEach(post => {
+    const dateStr = post.date ? new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'}) : '';
+    grid.insertAdjacentHTML('beforeend', '<a class="post-card" href="' + post.file + '"><span class="cat">' + (post.category || 'Insight') + '</span><h3>' + post.title + '</h3><p>' + post.excerpt + '</p><div class="date">' + dateStr + '</div><span class="more">Read more</span></a>');
+  });
+})
+.catch(() => {});
+</script>
+<!-- WS4 -->
+<script>
+(function(){
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var menu=document.querySelector('.site-menu');
+var top=document.createElement('button');
+top.type='button';top.className='to-top';top.setAttribute('aria-label','Back to top');
+top.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+document.body.appendChild(top);
+if(document.querySelector('a[aria-label="Chat on WhatsApp"]')){document.body.classList.add('has-wa');}
+top.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});});
+var tick=false;
+function onScroll(){
+if(tick)return;tick=true;
+requestAnimationFrame(function(){
+var y=window.pageYOffset||document.documentElement.scrollTop;
+if(menu)menu.classList.toggle('scrolled',y>24);
+top.classList.toggle('show',y>600);
+tick=false;
+});
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(reduce||!('IntersectionObserver' in window))return;
+var skip='.t-slider,.hero,.page-hero,.case-hero,footer,.site-menu,.lightbox,.video-modal,.marquee-wrap,.stats-bar';
+var cards='.card,.bid-card,.svc-card,.wf-item,.icon-card,.strip-item,.team-card,.post-card,.assurance,.grow-card,.faq-item,.checklist li,.mistakes li,.pricing-table,.ledger,.chat-phone,.real-coord,.explainer-wrap,.contact-wrap,.callout-band,.ph-slot,.story-band,.privacy-note';
+var text='section>.container>h2,section>.container>p,section>.container>.lede,section>.container>ul,section>.container>.num,.cta-band .container>h2,.cta-band .container>p,article .container>h2,article .container>.callout,article .container>.stat-row,article .container>.faq-item';
+document.querySelectorAll(cards+','+text).forEach(function(el){
+if(el.closest(skip))return;
+el.classList.add('reveal');
+});
+var groups=new Map();
+document.querySelectorAll('.reveal').forEach(function(el){
+var p=el.parentNode;var n=groups.get(p)||0;groups.set(p,n+1);
+el.style.transitionDelay=(Math.min(n,8)*80)+'ms';
+});
+var io=new IntersectionObserver(function(es){
+es.forEach(function(e){
+if(!e.isIntersecting)return;
+var el=e.target;el.classList.add('in-view');io.unobserve(el);
+var d=parseInt(el.style.transitionDelay,10)||0;
+setTimeout(function(){el.style.transitionDelay='';el.classList.add('done');},d+750);
+});
+},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>

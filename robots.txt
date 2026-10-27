@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+Disallow: /blog/template.html
+
+User-agent: GPTBot
+Allow: /
+Disallow: /blog/template.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /blog/template.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /blog/template.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /blog/template.html
+
+User-agent: Claude-User
+Allow: /
+Disallow: /blog/template.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /blog/template.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /blog/template.html
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /blog/template.html
+
+Sitemap: https://feuernoutsourcing.online/sitemap.xml
