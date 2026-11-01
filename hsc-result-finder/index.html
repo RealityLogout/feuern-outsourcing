@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://hsc-api.feuernoutsourcing.online; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f8f4">
+  <meta name="result-cache-policy" content="3">
+  <meta name="description" content="Find a Chattogram Board HSC 2026 result using a college and student name, even without knowing the roll number. Select a group to narrow the search.">
+  <meta name="robots" content="index,follow">
+  <meta name="referrer" content="no-referrer">
+  <link rel="canonical" href="https://feuernoutsourcing.online/hsc-result-finder/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chattogram HSC Result Finder — Search by College & Name">
+  <meta property="og:description" content="No roll number? Start with a college and a student name to search Chattogram Board HSC 2026 results.">
+  <meta property="og:url" content="https://feuernoutsourcing.online/hsc-result-finder/">
+  <title>Chattogram HSC Result Finder 2026 — Search by College & Name</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23195a3e'/%3E%3Cpath d='M12 26 32 15l20 11v24H12V26zm9 24V32h22v18' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css?v=gh-oracle-20261102a">
+  <script type="module" src="./app.js?v=gh-oracle-20261102a"></script>
+  <script type="module" src="./activity.js?v=gh-oracle-20261102a"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="top-inner">
+    <a class="brand" href="./" aria-label="HSC Result Finder home"><span class="brand-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 11 16 6l10 5v12H6V11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 23v-8h10v8M14 15v8M18 15v8M5 25h22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><strong>HSC Result Finder</strong><small>CHATTOGRAM · HSC 2026</small></span></a>
+    <div class="top-actions"><span class="online-pill" title="Approximate number of browser tabs active in the last two minutes"><span class="online-dot" aria-hidden="true"></span><span id="onlineText" aria-live="polite">Online: —</span></span><span class="independent"><span></span> Independent helper</span></div>
+  </div>
+</header>
+<div class="shell">
+  <section class="hero">
+    <div class="eyebrow"><span></span> CHATTOGRAM BOARD · HSC 2026</div>
+    <h1>No roll number?<br><span>Start with a college.</span></h1>
+    <p>Find a friend’s or relative’s result using their college and name—even when you don’t know their roll number. Know their group? Select it to narrow the search.</p>
+    <div class="hero-note"><span>01</span> Choose a college <i>→</i> <span>02</span> Pick a group <i>→</i> <span>03</span> Search by name</div>
+  </section>
+  <noscript><div class="alert">JavaScript is required to read the roll list and search the board. Enable it to use this tool.</div></noscript>
+  <div id="alertBox" class="alert" role="alert" hidden></div>
+  <main class="layout">
+    <form id="searchForm" class="setup" novalidate>
+      <div id="lookupStatus" class="lookup-status" role="status" hidden><div><strong>College lookup</strong><p id="lookupText">Searching the board…</p></div><button id="cancelLookup" type="button" class="outline-button">Cancel lookup</button></div>
+      <fieldset id="setupFields">
+        <section class="card">
+          <div class="card-heading"><div class="heading-left"><span class="step">01</span><div><h2>Choose a roll list</h2><p>Use an institute, a board PDF, or your own list</p></div></div></div>
+          <div class="source-tabs" role="tablist" aria-label="Roll list source">
+            <button type="button" role="tab" id="tabInstitute" aria-controls="panelInstitute" aria-selected="true" class="tab selected" data-source="institute">College / EIIN</button>
+            <button type="button" role="tab" id="tabPdf" aria-controls="panelPdf" aria-selected="false" class="tab" data-source="pdf">Upload PDF</button>
+            <button type="button" role="tab" id="tabManual" aria-controls="panelManual" aria-selected="false" class="tab" data-source="manual">Paste rolls</button>
+          </div>
+          <div class="card-content source-content">
+            <div id="panelInstitute" role="tabpanel" aria-labelledby="tabInstitute">
+              <label for="collegeQuery">College name or EIIN</label>
+              <div class="input-action"><input id="collegeQuery" type="text" maxlength="120" autocomplete="off" placeholder="e.g. Kapasgola college or 132060"><button id="findInstitute" type="button" class="compact-button">Find</button></div>
+              <label class="inline-check"><input id="webSearch" type="checkbox" checked><span>Also search the web for EIIN suggestions</span></label>
+              <p class="hint">Name searches use a local directory and DuckDuckGo. Only the college name is sent to web search. Suggestions need verification.</p>
+              <div id="suggestionArea" class="suggestions" aria-live="polite" hidden></div>
+              <a id="googleLink" class="small-link" href="https://www.google.com/search?q=college+EIIN+Chattogram" target="_blank" rel="noopener noreferrer">Search Google manually ↗</a>
+            </div>
+            <div id="panelPdf" role="tabpanel" aria-labelledby="tabPdf" hidden>
+              <label class="drop-zone" id="dropZone" for="pdfInput"><input id="pdfInput" type="file" class="visually-hidden" accept=".pdf,application/pdf"><span class="upload-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V4m0 0L8 8m4-4 4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Choose a board result PDF</strong> <em>or drag it here</em></span><small>Selectable text · up to 20 MB</small></label>
+              <p class="hint">The group headings and roll lists are read across pages. Scanned pages need OCR first.</p>
+            </div>
+            <div id="panelManual" role="tabpanel" aria-labelledby="tabManual" hidden>
+              <label for="manualRolls">Roll numbers</label><textarea id="manualRolls" rows="4" placeholder="123456&#10;123457&#10;123458"></textarea>
+              <div class="manual-footer"><span class="hint">One per line, or separated by spaces or commas.</span><button type="button" id="loadManual" class="outline-button">Use this list</button></div>
+              <p class="hint">Pasted rolls have no group information, so they are searched as one list.</p>
+            </div>
+
+            <label class="inline-check refresh-check"><input id="refreshBoard" type="checkbox"><span>Refresh from the board instead of using saved data</span></label>
+            <p class="hint">Saved results may be out of date. Check this before finding an EIIN again to refresh its list; individual rolls are refreshed when you search.</p>
+            <div id="sourceEmpty" class="source-empty"><span class="tiny-dot"></span> No roll list loaded yet</div>
+            <div id="sourceSummary" class="loaded-source" hidden>
+              <div class="loaded-top"><span id="sourceTag" class="source-tag">PDF LOADED</span><span id="sourceCount" class="loaded-count"></span></div>
+              <h3 id="sourceName"></h3><p id="sourceMeta" class="source-meta"></p>
+              <div id="groupCards" class="group-cards"></div>
+              <p id="listedNote" class="hint" hidden></p>
+              <details class="roll-details"><summary>View extracted roll numbers</summary><div class="roll-review"><label for="reviewGroup">Section</label><select id="reviewGroup"></select><div id="rollList" class="roll-list" tabindex="0"></div></div></details>
+            </div>
+            <div id="sourceWarnings" class="source-warnings" role="status" hidden></div>
+            <label id="incompleteLabel" class="inline-check danger-check" hidden><input id="confirmIncomplete" type="checkbox"><span>I reviewed the warnings and understand this list may be incomplete.</span></label>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-heading"><div class="heading-left"><span class="step">02</span><div><h2>Plan your search</h2><p>Choose a group and optionally look for a name</p></div></div></div>
+          <div class="card-content">
+            <div class="field"><label for="groupSelect">Group to check first</label><select id="groupSelect"><option value="">Load a roll list first</option></select><p class="group-tip"><strong>Know their group?</strong> Choose Science, Business Studies or Humanities to search fewer rolls and save time. If you don’t know it, choose All sections.</p></div>
+            <label id="othersLabel" class="option-row" hidden><input id="includeOthers" type="checkbox" checked><span><strong>Then check Unsuccessful / Others</strong><small>This list mixes all groups. If the selected group has matches, we’ll ask before continuing to it.</small></span></label>
+            <div class="field name-field"><label for="targetName">Student name <span class="optional">OPTIONAL</span></label><input id="targetName" type="text" maxlength="120" autocomplete="off" placeholder="Full name or part of a name"><p class="hint">Leave blank to collect details for every roll in the search plan.</p></div>
+            <div class="option-box">
+              <label class="option-row compact"><input id="similarNames" type="checkbox" checked><span><strong>Suggest similar spellings</strong><small>Suggestions are not proof of identity.</small></span></label>
+              <div class="threshold-row"><label for="threshold">Minimum similarity</label><select id="threshold"><option value="70">70%</option><option value="75">75%</option><option value="80" selected>80%</option><option value="85">85%</option><option value="90">90%</option><option value="95">95%</option></select></div>
+            </div>
+            <label class="option-row pause-option"><input id="stopOnMatch" type="checkbox" checked><span><strong>Pause at a possible match</strong><small>Review it, then stop or continue to the next one.</small></span></label>
+            <div class="plan-bottom"><div class="field"><label for="delay">Gap between requests</label><select id="delay"><option value="3">3 seconds</option><option value="5">5 seconds</option><option value="10">10 seconds</option><option value="15">15 seconds</option></select></div><div class="plan-estimate"><span>SEARCH PLAN</span><strong id="planCount">0 rolls</strong><small id="planTime">Load a list to begin</small></div></div>
+            <button id="startButton" type="submit" class="primary-button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.2" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="button-label">Start searching</span><span class="arrow">→</span></button>
+            <label class="inline-check remember-check"><input id="rememberProgress" type="checkbox"><span>Remember my private search key on this device</span></label>
+            <p class="hint remember-hint">Optional: lets this browser reopen your search after it closes. Anyone using this device may be able to access it. Avoid this on a shared device.</p>
+            <p class="permission"><strong>Privacy:</strong> Board-verified student details and marks are saved for other visitors to reuse until the owner deletes them; backup copies may persist until removed. Your private search name and progress are kept for up to 7 days. Only check records you are authorized to access.</p>
+          </div>
+        </section>
+      </fieldset>
+    </form>
+
+    <div class="results-column">
+      <section class="card progress-card">
+        <div class="progress-heading"><div><span class="kicker">YOUR SEARCH</span><h2>Search progress</h2></div><span id="statusBadge" class="badge ready"><span></span><span id="statusText">Ready</span></span></div>
+        <div class="metrics"><div><span>CHECKED</span><strong id="checkedMetric">0<em> / 0</em></strong></div><div><span>NAME MATCHES</span><strong id="matchMetric">0</strong></div><div><span>NO RESULT</span><strong id="noResultMetric">0</strong></div></div>
+        <div class="progress-track" id="progressTrack" role="progressbar" aria-label="Search progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressFill"></div></div>
+        <div class="progress-labels"><span id="progressLabel">Nothing checked yet</span><span id="progressPercent">0%</span></div>
+        <div id="activity" class="activity neutral" aria-live="polite"><span class="activity-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5l3 1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong id="activityTitle">Ready when you are</strong><p id="activityText">Load a roll list and choose a group to get started.</p><p id="retryText" hidden></p></div></div>
+        <p id="estimateText" class="estimate">Visitors take turns. Requests have at least a 3-second gap; actual waits can be longer.</p>
+        <div id="jobControls" class="job-controls" hidden><button type="button" id="pauseButton" class="secondary-button" hidden>Pause</button><button type="button" id="resumeButton" class="secondary-button green" hidden>Continue search</button><button type="button" id="stopButton" class="secondary-button" hidden>Stop</button><button type="button" id="clearButton" class="quiet-button" title="Deletes this private job, not shared board records" hidden>Delete private progress</button></div>
+        <div id="recoveryBox" class="recovery-box" hidden><strong>Your private search</strong><p>While running, the search continues on the server when you switch apps. It may pause for a match or board restriction. To reopen after closing this tab, save your private recovery link; anyone with the link can see and control this search. Progress expires after 7 days.</p><button type="button" id="copyRecovery" class="outline-button">Copy private recovery link</button> <button type="button" id="retryRecovery" class="outline-button" hidden>Retry connection</button><input id="recoveryLink" type="text" readonly aria-label="Private recovery link" hidden><p id="recoveryMessage" class="hint" aria-live="polite"></p></div>
+        <p class="safety"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3 8.2 7 10 4-1.8 7-5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> The search pauses on rate limits, access blocks, verification, or unexpected responses.</p>
+        <div class="retry-guide"><strong>If the search stops</strong><p>For a temporary board error such as HTTP 520, the tool tries the same roll twice automatically. If it still stops, wait and tap <b>Retry current roll</b> to continue without losing checked results. Do not bypass verification or access restrictions.</p></div>
+      </section>
+
+      <section class="card results-card">
+        <div class="results-heading"><div><span class="kicker">ROLL-BY-ROLL</span><h2>Individual results <span id="resultCount" class="result-count">0</span></h2></div><button id="downloadAll" type="button" class="download" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> Download Excel</button></div>
+        <div class="filter-row" role="group" aria-label="Filter checked results"><button type="button" class="filter selected" data-filter="all" aria-pressed="true">All <span id="allCount">0</span></button><button type="button" class="filter" data-filter="matches" aria-pressed="false">Matches <span id="matchesCount">0</span></button><button type="button" class="filter" data-filter="similar" aria-pressed="false">Similar <span id="similarCount">0</span></button><button type="button" class="filter" data-filter="no_result" aria-pressed="false">No result <span id="emptyCount">0</span></button></div>
+        <div id="emptyState" class="empty-state"><span class="empty-art"><svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><rect x="16" y="11" width="39" height="51" rx="6" fill="#eef4ec" stroke="#b9cdbb" stroke-width="1.5"/><path d="M25 23h21M25 30h17M25 37h12M25 44h10" stroke="#a6bda9" stroke-width="2" stroke-linecap="round"/><circle cx="52" cy="50" r="12" fill="#fff" stroke="#76a17f" stroke-width="2"/><path d="m60 58 7 7" stroke="#76a17f" stroke-width="3" stroke-linecap="round"/></svg></span><strong id="emptyTitle">Results will appear here</strong><p id="emptyText">Review matches and open each row for full details.</p></div>
+        <div id="tableWrap" class="table-wrap" hidden><table><thead><tr><th scope="col">ROLL</th><th scope="col">NAME</th><th scope="col">GROUP</th><th scope="col">RESULT / GPA</th><th scope="col">MATCH</th><th scope="col"><span class="visually-hidden">Details</span></th></tr></thead><tbody id="resultRows"></tbody></table></div>
+        <div class="results-footer"><span id="csvNote">Excel includes checked rows only, with one column per subject.</span><div class="export-options"><button type="button" id="downloadMatches" disabled>Matches Excel ↓</button><button type="button" id="downloadCsv" disabled>CSV ↓</button></div></div>
+      </section>
+      <section class="card hello-card" aria-labelledby="helloTitle">
+        <div class="hello-heading"><span class="hello-heart" aria-hidden="true">♥</span><div><span class="kicker">A LITTLE HELLO</span><h2 id="helloTitle">Found this useful?</h2><p>Send an optional like to the person who made this tool.</p></div></div>
+        <form id="helloForm" class="hello-form"><label for="helloName">Name or nickname <span class="optional">OPTIONAL</span></label><div class="hello-actions"><input id="helloName" type="text" maxlength="40" autocomplete="off" placeholder="Leave blank to say hello anonymously"><button id="helloSend" type="submit">Send a ♥</button></div></form>
+        <p id="helloStatus" class="hello-note" aria-live="polite">Only the site owner can see your hello. It is deleted after 30 days. No name is required.</p>
+      </section>
+      <div class="privacy-note"><span class="privacy-icon">i</span><p><strong>Personal data notice.</strong> Board-verified institute lists and individual results are saved on the server for reuse by other visitors until the owner deletes them; backups may retain copies until removed. Results can include names, family names, registration numbers and marks. The search name and private progress are scheduled to expire after 7 days; cleanup can be delayed by outages. Only search records you are authorized to access.</p></div>
+      <details class="privacy-details"><summary>How this independent tool works &amp; privacy</summary><p>The online number is an estimate of browser tabs active in the last two minutes, not verified people. A random tab ID and recent activity time are stored briefly to count tabs and arrange search turns. You can optionally send a hello with a name or nickname; only the site owner can see it. A hello is stored with its random tab ID to limit repeats, and both are deleted after 30 days. An anonymous hello has no name. Short-lived connection information helps prevent abuse. The hosting and database providers, and the board, receive the connection information needed to serve requests. When a college is loaded, its groups are queued for background collection independently of your search, subject to board and hosting limits. Active searches take priority. Board-verified institute lists and student results are stored until the owner deletes them and can be reused by other visitors; backups may retain copies until removed, and results may become outdated unless refreshed. If a refresh finds no result, an older saved copy is hidden from normal reuse but retained for the owner to delete. Uploaded PDFs are not published as verified lists. Private search names, progress and checked results are scheduled to expire after 7 days; cleanup can be delayed by outages. The site owner and hosting provider may have access to stored data. Anyone with a private recovery link can access that search. Uploaded PDFs stay in your browser, but extracted rolls are sent to the server for the private background search. Contact <a href="https://www.linkedin.com/in/aminoladud/" target="_blank" rel="noopener noreferrer">Aminol Adud</a> to know about it.</p></details>
+    </div>
+  </main>
+  <footer><span>Independent tool · Not affiliated with the board<br><span class="footer-credit">Built by <a href="https://www.linkedin.com/in/aminoladud/" target="_blank" rel="noopener noreferrer">Aminol Adud ↗</a></span></span></footer>
+</div>
+<dialog id="detailDialog" aria-labelledby="dialogTitle"><div class="dialog-header"><div><span class="kicker">INDIVIDUAL RESULT</span><h2 id="dialogTitle">Result details</h2></div><button type="button" id="closeDialog" class="close-dialog" aria-label="Close details">×</button></div><div id="dialogBody" class="dialog-body"></div><div class="dialog-foot"><span>As returned by the board. Blank fields remain blank.</span><button type="button" id="closeDialogBottom" class="outline-button">Close</button></div></dialog>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://hsc-api.feuernoutsourcing.online; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#f6f8f4"><title>Owner · HSC Result Finder</title>
+  <link rel="stylesheet" href="./style.css?v=gh-oracle-20261102a"><link rel="stylesheet" href="./owner.css?v=gh-oracle-20261102a">
+  <script type="module" src="./owner.js?v=gh-oracle-20261102a"></script>
+</head><body>
+<header class="topbar"><div class="top-inner"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">♥</span><span><strong>HSC Result Finder</strong><small>OWNER VIEW</small></span></a><a class="back" href="./">Back to search</a></div></header>
+<main class="owner-shell">
+  <div class="owner-intro"><span class="kicker">PRIVATE OWNER VIEW</span><h1>Your visitors’ hellos</h1><p>Optional likes sent by visitors are visible only with your owner passphrase.</p></div>
+  <section id="loginCard" class="card owner-card" aria-labelledby="loginTitle">
+    <h2 id="loginTitle">Unlock this page</h2><p>Enter the new owner passphrase generated during the Oracle setup. It stays in this page’s memory and is not saved in your browser.</p>
+    <form id="loginForm"><label for="passphrase">Owner passphrase</label><div class="owner-input"><input id="passphrase" type="password" autocomplete="off" required placeholder="Your private passphrase"><button type="submit" class="primary-button">Unlock</button></div></form>
+    <p class="help">Need your passphrase? Follow the private owner-access step in the setup guide. Never share it in chat or put it in your website files.</p>
+  </section>
+  <section id="inbox" class="card owner-card" aria-labelledby="inboxTitle" hidden>
+    <div class="inbox-head"><div><span class="kicker">LAST 30 DAYS</span><h2 id="inboxTitle">Visitor hellos</h2><p id="helloCount"></p></div><div class="owner-controls"><button id="refresh" type="button" class="outline-button">Refresh</button><button id="lock" type="button" class="outline-button">Lock</button></div></div>
+    <div id="emptyHellos" class="owner-empty" hidden>No hellos yet. Visitors can optionally send one from the search page.</div>
+    <div class="owner-list-wrap"><ul id="helloList" class="owner-list"></ul></div>
+    <div class="inbox-foot"><p>Only the latest 500 are shown. Hellos are automatically deleted after 30 days.</p><button id="clear" type="button" class="danger-button">Delete all hellos</button></div>
+  </section>
+  <section id="cachePanel" class="card owner-card cache-panel" aria-labelledby="cacheTitle" hidden>
+    <div class="inbox-head"><div><span class="kicker">SHARED RESULT DATABASE</span><h2 id="cacheTitle">Saved board records</h2><p id="cacheCount">Loading saved-record counts…</p></div><button id="refreshCache" type="button" class="outline-button">Refresh counts</button></div>
+    <p>These records can contain student names, family names, registration numbers and marks. They are kept until you delete them and may become outdated. Private backups may retain copies until you delete those backups too. Background search progress is stored separately, with expiry scheduled after 7 days. Cleanup can be delayed by outages.</p>
+    <button id="clearCache" type="button" class="danger-button">Delete all saved board data</button>
+  </section>
+  <section id="fillPanel" class="card owner-card" hidden>
+    <div class="inbox-head"><div><span class="kicker">BY INSTITUTE AND GROUP</span><h2>Background collection</h2><p id="fillState">Loading…</p></div><button id="refreshFill" type="button" class="outline-button">Refresh</button></div>
+    <p>Active searches take priority. A college continues separately when a visitor stops. Processing can pause at free-tier limits or board restrictions; the third-party college directory may be incomplete.</p>
+    <div class="owner-controls"><button id="pauseFill" type="button" class="outline-button">Pause background collection</button><button id="resumeFill" type="button" class="outline-button">Resume background collection</button><button id="resumeBoard" type="button" class="outline-button">Resume after board restriction</button></div>
+    <label for="additionalEiins">Add missing six-digit EIINs (one per line or separated by commas)</label><div class="owner-input"><textarea id="additionalEiins" rows="3" maxlength="3000" placeholder="123456&#10;234567"></textarea><button id="addEiins" type="button" class="outline-button">Add to collection</button></div><p class="help">Only use verified EIINs. The board list is checked before results are saved; adding an existing EIIN does not restart it.</p>
+    <p id="fillBudget" class="hint"></p><div class="owner-list-wrap"><ul id="fillList" class="owner-list"></ul></div>
+  </section>
+  <p id="message" class="owner-message" role="status" aria-live="polite"></p>
+  <p class="help">You may delete all hellos at any time. This page shows counts rather than individual results. Saved results remain accessible through searches until deleted.</p>
+</main>
+<dialog id="clearDialog" aria-labelledby="clearTitle"><div class="dialog-header"><h2 id="clearTitle">Delete all hellos?</h2></div><div class="dialog-body confirm-copy">This permanently removes all saved hellos, including names and nicknames. This cannot be undone.</div><div class="dialog-foot"><button id="cancelClear" type="button" class="outline-button">Cancel</button><button id="confirmClear" type="button" class="danger-button">Delete all</button></div></dialog>
+<dialog id="cacheDialog" aria-labelledby="cacheDialogTitle"><div class="dialog-header"><h2 id="cacheDialogTitle">Delete all saved board data?</h2></div><div class="dialog-body confirm-copy">This deletes all saved institute lists and student results and pauses background collection. Active searches may save records again. Private job progress, visitor hellos and backup copies are separate and are not deleted here.</div><div class="dialog-foot"><button id="cancelCache" type="button" class="outline-button">Cancel</button><button id="confirmCache" type="button" class="danger-button">Delete saved data</button></div></dialog>
+</body></html>
