@@ -759,5 +759,54 @@ setTimeout(function(){el.style.transitionDelay='';el.classList.add('done');},d+7
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 })();
 </script>
+  <!--
+  PHOTO SLOT AUTO LOADER
+  Paste this once, just before </body> on blog-safeguard-bid-rejections.html.
+
+  What it does:
+  Every <div class="ph-slot"> block on the page is a text placeholder. It never shows a photo by itself.
+  This script reads the filename written inside each placeholder, checks whether that file exists on the site,
+  and if it does, replaces the placeholder with a real <figure><img> block using the placeholder text as the caption.
+  If the file is not uploaded yet, nothing changes and the placeholder stays visible as a reminder.
+
+  It tries three locations for each file, in order: img/FILENAME, images/FILENAME, FILENAME
+  So it works whether you keep photos in img/, images/, or next to the page.
+-->
+<script>
+(function () {
+  function upgrade(slot) {
+    var codeEl = slot.querySelector('code');
+    if (!codeEl) return;
+    var raw = codeEl.textContent.trim();
+    var name = raw.split('/').pop();
+    var captionEl = slot.querySelector('span');
+    var caption = captionEl ? captionEl.textContent.trim() : '';
+    var candidates = ['img/' + name, 'images/' + name, name];
+
+    (function tryNext(i) {
+      if (i >= candidates.length) return;
+      var probe = new Image();
+      probe.onload = function () {
+        var fig = document.createElement('figure');
+        var img = document.createElement('img');
+        img.src = candidates[i];
+        img.alt = caption || name;
+        img.loading = 'lazy';
+        fig.appendChild(img);
+        if (caption) {
+          var cap = document.createElement('figcaption');
+          cap.textContent = caption;
+          fig.appendChild(cap);
+        }
+        slot.replaceWith(fig);
+      };
+      probe.onerror = function () { tryNext(i + 1); };
+      probe.src = candidates[i];
+    })(0);
+  }
+
+  document.querySelectorAll('.ph-slot').forEach(upgrade);
+})();
+</script>
 </body>
 </html>
